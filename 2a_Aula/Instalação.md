@@ -49,3 +49,4 @@ O WSL é uma ferramenta do próprio Windows 10 que permite rodar um terminal de 
 
 4. siga esse [tutorial que faz você instalar o openssh](https://virtualizationreview.com/articles/2017/02/08/graphical-programs-on-windows-subsystem-on-linux.aspx)
 
+Caso com o Xming aberto no windows e rodar o xeyes no wsl não aparecer os olhos no Xming entre em contato.
