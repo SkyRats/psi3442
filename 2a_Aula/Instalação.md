@@ -8,6 +8,8 @@ máquina virtual ou wsl com o windows 10.
 
 ## Dual boot
 
+ANTES DE PROSSEGUIR LEIA TUDO QUE ESTA AQUI E ALGUNS TUTORIAS NA INTERNET (recomendo a leitura deste aqui [tutorial](https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/how-to-install-ubuntu-18-04-alongside-with-windows-10-or-8-in-dual-boot.html)) 
+
 Aqui vamos paresentar a instalação do Ubuntu, caso deseje fazer de outro OS uma rapida pesquisa você encontra o que deseja. Para fazer um dual boot você vai precisar:
 
 - Um PC
@@ -32,7 +34,18 @@ disciplina)
 >Seu pendrive bootará um linux com a primeira opção sendo experimentar o ubuntu ou instalar, se desejar experimentar ele para ver como é um linux será iniciado normalmente
 porém se você desligar o computador ele sumirá junto com tudo que você fizer nele (caso selecione experimentar terá um incone na area de tralho para instalar o linux)
 
->A instalação é meio longuinha e sem muitos segredos, então siga qualquer um destes tutoriais ou outros da internet (se desejar abre 2 ou mais para certificar-se que esta tudo certo):
-[1]
+>Na parte de escolher como instalar o ubuntu ela é bem delicada, a opção de instalar ao lado do windows é a mais simples, mas você não consegue manejar os espaços de disco usado
+o instalador fará tudo para você. Se quiser tem maior controle, como por exemplo escolher quanto de memória swap irá colocar o mais recomendado é a opção "something else" que você pode manejar as partições das suas memórias (porém é meio delicado, você não vai querer selecionar a partição errada, então tome cuidado)
 
+## WSL
+
+O WSL é uma ferramenta do próprio Windows 10 que permite rodar um terminal de linux no seu computador. É bem prático de usar, apesar de ter alguns macetes para funcionar adequadamente, além de que é um pouco perigoso, teoricamente era para ele ser isolado do windows, mas eu consegui acessar todo o sistema do windws.
+
+1. [Para habilitar o WSL basta seguir o tutorial do próprio windows](https://docs.microsoft.com/pt-br/windows/wsl/install-win10)
+
+2. Abre a microsoft store e procure a distro q você deseja, baixe ela e digite o nome da distro na barra de busca do windows, pronto você tem um terminal da distro de linux que você quer aberto.
+
+3. o WSL é apenas um terminal, então para rodar janelas você vai precisar fazre umas gambiarras, primeiro faça o [download do Xming](https://sourceforge.net/projects/xming/)
+
+4. siga esse [tutorial que faz você instalar o openssh](
 
