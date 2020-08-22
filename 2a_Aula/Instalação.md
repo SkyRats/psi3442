@@ -47,5 +47,5 @@ O WSL é uma ferramenta do próprio Windows 10 que permite rodar um terminal de 
 
 3. o WSL é apenas um terminal, então para rodar janelas você vai precisar fazre umas gambiarras, primeiro faça o [download do Xming](https://sourceforge.net/projects/xming/)
 
-4. siga esse [tutorial que faz você instalar o openssh](
+4. siga esse [tutorial que faz você instalar o openssh](https://virtualizationreview.com/articles/2017/02/08/graphical-programs-on-windows-subsystem-on-linux.aspx)
 
