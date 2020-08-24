@@ -1,7 +1,7 @@
 # Instalação do ROS/Gazebo
 Esse tutorial de instalção do ROS foi baseado no seguinte [link](http://wiki.ros.org/ROS/Installation). O tutorial abaixo foi feito para o sistema operacional Ubuntu.
 
-Atualmente há varias versões do ROS, porém, como versões muito recentes ainda não possuem compatibilidade com alguns softwares que são requisitos da diciplina, utilizaremos o ROS **Melodic**.
+Atualmente há varias versões do ROS, porém, como versões muito recentes ainda não são muito estáveis com alguns softwares que são requisitos da diciplina, recomendamos a utilização do ROS **Melodic**. Ainda assim, é possível utilizar outras versões do ROS, como a Noetic e Kinetic. Para isso, basta substituir nas instalações o distro do ROS (melodic) pela versão que deseja instalar.
 
 ## 1. Instalação
 ### 1.1 Pré-instalação
