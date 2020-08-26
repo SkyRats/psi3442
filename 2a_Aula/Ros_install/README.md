@@ -41,7 +41,10 @@ Para instalar ferramentas e dependencias de para a criação de pacotes ROS:
 ```bash
 sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
 ```
-Outra ferramenta muito útil na criação de pacotes é a `catkin_tools` , que pode ser instalada com ajuda desse [link](https://catkin-tools.readthedocs.io/en/latest/installing.html).
+Outra ferramenta muito útil na criação de pacotes é a `catkin_tools` , que pode ser instalada com ajuda desse [link](https://catkin-tools.readthedocs.io/en/latest/installing.html), ou somente rodar:
+```bash
+sudo apt-get install python-catkin-tools
+```
 #### 2.1.1 Inicializando rosdep
 Para conseguir usar muitas ferramentas do ROS, é necessário primeiro inicializar o rosdep,.
 Se ainda não possue rosdep, rode:
