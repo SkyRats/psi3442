@@ -151,7 +151,7 @@ echo RESTART YOUR COMPUTER to complete installation of PX4 development toolchain
 
 ```
 
-**3. Aperte *Ctrl+X* e *Enter* em seguida:**
+**3. Aperte *Ctrl+X* > *y* > *Enter* em seguida:**
 
 ```bash
 source ubuntu_sim.sh
@@ -159,13 +159,18 @@ source ubuntu_sim.sh
 
 **4. Reinicie o seu computador**
 
-Obs: Você pode fazer isso com o seguinte comando no temrinal:
+Obs: Você pode fazer isso com o seguinte comando no terminal:
 
 ```bash
 sudo reboot
 ```
 
-**5. Inicie a simulação via MAVROS**
+**5. Abra um terminal e vá ao diretório do Firmware:**
+```bash
+cd src/Firmware
+```
+
+**6. Inicie a simulação via MAVROS**
 
 ```
 make px4_sitl_default gazebo_iris_opt_flow
