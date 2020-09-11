@@ -213,4 +213,4 @@ Dica olhem o tópico que ja estamos publicando e veja sua documentação.
 ## Referências
 
 * [Gazebo with ROS Melodic - PX4 Dev Guide](https://dev.px4.io/v1.9.0/en/setup/dev_env_linux.html#ros)
-* [PX4 Simulation](https://dev.px4.io/v1.9.0/en/simulation/)
+* [PX4 Simulation](https://dev.px4.io/master/en/simulation/)
