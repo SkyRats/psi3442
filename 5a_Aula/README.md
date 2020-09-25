@@ -42,6 +42,12 @@ Para rodar o script de simulação, vá até o diretório de *simulation* e depi
 cd ~/catkin_ws/src/simulation/scripts
 ```
 
+E antes de conseguirmos rodar o script, temos que deixá-lo executável:
+
+```bash
+chmod +x simulate.sh
+```
+
 Agora rode o script em bash
 
 ```bash
