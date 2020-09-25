@@ -224,10 +224,16 @@ Primeiro temos que deixar o nosso cript executável:
 chmod +x avoid.py
 ```
 
+Agora temos que compilar o nosso workspace novamente
+
+```bash
+cd ~/catkin_ws && catkin build
+```
+
 e depois vamos executá-lo com:
 
 ```bash
-rosrun aula_pkg avoid.py
+cd ~/catkin_ws/src/aula_pkg/scripts && rosrun aula_pkg avoid.py
 ```
 
 ## Atividade 3 - Red Object Detection
@@ -483,4 +489,28 @@ generate_messages(
   DEPENDENCIES
   std_msgs
 )
+```
+
+Salve o arquivo e feche-o.
+
+Para finalizar todo este processo temos que compilar o nosso workspace novamente
+
+```bash
+cd ~/catkin_ws && catkin build
+```
+
+#### Executando
+
+Primeiramente temos que executar o **control.py** e depois que o drone estiver voando de forma estável, executamos o **detection.py**
+
+```bash
+cd ~/catkin_ws/src/aula_pkg/scripts
+```
+
+```bash
+rosrun aula_pkg control.py
+```
+
+```bash
+rosrun aula_pkg detection.py
 ```
