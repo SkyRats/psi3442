@@ -247,7 +247,7 @@ Agora vamos precisar fazer o mesmo procedimento que fizemos acima, de criar scri
 - control.py
 - detection.py
 
-O código do control.py é este:
+O código do **control.py** é este:
 
 ```python
 #!/usr/bin/env python3
@@ -365,7 +365,7 @@ while not rospy.is_shutdown():
     rate.sleep()
 ```
 
-O código do detection.py é este:
+O código do **detection.py** é este:
 
 ```python
 #!/usr/bin/env python
@@ -434,7 +434,7 @@ if __name__=="__main__":
     main()
 ```
 
-Depois de criar os dois arquivos dentro de `simulation/scripts` deixe-os executáveis com:
+Depois de criar os dois arquivos dentro de `aula_pkg/scripts` deixe-os executáveis com:
 
 ```bash
 chmod +x control.py
@@ -444,4 +444,43 @@ e
 
 ```bash
 chmod +x detection.py
+```
+
+Em seguida vamos criar o diretório **msg**:
+
+```bash
+cd ~/catkin_ws/src/aula_pkg && mkdir msg
+```
+
+Agora vamos criar o arquivo **control.msg**
+
+```bash
+gedit control.msg
+```
+e que deve conter o seguinte código:
+
+```
+int64 cx
+int64 width
+```
+
+Por fim vamos editar o nosso **CMakelists.txt**
+
+```bash
+gedit ~/catkin_ws/src/aula_pkg/CMakelists.txt
+```
+
+depois que abrir o código no Gedit, vá até o fim do arquivo e adicione o seguinte código:
+
+```
+add_message_files(
+  FILES
+  control.msg
+  
+)
+
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
 ```
