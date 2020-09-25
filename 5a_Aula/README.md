@@ -56,3 +56,31 @@ Nesta aula nós não iremos utilizar todos os arquivos .launch disponíveis ness
 O seu terminal deve estar asism o o da imagem abaixo:
 
 ![Terminal simulate.sh](images/terminal_1.jpeg)
+
+## Atividade 2 - Criar e executar um node ROS
+
+Para criar um package ROS, e neste caso, o package que iremos utilizar nesta aula, rode os seguintes comandos no seu Terminal:
+
+```bash
+cd ~/catkin_ws/src
+```
+
+e depois
+
+```bash
+catkin_create_pkg aula_pkg mavros_msgs rospy roscpp geometry_msgs sensor_msgs geographic_msgs cv_bridge message_generation
+```
+
+Agora, se vc der `ls` no seu Terminal vc deve observar que um package com nome "aula_pkg" foi criado. E se vc entrar no repositório e abrir o *CMakelists.txt*, você deve observar que os parâmetro que utilizamos no comando acima foram adicinados as dependências que serão necessárias no nosso pacote (rospy, roscpp, geometry_msgs, sensor_msgs, geographic_msgs, cv_bridge, message_generation)
+
+Agora, vamos criar um repositório para colcoarmos todos os nossos scripts, para isso rode no seu Terminal:
+
+```bash
+cd ~/catkin_ws/src
+```
+
+e depois
+
+```bash
+mkdir scripts
+```
