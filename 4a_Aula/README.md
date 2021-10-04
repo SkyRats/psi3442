@@ -58,10 +58,10 @@ mkdir -p ~/mavros_ws/src
 cd mavros_ws/src
 catkin_init_workspace
 
-source ~/mavros_ws/devel/setup.bash
-
 cd ~/mavros_ws
 catkin build
+
+source ~/mavros_ws/devel/setup.bash
 ```
 
 Com isso criamos, o workspace que vamos usar no momento. Se você observar, durante todas as instalações que foram feitas até agora, existe um workspace chamado ```catkin_ws```.
