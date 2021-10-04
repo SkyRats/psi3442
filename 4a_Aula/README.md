@@ -62,6 +62,10 @@ cd ~/mavros_ws
 catkin build
 
 source ~/mavros_ws/devel/setup.bash
+
+# para adicionar o comando no .bashrc
+echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+
 ```
 
 Com isso criamos, o workspace que vamos usar no momento. Se você observar, durante todas as instalações que foram feitas até agora, existe um workspace chamado ```catkin_ws```.
