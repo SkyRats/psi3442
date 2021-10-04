@@ -64,7 +64,7 @@ catkin build
 source ~/mavros_ws/devel/setup.bash
 
 # para adicionar o comando no .bashrc
-echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+echo "source ~/mavros_ws/devel/setup.bash" >> ~/.bashrc
 
 ```
 
