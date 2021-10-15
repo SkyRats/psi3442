@@ -2,7 +2,7 @@
 
 ## O que queremos fazer?
 
-**Digamos que nós queremos construir uma tartaruga autônoma**. Vamos precisar de algorítmos de controle, integração de sensores, máquinas de estados, softwares de segurança e muitos outros...  Construir todo o código para cada um desses sistemas (sem falar na integração entre eles) seria muito complicado.
+**Digamos que nós queremos construir um sistema autônomo**. Vamos precisar de algorítmos de controle, integração de sensores, máquinas de estados, softwares de segurança e muitos outros...  Construir todo o código para cada um desses sistemas (sem falar na integração entre eles) seria muito complicado.
 
 Para projetos maiores e mais complexos, **é quase impossível e bastante desnecessário implementar tudo do zero**. Muitos dos problemas já têm soluções disponíveis publicamente, e podemos investir nosso tempo aprimorando soluções novas. Ter um sistema que nos permite facilmente integrar funcionalidades nossas e de outros desenvolvedores seria muito legal...
 
@@ -12,18 +12,16 @@ Para projetos maiores e mais complexos, **é quase impossível e bastante desnec
 
 > Robot Operating System (ROS, sistema operacional de robôs) é uma coleção de frameworks de software para desenvolvimento de robôs, que fornece a funcionalidade de um sistema operacional em um cluster de computadores heterogêneo. ROS fornece serviços padrões de sistema operacional, tais como abstração de hardware, controle de dispositivos de baixo nível, a implementação de funcionalidades comumente usadas, passagem de mensagens entre processos e gerenciamento de pacotes.
 
-Ou seja, o ROS é um ecossistema de softwares e ferramentas padronizadas que nos permite **integrar os diversos componentes** necessários para o funcionamento de um robô (ou de nossa tartaruga).
+Ou seja, o ROS é um ecossistema de softwares e ferramentas padronizadas que nos permite **integrar os diversos componentes** necessários para o funcionamento de um robô.
 
 *Alguns recursos interessantes para procurar mais informações sobre o ROS e suas funcionalidades são a [ROS Wiki](http://wiki.ros.org/) e o [ROS Answers](https://answers.ros.org/questions/)*
 
-## Como usaremos ROS na diciplina?
+## Como a Skyrats usa o ROS?
 
 Usamos o ROS conforme as necessidades do projeto em que estamos trabalhando. Podemos mudar os pacotes utilizados, mas a estrutura por baixo permanece sempre a mesma. Alguns pacotes que usamos são:
 
 * MAVROS
-* CvBridge
 * Gazebo
-* bebop_driver, bebop_autonomy, bebop_msgs, bebop tools,_et cetera_.
 
 ## Como funciona o ROS?
 
@@ -33,7 +31,7 @@ O funcionamento do ROS é representado por um **Grafo de comunicação**, que or
 
 Grafos são estruturas muito utilizadas na computação e na matemática, e consistem em um conjunto de **vértices** ou **nós** ligados por **arestas**. Na prática, eles funcionam como uma forma de abstração, isto é, uma forma de compreender e modelar um sistema. No caso do ROS, o grafo representa a comunicação: os nós são os programas, e as arestas representam vias de comunicação entre eles.
 
-Para iniciar o ROS, usamos o comando `roscore` em um terminal
+Para iniciar o ROS no nosso computador, usamos o comando `roscore` em um terminal.
 
 ### Nodes
 
@@ -62,7 +60,7 @@ Veja que o programa roda e abre a linda janelinha do turtlesim. Examinando novam
 
 Mas como esses _nodes_ se comunicam entre si? A forma mais comum é através de _topics_. Os tópicos funcionam como caixinhas de correio: um _node_ coloca uma mensagem em uma certa caixinha, e depois um outro _node_ pode ir nessa caixinha e ver a mensagem que foi colocada. No ROS, dizemos que um _node_ do tipo _Publisher_ publica mensagens em um _topic_, e um _node_ do tipo _Subscriber_ se inscreve nesse _topic_, recebendo todas as mensagens que são publicadas nele.
 
-Eles são um dos tipos possíveis de **arestas** no grafo de comunicação que mencionamos acima. Mais especificamente, são arestas direcionais, ou seja, que só permitem comunicação em um sentido. Dizemos também que a comunicação é **assíncrona**, pois os Subscribers podem realizar as postagens em qualquer momento, sem precisar interromper sua execução para esperar que algum Subscriber receba a mensagem.
+Eles são um dos tipos possíveis de **arestas** no grafo de comunicação que mencionamos acima. Mais especificamente, são arestas direcionais, ou seja, que só permitem comunicação em um sentido. Dizemos também que a comunicação é **assíncrona**, pois os Publishers podem realizar as postagens em qualquer momento, sem precisar interromper sua execução para esperar que algum Subscriber receba a mensagem.
 
 Vamos ver os tópicos atualmente em execução com o comando `rostopic list` em um terminal. Vamos examinar, por exemplo, o tópico `/turtle1/pose`, com o comando `rostopic info /turtle1/pose`:
 
@@ -130,7 +128,7 @@ geometry_msgs/Vector3 angular
 
 Veja que ela é composta de dois itens (linear e angular), sendo que esses são instâncias de uma mensagem do tipo geometry_msgs/Vector3. Essa mensagem, por sua vez, tem 3 parâmetros (dessa vez primitivos): x, y e z, do tipo float64. Ou seja, uma mensagem pode ser uma combinação de outras mensagens e tipos primitivos.
 
-Você pode enconrar mais informações sobre ROS Messages [aqui](http://wiki.ros.org/msg).
+Você pode encontrar mais informações sobre ROS Messages [aqui](http://wiki.ros.org/msg).
 
 ### Services
 
@@ -212,7 +210,7 @@ Putz, mas como eu vou lembrar de criar todas essas pastas?
 Resposta: ~~não vou~~
 
 Para a criação de um package, usamos o comando 
-`catkin_create_pkg`
+`catkin_create_pkg <nome do package>`
 
 Além desse comando, temos vários outros para manipular packages, como
 
@@ -294,6 +292,7 @@ Para usar o workspace então, precisamos dar o comando
 
 `source ~/[nome_do_workspace]/devel/setup.bash`
 
+_Vale ressaltar que esse comando só pode ser executado após uma primeira compilação do workspace._
 
 Costumamos deixar a linha abaixo e o source do workspace no final do nosso arquivo ~/.bashrc, para mudar o ambiente de trabalho.
 
@@ -323,8 +322,7 @@ def main():
   pub.publish(TipoDeMsg(param1, param2, ..., paramN))
   rate.sleep()
 ```
-Repare no jutsu do jutsu mil grau que é o `#!/usr/bin/env python`, é teoricamente um comentário no programa, mas ele tem uma função importante.
-Esa linha é chamada de **shebang**, e se temos um script executável, que é chamado para execução sem que informemos a linguagem dele (como será o caso do roslaunch/rosrun), o shebang dá o endereço do interpretador que roda o código em questão
+A primeira linha do código é chamada de **shebang**, e se temos um script executável, que é chamado para execução sem que informemos a linguagem dele (como será o caso do roslaunch/rosrun), o shebang dá o endereço do interpretador que roda o código em questão
 >if the script is executable, and called without the preceding language. The script then calls the language's interpreter to run the code inside the script, and the shebang is the "guide" to find it.
 
 ### Implementação de um Node Subscriber em Python
@@ -379,8 +377,7 @@ Exemplo do ROS wiki
 
 ### Exemplos em C++
 
-#### Compilação! EEBA!
-Ao escrever um node ROS em C++, precisaremos compilá-lo eventualmente, isso envolve adicionar o arquvio .cpp (e, eventualmente, os .h) no arquivo `CMakeLists.txt`, para fazer isso o CMakeLists facilita disponibilizando um template para cada tipo de operação. Precisamos:
+Ao escrever um node ROS em C++, precisaremos compilá-lo eventualmente, isso envolve adicionar o arquivo .cpp (e, eventualmente, os .h) no arquivo `CMakeLists.txt`, para fazer isso o CMakeLists facilita disponibilizando um template para cada tipo de operação. Precisamos:
 
 * Adicionar o roscpp no `find_package`
 * Adicionar o executável com um
@@ -486,7 +483,7 @@ Para rodar o roslaunh, usamos o comando
 Mas antes precisamos **compilar o workspace** e dar **source** em seu **setup.bash**
 
 #### ROS Bags
-Ferramenta para gravação e reprodução de mensagens ROS .
+Ferramenta para gravação e reprodução de mensagens ROS.
 
 * `rosbag record [topico1] [topico2] [topico3]` grava os tópicos 1, 2 e 3
 * `rosbag record -a` grava todos os tópicos
