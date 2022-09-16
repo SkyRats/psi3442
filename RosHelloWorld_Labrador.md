@@ -6,6 +6,12 @@ até um script pyhton que controle um robo utilizando a estrutura do ROS.
 Alguns comandos adicionais serão passados a fim de tornar esse tutorial útil para qualquer pessoa que deseje reproduzir os passos aqui indicados
 por utilizando a SBC Labrador do CITI-USP com Debian 10 e ROS Noetic ou versões similares dessas tecnologias.
 
+## Indice do tutorial
+* Criando um workspace
+* Criando um packge
+* Criando um controlador em python usando ROS
+* Executando a simulação do TurtleSim e do controle.py
+
 ## Criando um workspace
 Criar um workspace nada mais é do que criar um diretório preparado para aplicações baseadas em ROS. 
 
