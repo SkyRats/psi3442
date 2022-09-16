@@ -28,7 +28,7 @@ nano ~/.bashrc
 ```
 Na última linha do script do seu bashrc inclua:
 ```
-source ~/ workshop21_workspace / devel / setup . bash
+source ~/workshop21_workspace/devel/setup.bash
 ```
 Utilize ctrl+x para sair do ambiente de edição do nano. Salve as alterações.
 
