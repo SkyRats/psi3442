@@ -72,9 +72,9 @@ catkin build
 ```
 
 ## Criando um controlador em python usando ROS
-Leia a apostila [APOSTILA DE IMPLEMENTA  ̧C  ̃AO B  ́ASICA DE SISTEMA DE
-CONTROLE APLICADO A ROB  ́OTICA COM ROS (ROBOTIC
-OPERATIING SYSTEM)]()
+Leia a apostila [APOSTILA DE IMPLEMENTAÇÃO BÁSICA DE SISTEMA DE
+CONTROLE APLICADO A ROBÓTICA COM ROS (ROBOTIC
+OPERATIING SYSTEM)](https://github.com/SkyRats/psi3442/blob/master/2a_Aula/ApostilaImplementacaoROS2022.pdf)
 
 
 ## Executando a simulação do TurtleSim e do controle.py
