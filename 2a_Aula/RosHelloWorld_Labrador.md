@@ -100,3 +100,8 @@ Abra um terceiro terminal e execute o .py criado para controlar o robo
 ```
 rosrun turtle_control_demo1 turtle_control_demo1.py
 ```
+
+## Agradecimentos:
+Giovani F.
+Lucas Mata
+Yan
