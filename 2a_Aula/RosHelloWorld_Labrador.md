@@ -72,7 +72,7 @@ catkin build
 ```
 
 ## Criando um controlador em python usando ROS
-![img](images/droneexemplo.jpg)
+
 
 ## Executando a simulação do TurtleSim e do controle.py
 
