@@ -507,6 +507,8 @@ Ou carregar uma interface já configurada com
 
 `ln -s ~/git/[package] ~/[workspace]/src/`
 
+## Exemplo resolvido
+Consulte [Tutorial de Utilização de ROS (Robotic Operating System)](https://github.com/SkyRats/psi3442/blob/master/2a_Aula/RosHelloWorld_Labrador.md)
 
 ## Referências
 1. [ROS Wiki](http://wiki.ros.org/)
