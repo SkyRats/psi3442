@@ -12,7 +12,7 @@ A PX4 é um Firmware de piloto automático open-source amplamente utilizado para
 
 O PX4 fornece controle de voo e integração para diversos tipos de veículos, como drones, aviões, VTOLs, rovers, barcos, etc. Para isso, ele usa uma base comum de código que é igual para qualquer tipo de "airframe".
 
-O PX4 é organizado para ser um sistema reativo (veja o [Reactive Manifesto](https://www.reactivemanifesto.org/)), ou seja, ele é organizado em várias partes separadas e relativamente independentes (módulos), que se comunicam entre si através de um sistema assíncrono de mensagens (uORB), sendo capaz de se adaptar a cargas de trabalho variáveis. Dessa forma, os vários módulos podem ser desenvolvidos e trocados independentemente, reduzindo o risco de danificar outros componentes do sistema e tornando o sistema mais robusto a falhas.
+O PX4 é organizado para ser um sistema reativo (veja o [Reactive Manifesto](https://www.reactivemanifesto.org/)), ou seja, ele é organizado em várias partes separadas e relativamente independentes (módulos), que se comunicam entre si através de um sistema assíncrono de mensagens ([uORB](https://docs.px4.io/main/en/middleware/uorb.html)), sendo capaz de se adaptar a cargas de trabalho variáveis. Dessa forma, os vários módulos podem ser desenvolvidos e trocados independentemente, reduzindo o risco de danificar outros componentes do sistema e tornando o sistema mais robusto a falhas.
 
 ![PX4_Architecture](imgs/PX4_Architecture.fa89af6b.svg)
 
