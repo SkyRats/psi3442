@@ -255,9 +255,9 @@ NAV_DLL_ACT = 0
 NAV_RCL_ACT = 1 
 COM_RCL_EXCEPT = 4
 ```
-Os significados desses parâmetros podem ser encontrados na tabela do [PX4 User Guide - Tabela](https://docs.px4.io/main/en/advanced_config/parameter_reference.html)
+Os significados desses parâmetros podem ser encontrados na tabela do [PX4 User Guide/Tabela](https://docs.px4.io/main/en/advanced_config/parameter_reference.html)
 
-Para alterar esses parâmetros do firmware use o [QgroundControl](https://docs.qgroundcontrol.com/master/en/getting_started/download_and_install.html) e siga as instruções descritas na [PX4 User Guide](https://docs.px4.io/main/en/advanced_config/parameters.html).
+Para alterar esses parâmetros do firmware use o [QgroundControl](https://docs.qgroundcontrol.com/master/en/getting_started/download_and_install.html) e siga as instruções descritas na [PX4 User Guide/advanced_config/parameters](https://docs.px4.io/main/en/advanced_config/parameters.html).
 
 ## Referências
 
