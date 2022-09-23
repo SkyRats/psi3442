@@ -18,8 +18,12 @@ O PX4 é organizado para ser um sistema reativo (veja o [Reactive Manifesto](htt
 
 Ele é executado dentro de uma controladora de voo, como a Pixhawk, em um sistema operacional de tempo real (RTOS) como o NuttX. Assim, ele controla diretamente os motores e recebe informações de sensores como IMU e GPS, assim como comandos diretos de radiocontrole. Porém, ele também é capaz de trocar informações e receber comandos de fontes externas (como um computador no solo ou embarcado no próprio drone), através do protocolo MAVLink.
 
-* Para não confundir: O que é Attitude Control e o que é Altitude Control?
-[Attitude Control](https://en.wikipedia.org/wiki/Attitude_control) se refere tipicamente a orientação de uma aeronave em relação a um determinado eixo de coordenadas utilizada como referência para seu movimento. Já Altitude Control refere-se simplismente ao controle de altitude de uma aeronave.
+### 4.1 Arquitetura de Controle PX4
+* [Attitude Control](https://en.wikipedia.org/wiki/Attitude_control) se refere tipicamente a orientação de uma aeronave em relação a um determinado eixo de coordenadas utilizada como referência para seu movimento. 
+
+* Altitude Control refere-se simplismente ao controle de altitude de uma aeronave.
+
+* Rate controller: é o controlador de nível mais baixo desenvolvido para o sistema quadrotor. Este controlador recebe as taxas angulares desejadas do controlador de atitude. Em seguida, calcula o erro entre as taxas desejadas e as taxas medidas pelo giroscópio. Este erro é então usado para calcular as três entradas de controle de momento. Estes são combinados com a entrada de controle de empuxo calculada pelo controlador de altitude que são então convertidas para as velocidades desejadas do motor e enviadas aos motores através dos ESCs.
 
 ## 2. MAVLink e MAVROS
 
