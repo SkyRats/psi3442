@@ -18,6 +18,9 @@ O PX4 é organizado para ser um sistema reativo (veja o [Reactive Manifesto](htt
 
 Ele é executado dentro de uma controladora de voo, como a Pixhawk, em um sistema operacional de tempo real (RTOS) como o NuttX. Assim, ele controla diretamente os motores e recebe informações de sensores como IMU e GPS, assim como comandos diretos de radiocontrole. Porém, ele também é capaz de trocar informações e receber comandos de fontes externas (como um computador no solo ou embarcado no próprio drone), através do protocolo MAVLink.
 
+* Para não confundir: O que é Attitude Control e o que é Altitude Control?
+[Attitude Control](https://en.wikipedia.org/wiki/Attitude_control) se refere tipicamente a orientação de uma aeronave em relação a um determinado eixo de coordenadas utilizada como referência para seu movimento. Já Altitude Control refere-se simplismente ao controle de altitude de uma aeronave.
+
 ## 2. MAVLink e MAVROS
 
 MAVLink é um protocolo de comunicação leve usado para a comunicação entre a PX4 e outras aplicações como o QGroundControl e o ROS, enviando um conjunto de mensagens e microsserviços para transporte de dados e comandos.
