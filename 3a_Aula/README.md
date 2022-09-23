@@ -266,6 +266,11 @@ Os significados desses parâmetros podem ser encontrados na tabela do [PX4 User 
 
 Para alterar esses parâmetros do firmware use o [QgroundControl](https://docs.qgroundcontrol.com/master/en/getting_started/download_and_install.html) e siga as instruções descritas na [PX4 User Guide/advanced_config/parameters](https://docs.px4.io/main/en/advanced_config/parameters.html).
 
+## Exercício para aprofundamento do aprendizado
+* Faça um algorítimo para que o dorne realize uma trajetória no formato de um quadrado
+* Altere a sintonia dos controladores PID no firmware PX4 para eliminar o overshoot, isto é, imponha regime supercrítico (preferencialmente crítico)
+* Bonus: Imponha uma trajetoria polinomial para que o drone passe em cada vértice com velocidade não nula. Referência: 
+
 ## Referências
 
 1. [Site da PX4](https://px4.io/)
