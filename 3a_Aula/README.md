@@ -248,6 +248,17 @@ rosrun mav_control takeoff_land.py
 
 Você deve ver o drone realizar, na simulação, os movimentos desejados.
 
+## Parametros PX4 para simulação
+Caso sua simulação apresente problemas no momento armar o drone ou em alguma outra etapa, veririque se os seguintes parâmetros do firmware PX4 estão com os valores a seguir: (para mais informações acesse: [Forum de discussão do erro](https://discuss.px4.io/t/offboard-mode-in-sitl/25727/3)
+```
+NAV_DLL_ACT = 0
+NAV_RCL_ACT = 1 
+COM_RCL_EXCEPT = 4
+```
+Os significados desses parâmetros podem ser encontrados na tabela do [PX4 User Guide - Tabela](https://docs.px4.io/main/en/advanced_config/parameter_reference.html)
+
+Para alterar esses parâmetros do firmware use o [QgroundControl](https://docs.qgroundcontrol.com/master/en/getting_started/download_and_install.html) e siga as instruções descritas na [PX4 User Guide](https://docs.px4.io/main/en/advanced_config/parameters.html).
+
 ## Referências
 
 1. [Site da PX4](https://px4.io/)
