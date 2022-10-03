@@ -12,6 +12,10 @@ Nesta atividade, iremos explorar aspectos de controle de sistemas dinâmicos, im
 
 fonte das imagens: [PUC-RIO](https://www.maxwell.vrac.puc-rio.br/24097/elementos.html)
 
+Na figura 1a) Se observa um esquema de controle do nível de um reservatório de água. Existe um Suprimento de água que é controlado por uma vávula de controle. Quando falta água, a válvula se abre permitindo repor a água para manter um nível desejado no reservatório. O nível desejado é medido por um sensor de nível que fornece essa informação a um controlador de nível que por sua vez regula a válvula.
+
+Na figura 1b) O mesmo se observa, mas os elementos físicos são abstratídos em um **diagrama de blocos** que por sua vez chega em seu nível de abstração máxima quando retratado por funções de transferência **C(s), G(s)** e **L(s)** com sinais no domínio de laplace **L(s)**.
+
 ## 2. O controle PID
 ### 2.1 Proporcional
 ### 2.2 Integral
