@@ -6,7 +6,7 @@ Nesta atividade, iremos explorar aspectos de controle de sistemas dinâmicos, im
 ### 1.1 O significado de controlar e nomeclatura
 ### 1.2 Malha de Controle de sistemas SISO
 
-![px4_sitl_overview](https://github.com/SkyRats/psi3442/tree/master/3a_Aula/imgs/px4_sitl_overview.d5d197f2.svg)
+![px4_sitl_overview](imgs/nivelReal.png)
 
 ## 2. O controle PID
 ### 2.1 Proporcional
