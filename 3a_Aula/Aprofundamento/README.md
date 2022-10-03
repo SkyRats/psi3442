@@ -33,7 +33,7 @@ Dado essa maneira de pensar um controlador, o algorítimo de controle **C(s)**  
 
 ## 2. O controle PID
 
-A ideia do controle PID é gerar um esforço de controle u(t) a partir de operações sobre erro e(t) ambos mostrados na ''Malha de COntrole''.
+A ideia do controle PID é gerar um esforço de controle u(t) a partir de operações sobre erro e(t) ambos mostrados na ''Malha de Controle''.
 
 A expressão linear idelaizada desse algorítimo é exposta a seguir
 
@@ -44,7 +44,27 @@ O que no domínio de Laplace se escreve como
 $\cfrac{U(s)}{E(s)} = K_p \times ( 1 + \cfrac{1}{s \times T_i} + T_D \times s)$
 
 ### 2.1 Proporcional
+
+Essa parcela é intuitiva, quanto maior o erro entre o valor de referência e o valor atual de uma variável, maior deverá ser o eforço de controle u(t) para que o erro e(t) seja minimizado. Por exemplo, se a água do chuveiro estiver muito gelada, então um banhista deverá fechar bastante o registro para que ela saia quente. Por outro lado, caso a água já esteja morna, um leve ajuste no registro será suficiente. Matemáticamente:
+
+$u_P(t) = K_p \times e(t)$
+
 ### 2.2 Integral
+
+Essa parcela é muitas vezes introduzida no controle com os seguintes objetivos
+* Aumentar o tipo do sistema, o que implica no rastreamento com erro nulo a trajetórias de grau mais elevado
+* Acelerar a dinâmica do controle, isto é, diminuir o tempo nescessário para chegar ao regime permanente no valor de referência desejado
+
+A parcela responsável por fazer isso é
+
+$u_I(t) = K_p \times \cfrac{1}{T_i} \int e(\tau) d\tau$
+
+E como se vê o erro é integrado de tal maneira que o esforço de controle aumenta se mais tempo passa sem que o erro seja diminuido. Essa parcela do controle aumenta a velocidade do rastreamento da referência pois penaliza o controle caso ele demore muito para atingir o objetivo por meio do aumento do esforço de controle.
+
+Quanto ao tipo do sistema, intuitivamente pode-se imaginar o caso em que se deseje manter um dorne a 1m de altura. Caso um controle proporcional controlasse o empuxo nas hélices desse drone, no momento em que o objetivo fosse alcançado o erro seria nulo e proporcionalmente o empuxo também seria nulo levando a queda do drone. Mas, se houver um valor integrado (acumulado) de erro por meio de uma parcela integrativa do erro, então o esforço de controle com erro nulo seria $u(t) \neq 0$ de tal maneira que haveria empuxo o suficiente para que o drone chegasse na cota 1m. Ou seja, a parcela integral aumenta o típo do sistema pois permite rastrear uma referência que seria impossível de se rastrear somente com controle proporcional.
+
+Essa ideia de integração é utilizada em inumeras outras técnicas de controle além do PID.
+
 ### 2.3 Derivativo
 ## 3. Implementação realista do controle PID
 ### 3.1 Anti-windup
