@@ -12,6 +12,6 @@ Nesta atividade, iremos explorar aspectos de controle de sistemas dinâmicos, im
 ## 3. Implementação realista do controle PID
 ### 3.1 Anti-windup
 ### 3.2 Filtro de derivada
-### 3.3 Lets Code!
+### 3.3 Exemplo de implementação!
 ## 4. Aplicação: Solução do exercício proposto na aula 3.
 
