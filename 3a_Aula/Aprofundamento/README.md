@@ -41,7 +41,7 @@ $u(t) = K_p \times ( e(t) + \cfrac{1}{T_i} \int e(\tau) d\tau + T_D \cfrac{de(t)
 
 O que no domínio de Laplace se escreve como
 
-$\cfrac{U(s)}{E(s)} = K_p \times ( 1 + \cfrac{1}{s \times T_i} + T_D \times s)
+$\cfrac{U(s)}{E(s)} = K_p \times ( 1 + \cfrac{1}{s \times T_i} + T_D \times s)$
 
 ### 2.1 Proporcional
 ### 2.2 Integral
