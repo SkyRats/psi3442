@@ -33,6 +33,7 @@ Dado essa maneira de pensar um controlador, o algorítimo de controle **C(s)**  
 
 ## 2. O controle PID
 ### 2.1 Proporcional
+$\int e(\tau) d\tau$
 ### 2.2 Integral
 ### 2.3 Derivativo
 ## 3. Implementação realista do controle PID
