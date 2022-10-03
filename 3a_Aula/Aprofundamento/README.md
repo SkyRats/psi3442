@@ -82,11 +82,12 @@ A figura a seguir ilustra graficamente o significado dessa equação
 
 ![px4_sitl_overview](imgs/acaointegral.png)
 
-[Apostila de Controle: Escola Politécnica da Universidade de São Paulo](https://edisciplinas.usp.br/mod/resource/view.php?id=123526)
+Fonte: [Apostila de Controle - Escola Politécnica da Universidade de São Paulo](https://edisciplinas.usp.br/mod/resource/view.php?id=123526)
 
 ### 2.3 Derivativo
 
 prever o futuro
+![px4_sitl_overview](imgs/acaoderivativa.png)
 
 ## 3. Implementação realista do controle PID
 ### 3.1 Anti-windup
