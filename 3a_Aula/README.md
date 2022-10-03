@@ -269,7 +269,8 @@ Para alterar esses parâmetros do firmware use o [QgroundControl](https://docs.q
 ## Exercício para aprofundamento do aprendizado
 * Faça um algorítimo para que o dorne realize uma trajetória no formato de um quadrado
 * Altere a sintonia dos controladores PID no firmware PX4 para eliminar o overshoot, isto é, imponha regime supercrítico (preferencialmente crítico)
-* Bonus: Imponha uma trajetoria polinomial para que o drone passe em cada vértice com velocidade não nula. Referência: 
+* Bonus: Imponha uma trajetoria polinomial para que o drone passe em cada vértice com velocidade não nula. Referência: Robótica, 3ª Edição
+John J. Craig - Capitulo 7: Geração de Trajetórias.
 
 ## Referências
 
