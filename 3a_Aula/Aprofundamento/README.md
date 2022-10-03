@@ -32,8 +32,14 @@ Na figura 1b) O mesmo se observa, mas os elementos físicos são abstratídos em
 Dado essa maneira de pensar um controlador, o algorítimo de controle **C(s)**  mais utilizados em sistemas SISO *Single Input - Single Output* é o PID *Proporcional Integral e Derivaitivo* que funciona por meio das operações de proporcionalidade, integral e derivada do erro entre o que se tem de referência para uma dada variável e seu valor real em um determinado instante. A seguir, explora-se as características e implementações desse algorítimo.
 
 ## 2. O controle PID
+
+A ideia do controle PID é gerar um esforço de controle u(t) a partir de operações sobre erro e(t) ambos mostrados na ''Malha de COntrole''.
+
+A expressão linear idelaizada desse algorítimo é exposta a seguir
+
+$K_p ( e(t) + \cfrac{1}{T_i} \int e(\tau) d\tau + T_D \cfrac{de(t)}{dt})$
+
 ### 2.1 Proporcional
-$\int e(\tau) d\tau$
 ### 2.2 Integral
 ### 2.3 Derivativo
 ## 3. Implementação realista do controle PID
