@@ -4,6 +4,13 @@ Nesta atividade, iremos explorar aspectos de controle de sistemas dinâmicos, im
 
 ## 1. Introdução ao controle de sistemas dinâmicos
 ### 1.1 O significado de controlar e nomeclatura
+
+A ideia de controle automático é muito antiga, mas popularmente considera-se o regulador de Watt como sendo o primeiro controlador automático da humanidade.
+
+A ideia de controlar consiste em condicionar uma variável de interesse a um valor especificado. Por exemplo, manter o nível de uma piscina em 2.5m de altura ou comandar um drone para que saia de um ponto origem **A** e chege a um ponto destino **B**.
+
+Os primeiros controles, antes do regulador de Watt implementavam ''sistema de malha aberta''
+
 ### 1.2 Malha de Controle de sistemas SISO
 
 ![px4_sitl_overview](imgs/nivelReal.png) 1a)
