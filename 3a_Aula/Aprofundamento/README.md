@@ -7,6 +7,8 @@ Nesta atividade, iremos explorar aspectos de controle de sistemas dinâmicos, im
 ### 1.2 Malha de Controle de sistemas SISO
 
 ![px4_sitl_overview](imgs/nivelReal.png)
+![px4_sitl_overview](imgs/nivelAbstrato.png)
+![px4_sitl_overview](imgs/nivelMatematico.png)
 
 ## 2. O controle PID
 ### 2.1 Proporcional
