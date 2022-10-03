@@ -78,6 +78,12 @@ O significado desse parâmetro é que T_i é o tempo nescesário para que, manti
 
 $e(T_i) = \int_{0}^{T_i} e(\tau) d(\tau)$
 
+A figura a seguir ilustra graficamente o significado dessa equação
+
+![px4_sitl_overview](imgs/acaointegral.png)
+
+[Apostila de Controle: Escola Politécnica da Universidade de São Paulo](https://edisciplinas.usp.br/mod/resource/view.php?id=123526)
+
 ### 2.3 Derivativo
 
 prever o futuro
