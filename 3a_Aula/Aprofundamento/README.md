@@ -89,6 +89,8 @@ Fonte: [Apostila de Controle - Escola Politécnica da Universidade de São Paulo
 prever o futuro
 ![px4_sitl_overview](imgs/acaodiferencial.png)
 
+Fonte: [Apostila de Controle - Escola Politécnica da Universidade de São Paulo](https://edisciplinas.usp.br/mod/resource/view.php?id=123526)
+
 ## 3. Implementação realista do controle PID
 ### 3.1 Anti-windup
 
