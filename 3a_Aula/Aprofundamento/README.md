@@ -37,7 +37,11 @@ A ideia do controle PID é gerar um esforço de controle u(t) a partir de opera�
 
 A expressão linear idelaizada desse algorítimo é exposta a seguir
 
-$K_p ( e(t) + \cfrac{1}{T_i} \int e(\tau) d\tau + T_D \cfrac{de(t)}{dt})$
+$u(t) = K_p \times ( e(t) + \cfrac{1}{T_i} \int e(\tau) d\tau + T_D \cfrac{de(t)}{dt})$
+
+O que no domínio de Laplace se escreve como
+
+$\cfrac{U(s)}{E(s)} = K_p \times ( 1 + \cfrac{1}{s \times T_i} + T_D \times s)
 
 ### 2.1 Proporcional
 ### 2.2 Integral
