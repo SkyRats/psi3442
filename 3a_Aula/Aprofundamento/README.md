@@ -49,6 +49,13 @@ Essa parcela é intuitiva, quanto maior o erro entre o valor de referência e o 
 
 $u_P(t) = K_p \times e(t)$
 
+#### Parâmetro K_p
+Esse parâmetro indica a agressividade do controle. Ele determina o quão intenso será o esforço de controle u(t) para um determinado valro de erro e(t).
+
+Fazendo-se uma análise mais avançada do lugar das raízes (LGR) pode-se notar que há casos em que o aumento do $K_p$ implica no estabilização de um sistema e que no caso de sistemas de fase não mínima, é comum que o aumento do ganho $K_p$ além de um valor crítico desestabilize o sistema a ser controlado.
+
+E sempre aumentar o $K_p$ resulta num sistema que rastreia uma referência mais rapidamente pois aumenta a intensidade do esforço de controle.
+
 ### 2.2 Integral
 
 Essa parcela é muitas vezes introduzida no controle com os seguintes objetivos
@@ -57,7 +64,7 @@ Essa parcela é muitas vezes introduzida no controle com os seguintes objetivos
 
 A parcela responsável por fazer isso é
 
-$u_I(t) = K_p \times \cfrac{1}{T_i} \int e(\tau) d\tau$
+$u_I(t) = K_p \times \cfrac{1}{T_i} \int_{0}^{t} e(\tau) d\tau$
 
 E como se vê o erro é integrado de tal maneira que o esforço de controle aumenta se mais tempo passa sem que o erro seja diminuido. Essa parcela do controle aumenta a velocidade do rastreamento da referência pois penaliza o controle caso ele demore muito para atingir o objetivo por meio do aumento do esforço de controle.
 
@@ -68,6 +75,9 @@ Essa ideia de integração é utilizada em inumeras outras técnicas de controle
 ### 2.3 Derivativo
 ## 3. Implementação realista do controle PID
 ### 3.1 Anti-windup
+
+Esse problema ocorre pois controladores mandam um sinal chamado esforço de controle u(t) para um atuador que atua sobre uma planta G(s). E esses atuadores possuem um limite de esforço de controle máximo que são capazes de empregar. Por exemplo, um par motor-hélice consegue prover um empuxo máximo limitado pela rotação máxima do motor escolhido e pelo design da hélice.
+
 ### 3.2 Filtro de derivada
 ### 3.3 Derivada do sinal medido versus derivada do erro
 ### 3.3 Exemplo de implementação!
