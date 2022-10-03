@@ -72,7 +72,16 @@ Quanto ao tipo do sistema, intuitivamente pode-se imaginar o caso em que se dese
 
 Essa ideia de integração é utilizada em inumeras outras técnicas de controle além do PID.
 
+#### Parâmetro T_i
+
+O significado desse parâmetro é que T_i é o tempo nescesário para que, mantido o erro e(t) constante, a integral do erro resulte nesse patamar de erro, isto é:
+
+$e(T_i) = \int_{0}^{T_i} e(\tau) d(\tau)$
+
 ### 2.3 Derivativo
+
+prever o futuro
+
 ## 3. Implementação realista do controle PID
 ### 3.1 Anti-windup
 
