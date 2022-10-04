@@ -139,6 +139,6 @@ O parâmetro adicional N impõe a frequência de corte para a derivada de tal ma
 Fonte: [Apostila de Controle - Escola Politécnica da Universidade de São Paulo](https://edisciplinas.usp.br/mod/resource/view.php?id=123526)
 
 ### 3.3 Derivada do sinal medido versus derivada do erro
-### 3.3 Exemplo de implementação!
+### 3.3 Exemplo de implementação na forma de sistema embarcado!
 ## 4. Aplicação: Solução do exercício proposto na aula 3.
 
