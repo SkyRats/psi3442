@@ -132,7 +132,7 @@ Esse problema ocorre pois controladores mandam um sinal chamado esforço de cont
 
 ### 3.2 Filtro de derivada
 
-O parâmetro adicional N impõe a frequência de corte para a derivada de tal maneira que ruídos com frequência acima da frequência $\omega_c = \cfrac{N}{T_D} tem ganho limitado a 20log(N). Segundo o livro do Ogata deve-se escolher $ \geq 20 $.
+O parâmetro adicional N impõe a frequência de corte para a derivada de tal maneira que ruídos com frequência acima da frequência $\omega_c = \cfrac{N}{T_D} tem ganho limitado a 20log(N). Segundo o livro do Ogata deve-se escolher $ N \in [3,20]$ .
 
 ![px4_sitl_overview](imgs/filtropoloderivada.png)
 
