@@ -131,6 +131,11 @@ Fonte: [Apostila de Controle - Escola Politécnica da Universidade de São Paulo
 Esse problema ocorre pois controladores mandam um sinal chamado esforço de controle u(t) para um atuador que atua sobre uma planta G(s). E esses atuadores possuem um limite de esforço de controle máximo que são capazes de empregar. Por exemplo, um par motor-hélice consegue prover um empuxo máximo limitado pela rotação máxima do motor escolhido e pelo design da hélice.
 
 ### 3.2 Filtro de derivada
+
+![px4_sitl_overview](imgs/filtropoloderivada.png)
+
+Fonte: [Apostila de Controle - Escola Politécnica da Universidade de São Paulo](https://edisciplinas.usp.br/mod/resource/view.php?id=123526)
+
 ### 3.3 Derivada do sinal medido versus derivada do erro
 ### 3.3 Exemplo de implementação!
 ## 4. Aplicação: Solução do exercício proposto na aula 3.
