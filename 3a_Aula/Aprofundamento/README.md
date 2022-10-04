@@ -47,6 +47,8 @@ O que no domínio de Laplace se escreve como
 
 $\cfrac{U(s)}{E(s)} = K_p \times ( 1 + \cfrac{1}{s \times T_i} + T_D \times s)$
 
+Um aspecto interessante que se deve ter em conta é que muitas vezes um ajuste suficientemente bom de um controlador PID pode ser conseguido, a depender do contexto, com versões simplificadas desse algorítimo, ou seja, utilizando-se somente o controle P ou PI ou PD. A ausencia de uma das letras da sigla PID significa que a parcela ausente não influencia no esforço de controle u(t). 
+
 ### 2.1 Proporcional
 
 Essa parcela é intuitiva, quanto maior o erro entre o valor de referência e o valor atual de uma variável, maior deverá ser o eforço de controle u(t) para que o erro e(t) seja minimizado. Por exemplo, se a água do chuveiro estiver muito gelada, então um banhista deverá fechar bastante o registro para que ela saia quente. Por outro lado, caso a água já esteja morna, um leve ajuste no registro será suficiente. Matemáticamente:
@@ -76,7 +78,7 @@ Quanto ao tipo do sistema, intuitivamente pode-se imaginar o caso em que se dese
 
 Essa ideia de integração é utilizada em inumeras outras técnicas de controle além do PID.
 
-É importante salientar contudo que o como se vê na figura, a integração de um erro cosntante resulta em $u_I(t) -> \infty$ quando $t -> \infty$ o que certamente é impraticavel dado que atuadores reais não possuem esforço de controle infinito. Por exemplo, um pistão não consegue impor força infinita sobre um gás numa bomba de encher bicicletas.
+É importante salientar contudo que o como se vê na figura, a integração de um erro cosntante resulta em $u_I(t) -> \infty$ quando $t -> \infty$ o que certamente é impraticavel dado que atuadores reais não possuem esforço de controle infinito. Por exemplo, um pistão não consegue impor força infinita sobre um gás numa bomba de encher bicicletas. Logo, não é possível implementar na prática essa versão do integrador linear. Uma versão mais realista será discutida a seguir.
 
 #### Parâmetro T_i
 
@@ -107,7 +109,16 @@ E como se vê o erro é derivado de tal maneira que maiores variações do erro 
 
 A parcela derivativa está associada a um aumento da estabilidade do sistema por ser um efeito oposto ao integrador. Porém, a parecela derivativa nunca é adicionada da maneira exposta acima pois dessa maneira ela representa um sistema não causal, dado que sua resposta depende de um valor futuro do erro. E ainda, a derivada potencializa o efeito de ruídos de alta frequência dado que a derivada em laplace é um filtro que introduz ganho em altas frequências. Ou seja, um derivador puro pode levar um ruído de ganho baixo para uma saída de amplitude infinita quebrando assim a estabilidade BIBO *Bounded Input - Bounded Output*.
 
-Por outro lado, considerando-se o carater preditivo visto na figura a seguir, a parecela derivativa permite antever o que ocorrerá no futuro próximo permitindo assim que os ganhos proporcional $K_p$ e integral $T_i$ sejam mais agressivos pois quando a partir do momento que o erro tende a zero, a parecela derivativa é capaz de antever esse momento e já compensar os efeitos de ganhos proporcional e integrativo mais elevados do que deveriam ser se somente controle PI.
+Por outro lado, considerando-se o carater preditivo visto na figura a seguir, a parecela derivativa permite antever o que ocorrerá no futuro próximo permitindo assim que os ganhos proporcional $K_p$ e integral $T_i$ sejam mais agressivos pois quando a partir do momento que o erro tende a zero, a parecela derivativa é capaz de antever esse momento e já compensar os efeitos de ganhos proporcional e integrativo mais elevados do que deveriam ser se somente controle PI. Por esse motivo, a parcela derivativa é capaz de reduzir sobressinal.
+
+#### Parâmetro T_D
+
+O significado desse parâmetro é que T_D é o tempo 
+
+$$
+
+A figura a seguir ilustra graficamente o significado dessa equação
+
 ![px4_sitl_overview](imgs/acaodiferencial.png)
 
 Fonte: [Apostila de Controle - Escola Politécnica da Universidade de São Paulo](https://edisciplinas.usp.br/mod/resource/view.php?id=123526)
