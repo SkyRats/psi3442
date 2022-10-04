@@ -113,9 +113,11 @@ Por outro lado, considerando-se o carater preditivo visto na figura a seguir, a 
 
 #### Parâmetro T_D
 
-O significado desse parâmetro é que T_D é o tempo 
+O significado desse parâmetro é que T_D é o tempo de horizonte de predição. Matematicamente realiza-se a seguinte aproximação
 
-$$
+$e(t+T_D) \approx e(t) + T_D\cfrac{de(t)}{dt}$
+
+em que se T_D é escolhido muito grande, o controle prevê instantes bastante avançados no tempo, mas com baixa precisão. E caso contrário, isto é, com T_D não muito grande, a precisão da previsão aumenta apesar de ser menos avançada no tempo. $T_D = 0$ anula o caráter derivativo do PID tornando-se um controle PI. 
 
 A figura a seguir ilustra graficamente o significado dessa equação
 
