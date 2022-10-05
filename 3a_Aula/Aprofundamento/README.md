@@ -78,7 +78,7 @@ Quanto ao tipo do sistema, intuitivamente pode-se imaginar o caso em que se dese
 
 Essa ideia de integração é utilizada em inumeras outras técnicas de controle além do PID.
 
-É importante salientar contudo que o como se vê na figura, a integração de um erro cosntante resulta em $u_I(t) -> \infty$ quando $t -> \infty$ o que certamente é impraticavel dado que atuadores reais não possuem esforço de controle infinito. Por exemplo, um pistão não consegue impor força infinita sobre um gás numa bomba de encher bicicletas. Logo, não é possível implementar na prática essa versão do integrador linear. Uma versão mais realista será discutida a seguir.
+É importante salientar contudo que o como se vê na figura, a integração de um erro cosntante resulta em $u_I(t) -> \infty$ quando $t -> \infty$ o que certamente é impraticavel dado que atuadores reais não possuem esforço de controle infinito. Esse problema é chamando windup. Por exemplo, um pistão não consegue impor força infinita sobre um gás numa bomba de encher bicicletas. Logo, não é possível implementar na prática essa versão do integrador linear. Uma versão mais realista será discutida a seguir.
 
 #### Parâmetro T_i
 
@@ -128,7 +128,17 @@ Fonte: [Apostila de Controle - Escola Politécnica da Universidade de São Paulo
 ## 3. Implementação realista do controle PID
 ### 3.1 Anti-windup
 
-Esse problema ocorre pois controladores mandam um sinal chamado esforço de controle u(t) para um atuador que atua sobre uma planta G(s). E esses atuadores possuem um limite de esforço de controle máximo que são capazes de empregar. Por exemplo, um par motor-hélice consegue prover um empuxo máximo limitado pela rotação máxima do motor escolhido e pelo design da hélice.
+O windup ocorre pois controladores mandam um sinal chamado esforço de controle u(t) para um atuador que atua sobre uma planta G(s). E esses atuadores possuem um limite de esforço de controle máximo que são capazes de empregar. Por exemplo, um par motor-hélice consegue prover um empuxo máximo limitado pela rotação máxima do motor escolhido e pelo design da hélice.
+
+Existem duas soluções para esse problema
+
+####3.1.1 Limitar integrador
+
+Adiciona-se uma condicional que zera o a parcela a ser integrada no instante t caso isso implique em um esforço de controle u(t) maior do que aquele realizável pelo atuador.
+
+####3.1.2 Subtrair excedente
+
+Uma outra maneira é permitir a integração mesmo quando o esforço de controle do atuador é saturado por suas limitações físicas, mas adicionando uma parcela subtrativa que compensa a soma excedente. Nesse caso, existe uma forma apropriada de se fazer isso onde uma parâmetro extra chamado $T_t$ é adicionado numa malha de controle específica mostrada na referência: [Discrete-Time Control Systems - Ogata](https://edisciplinas.usp.br/pluginfile.php/5581035/mod_folder/content/0/Ogata%20-%20Discrete-Time%20Control%20Systems_Aula1.pdf?forcedownload=1) 
 
 ### 3.2 Filtro de derivada
 
