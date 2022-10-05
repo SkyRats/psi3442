@@ -138,9 +138,13 @@ Adiciona-se uma condicional que zera o a parcela a ser integrada no instante t c
 
 ####3.1.2 Subtrair excedente
 
-Uma outra maneira é permitir a integração mesmo quando o esforço de controle do atuador é saturado por suas limitações físicas, mas adicionando uma parcela subtrativa que compensa a soma excedente. Nesse caso, existe uma forma apropriada de se fazer isso onde uma parâmetro extra chamado $T_t$ é adicionado numa malha de controle específica mostrada na referência: [Discrete-Time Control Systems - Ogata](https://edisciplinas.usp.br/pluginfile.php/5581035/mod_folder/content/0/Ogata%20-%20Discrete-Time%20Control%20Systems_Aula1.pdf?forcedownload=1) 
+Uma outra maneira é permitir a integração mesmo quando o esforço de controle do atuador é saturado por suas limitações físicas, mas adicionando uma parcela subtrativa que compensa a soma excedente. Nesse caso, existe uma forma apropriada de se fazer isso onde uma parâmetro extra chamado $T_t = \sqrt{T_D * T_i}$ é adicionado numa malha de controle específica mostrada na referência: [Discrete-Time Control Systems - Ogata](https://edisciplinas.usp.br/pluginfile.php/5581035/mod_folder/content/0/Ogata%20-%20Discrete-Time%20Control%20Systems_Aula1.pdf?forcedownload=1) 
 
 ### 3.2 Filtro de derivada
+
+Analisando a derivada no diagrama de bode da figura a seguir percebe-se que a derivada pura é um filtro passa-altas frequências e que ela amplifica sinais de alta frequeência. Ocorre que na prática de controle existem sinais de altissima frequência que são ruídos não desejados. Normalemnte eles possuem baixa amplitude, mas sendo a derivada um aplificador de sinais como esses ruídos, o operador de derivada puro introduz um problema sério aumentnado muito a relação sinal-ruído.
+
+Para que isso não ocorra, é introduzido um polo no operador de derivada de tal maneira que o 
 
 O parâmetro adicional N impõe a frequência de corte para a derivada de tal maneira que ruídos com frequência acima da frequência $\omega_c = \cfrac{N}{T_D}$ tem ganho limitado a 20log(N). Segundo o livro do Ogata deve-se escolher $N\in[3,20]$ .
 
@@ -149,6 +153,6 @@ O parâmetro adicional N impõe a frequência de corte para a derivada de tal ma
 Fonte: [Apostila de Controle - Escola Politécnica da Universidade de São Paulo](https://edisciplinas.usp.br/mod/resource/view.php?id=123526)
 
 ### 3.3 Derivada do sinal medido versus derivada do erro
-### 3.3 Exemplo de implementação na forma de sistema embarcado!
-## 4. Aplicação: Solução do exercício proposto na aula 3.
+## 4 Exemplo de implementação na forma de sistema embarcado!
+## 5 Aplicação: Solução do exercício proposto na aula 3.
 
