@@ -234,17 +234,20 @@ A evolução temporal das variáveis controladas:
 
 ![px4_sitl_overview](imgs/xyz_pid.png)
 
-Conclusão:
+Conclusão: Observa-se que a trajetória quadrada foi rastreada adequadamente, mas apresenotu undershoot o que indica que esse ajuste PID levou a um sistema de malha fechada com um zero real de fase não mínima. No vértice (5,5,2) isso fica claro pois é notório que a trajetória se afasta do ponto (0,5,2) antes de se direcionar a esse ponto, o que é chamado de undershoot. O mesmo pode ser visto nos gráficos de coordenada vs tempo. Sendo assim, nesse caso em particular a sintonia PD resultou melhor do que a sintonia PID. Porém, é possível ressintonizar o PID para tentar obter um desempenho superior.
+
+Referencia sobre sistemas com zeros reais de fase não mínima:
+Stewart, J., & Davison, D. E. (2006). On Overshoot and Nonminimum Phase Zeros. IEEE Transactions on Automatic Control, 51(8), 1378–1382. doi:10.1109/tac.2006.878745
 
 ### 5.5 Regime Subamortecido
 
 A trajetória no plano XY:
 
-![px4_sitl_overview](imgs/trajetoria_p.png)
+![px4_sitl_overview](imgs/trajetoria_subamortecido.png)
 
 A evolução temporal das variáveis controladas:
 
-![px4_sitl_overview](imgs/xyz_p.png)
+![px4_sitl_overview](imgs/xyz_subamortecido.png)
 
 Conclusão:
 
