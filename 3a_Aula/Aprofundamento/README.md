@@ -164,15 +164,21 @@ $u_{derivativa} = \text{filtro}(\cfrac{dy(t)}{dt})$
 ## 4 Exemplo de implementação na forma de sistema embarcado!
 
 ```python
+# Global Variables 
+e = 0
+e_i = 0
+un_1 = 0
+uIn_1 = 0
+uDn_1 = 0
+yn_1 = 0
+
 #Ganhos
 Kp=0.5
 Ti= 200
 Td = 0.001 
 N=10
-
 #Saturacao
 sat = 4
-
 #Periodo de amostragem
 Ts = 1/20 #s
 
