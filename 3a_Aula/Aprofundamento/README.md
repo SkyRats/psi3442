@@ -305,7 +305,7 @@ A evolução temporal das variáveis controladas:
 
 ![px4_sitl_overview](imgs/xyz_subamortecido.png)
 
-Conclusão: O controle PID foi ajustado de maneira inadequada propositalmente para mostrar um caso de sistemas subamortecido explicito. Note que nem todo sistema com overshoot é nescessariamente ruim. Normalmente o overshoot é um efeito indesejado, mas em troca, sistemas com overshoot são em geral mais rápidos em $t_r$ (rise time) e $t_s$ (settling time) se comparado aos regimes crítico e supercrítico.
+Conclusão: O controle PID foi ajustado de maneira inadequada propositalmente para mostrar um caso de sistemas subamortecido explicito. Note que nem todo sistema com overshoot é nescessariamente ruim. Normalmente o overshoot é um efeito indesejado, mas em troca, sistemas com overshoot são em geral mais rápidos em $t_r$ (rise time) e $t_s$ (settling time) se comparado aos regimes crítico e supercrítico. Note que a trajetória foi finalizada 15s mais rapido do que se comparado aos 60s com o controle PD em regime supercrítico.
 
 ### 5.6 Regime Critico
 
