@@ -154,5 +154,16 @@ Fonte: [Apostila de Controle - Escola Politécnica da Universidade de São Paulo
 
 ### 3.3 Derivada do sinal medido versus derivada do erro
 ## 4 Exemplo de implementação na forma de sistema embarcado!
-## 5 Aplicação: Solução do exercício proposto na aula 3.
+## 5 Ajustes de controles PID
+
+A seguir são mostradas diferentes sinotnias de controle PID e seus efeitos na trajetória e no controle das coordenadas.
+
+### P
+### PI
+### PD
+### PID
+### Regime Subamortecido
+### Regime Critico
+### Regime Supercritico
+## 6 Aplicação: Solução do exercício proposto na aula 3.
 
