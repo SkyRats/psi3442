@@ -210,7 +210,7 @@ A evolução temporal das variáveis controladas:
 
 ![px4_sitl_overview](imgs/xyz_pi.png)
 
-Conclusão: O rastreamento do quadrado mostrou-se impreciso. Porém, realizou um quadrado e com a vantagem de gastar aproximadamente 5s a menos para completar a missão. Isso se deve ao nível de agressividade dos ganhos do controle que foram empregados.
+Conclusão: O rastreamento do quadrado mostrou-se impreciso. Porém, realizou um quadrado e com a vantagem de gastar aproximadamente 5s a menos para completar a missão. Isso se deve ao nível de agressividade dos ganhos do controle que foram empregados. É possível melhorar o desempenho desse controle com um ajuste mais refinado dos ganhos do controlador.
 
 ### 5.3 Controle PD 
 
@@ -222,17 +222,17 @@ A evolução temporal das variáveis controladas:
 
 ![px4_sitl_overview](imgs/xyz_pd.png)
 
-Conclusão: 
+Conclusão: O rastreamento do quadrado mostrou-se preciso. O carater preditivo do derivador contribuiu para melhorar o erro de rastreio em relação ao controle proporcional. Uma característica interessante dessa sitonia é que o controle impos um regime superamortecido, praticamente não se observa sobressinal. Mas, sem tronar o sistema muito lento em relação aquele mostrado com controle p. Ou seja, é possível supor que a dinâmica imposta ficou algo próximo ao regime crítico.
 
 ### 5.4 Controle PID
 
 A trajetória no plano XY:
 
-![px4_sitl_overview](imgs/trajetoria_p.png)
+![px4_sitl_overview](imgs/trajetoria_pid.png)
 
 A evolução temporal das variáveis controladas:
 
-![px4_sitl_overview](imgs/xyz_p.png)
+![px4_sitl_overview](imgs/xyz_pid.png)
 
 Conclusão:
 
