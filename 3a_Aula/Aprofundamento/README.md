@@ -154,27 +154,20 @@ Fonte: [Apostila de Controle - Escola Politécnica da Universidade de São Paulo
 
 ### 3.3 Derivada do sinal medido versus derivada do erro
 ## 4 Exemplo de implementação na forma de sistema embarcado!
-## 5 Ajustes de controles PID
+## 5 Ajustes de controles PID e resultados
 
-A seguir são mostradas diferentes sinotnias de controle PID e seus efeitos na trajetória e no controle das coordenadas.
+A seguir são mostradas diferentes sinotnias de controle PID e seus efeitos na trajetória e no controle das coordenadas. A trajetória desejada é um quadrado.
+O drone percorre as arestas do quadrado segundo as seguintes coordenadas. Note que z é a altura do drone.
 
-### 5.1 Controle P
-A trajetória no plano XY:
+* (x,y,z)
+* (0,0,2)
+* (5,0,2)
+* (5,5,2)
+* (0,5,2)
+* (0,0,2)
 
-![px4_sitl_overview](imgs/trajetoria_p.png)
-
-A evolução temporal das variáveis controladas:
-
-![px4_sitl_overview](imgs/xyz_p.png)
-
-### 5.2 Controle PI
-### 5.3 Controle PD
-### 5.4 Controle PID
-### 5.5 Regime Subamortecido
-### 5.6 Regime Critico
-### 5.7 Regime Supercritico
-## 6 Aplicação: Solução do exercício proposto na aula 3.
-
+No terminal a execução do node de controle resulta em:
+```
 user@user:~$ rosrun mav_control2 demo_control_psi3442_PID_DIGITAL_graficos_QuadradoPerfeito.py 
 Esperando conexao com FCU
 Alterando para modo Offboard
@@ -194,5 +187,25 @@ Para lado
 Esperando Esperando na coordenada (0,0,2)
 Alterando para modo Land
 Drone em modo Land
+```
+
+### 5.1 Controle P
+A trajetória no plano XY:
+
+![px4_sitl_overview](imgs/trajetoria_p.png)
+
+A evolução temporal das variáveis controladas:
+
+![px4_sitl_overview](imgs/xyz_p.png)
+
+### 5.2 Controle PI
+### 5.3 Controle PD
+### 5.4 Controle PID
+### 5.5 Regime Subamortecido
+### 5.6 Regime Critico
+### 5.7 Regime Supercritico
+## 6 Aplicação: Solução do exercício proposto na aula 3.
+
+
 
 
