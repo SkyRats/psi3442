@@ -243,16 +243,22 @@ Stewart, J., & Davison, D. E. (2006). On Overshoot and Nonminimum Phase Zeros. I
 
 A trajetória no plano XY:
 
-![px4_sitl_overview](imgs/trajetoria_subamortecido.png)
+![px4_sitl_overview](imgs/trajetoria_subamortecida.png)
 
 A evolução temporal das variáveis controladas:
 
 ![px4_sitl_overview](imgs/xyz_subamortecido.png)
 
-Conclusão:
+Conclusão: O controle PID foi ajustado de maneira inadequada propositalmente para mostrar um caso de sistemas subamortecido explicito. Note que nem todo sistema com overshoot é nescessariamente ruim. Normalmente o overshoot é um efeito indesejado, mas em troca, sistemas com overshoot são em geral mais rápidos em $t_r$ (rise time) e $t_s$ (settling time) se comparado aos regimes crítico e supercrítico.
 
 ### 5.6 Regime Critico
+
+Esse regime é um caso limite entre o subamortecido e o supercrítico. Suas características principais são não apresentar overshoot e ser o mais rápido dentre os sistemas supercríticos. Aqui não é mostradada nenhuma simulação desse regime pois por se tratar de regime muito particular, seria nescessário conhecer um mode fiel do drone para que um ajuste fosse feito de modo a alcançar esse regime. Somente pela observação dos gráficos é difícil afirmar que um sisemas está operando em regime crítico.
+
 ### 5.7 Regime Supercritico
+
+O comporatamento de um sistema nesse regime é mostrado nos gráficos referentes ao controle PD. Note que a menção ao sistema crítico naquela seção traduz uma tendencia de comportamento, sendo contudo mais acurado dizer que se trata de um regime supercrítico.
+
 ## 6 Aplicação: Solução do exercício proposto na aula 3.
 
 
