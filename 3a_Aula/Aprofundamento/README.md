@@ -158,13 +158,17 @@ Fonte: [Apostila de Controle - Escola Politécnica da Universidade de São Paulo
 
 A seguir são mostradas diferentes sinotnias de controle PID e seus efeitos na trajetória e no controle das coordenadas.
 
-### P
-### PI
-### PD
-### PID
-### Regime Subamortecido
-### Regime Critico
-### Regime Supercritico
+### 5.1 Controle P
+A trajetória no plano XY:
+![px4_sitl_overview](imgs/trajetoria_p.png)
+A evolução temporal das variáveis controladas:
+![px4_sitl_overview](imgs/xyz_p.png)
+### 5.2 Controle PI
+### 5.3 Controle PD
+### 5.4 Controle PID
+### 5.5 Regime Subamortecido
+### 5.6 Regime Critico
+### 5.7 Regime Supercritico
 ## 6 Aplicação: Solução do exercício proposto na aula 3.
 
 user@user:~$ rosrun mav_control2 demo_control_psi3442_PID_DIGITAL_graficos_QuadradoPerfeito.py 
