@@ -162,6 +162,48 @@ Assim, o esforço de controle da parcela derivativa é implementado de maneira r
 $u_{derivativa} = \text{filtro}(\cfrac{dy(t)}{dt})$
 
 ## 4 Exemplo de implementação na forma de sistema embarcado!
+
+```
+#Ganhos
+Kp=0.5
+Ti= 200
+Td = 0.001 
+N=10
+
+#Saturacao
+sat = 4
+
+#Periodo de amostragem
+Ts = 1/20 #s
+
+#Controle
+def pid(r,yn,Kp,Ti,Td,sat):
+    global e
+    global e_i
+    global un_1 
+    global uIn_1 
+    global uDn_1 
+    global yn_1 
+    e = r - yn
+    #anti-windup
+    if (un_1 > sat or un_1 < - sat):
+        e_i = 0
+    else:
+        e_i = e
+    #pid
+    uP = Kp*e
+    uIn = uIn_1 + (Kp*Ts/Ti)*e_i #backward
+    uDn = Td/(Td + N*Ts)*uDn_1 - (Kp*N*Td)/(Td+N*Ts)*(yn-yn_1)
+    un = uP + uIn + uDn
+    #update past values variables
+    un_1 = un
+    uIn_1 = uIn
+    uDn_1 = uDn
+    yn_1 = yn
+    #return
+    return un
+```
+
 ## 5 Ajustes de controles PID e resultados
 
 A seguir são mostradas diferentes sinotnias de controle PID e seus efeitos na trajetória e no controle das coordenadas. A trajetória desejada é um quadrado.
