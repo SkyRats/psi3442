@@ -153,6 +153,14 @@ O parâmetro adicional N impõe a frequência de corte para a derivada de tal ma
 Fonte: [Apostila de Controle - Escola Politécnica da Universidade de São Paulo](https://edisciplinas.usp.br/mod/resource/view.php?id=123526)
 
 ### 3.3 Derivada do sinal medido versus derivada do erro
+
+A derivada é uma operação matemática sensível a funções com descontinuidades. 
+Considerando-se que o sinal de referência para controladores costuma ser contínuo por partes, isso implica em pontos de derivada tentendo ao infinito nos pontos de descontinuidade da função de referência. E o erro é calculado em função do sinal de referência como $e(t) = r(t) - y(t)$. Ou seja, o erro normalmente é uma função contínua por partes de tal maneira que $\cfrac{de(t)}{dt}$ tente ao infinito nos pontos de descontinuidade do erro. Para evitar que a parecela derivativa introduza eforços de controle tendendo ao infinito utiliza-se a derivada do sinal controlado $y(t)$ no lugar da derivada do erro.
+
+Assim, o esforço de controle da parcela derivativa é implementado de maneira realista como
+
+$u_{derivativa} = \text{filtro}(\cfrac{dy(t)}{dt})$
+
 ## 4 Exemplo de implementação na forma de sistema embarcado!
 ## 5 Ajustes de controles PID e resultados
 
@@ -261,6 +269,7 @@ O comporatamento de um sistema nesse regime é mostrado nos gráficos referentes
 
 ## 6 Aplicação: Solução do exercício proposto na aula 3.
 
+Uma proposta de solução é mostrada [aqui](https://github.com/SkyRats/psi3442/blob/master/3a_Aula/Aprofundamento/ControleQuadradoPerfeito/demo_control_psi3442_PID_DIGITAL_graficos_QuadradoPerfeito.py)
 
 
 
