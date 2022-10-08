@@ -198,10 +198,56 @@ A evolução temporal das variáveis controladas:
 
 ![px4_sitl_overview](imgs/xyz_p.png)
 
+Conclusão: rastreou a trajetória quadrada com baixa precisão sem alcançar erro nulo em regime permanente. Apesar da baixa qualidade, realizou um quadrado. Veremos a seguir que um controle proporcional bem ajustado pode ser melhor do que um PID mal ajustado.
+
 ### 5.2 Controle PI
+
+A trajetória no plano XY:
+
+![px4_sitl_overview](imgs/trajetoria_pi.png)
+
+A evolução temporal das variáveis controladas:
+
+![px4_sitl_overview](imgs/xyz_pi.png)
+
+Conclusão:
+
 ### 5.3 Controle PD
+
+A trajetória no plano XY:
+
+![px4_sitl_overview](imgs/trajetoria_p.png)
+
+A evolução temporal das variáveis controladas:
+
+![px4_sitl_overview](imgs/xyz_p.png)
+
+Conclusão:
+
 ### 5.4 Controle PID
+
+A trajetória no plano XY:
+
+![px4_sitl_overview](imgs/trajetoria_p.png)
+
+A evolução temporal das variáveis controladas:
+
+![px4_sitl_overview](imgs/xyz_p.png)
+
+Conclusão:
+
 ### 5.5 Regime Subamortecido
+
+A trajetória no plano XY:
+
+![px4_sitl_overview](imgs/trajetoria_p.png)
+
+A evolução temporal das variáveis controladas:
+
+![px4_sitl_overview](imgs/xyz_p.png)
+
+Conclusão:
+
 ### 5.6 Regime Critico
 ### 5.7 Regime Supercritico
 ## 6 Aplicação: Solução do exercício proposto na aula 3.
