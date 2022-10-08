@@ -160,9 +160,13 @@ A seguir são mostradas diferentes sinotnias de controle PID e seus efeitos na t
 
 ### 5.1 Controle P
 A trajetória no plano XY:
+
 ![px4_sitl_overview](imgs/trajetoria_p.png)
+
 A evolução temporal das variáveis controladas:
+
 ![px4_sitl_overview](imgs/xyz_p.png)
+
 ### 5.2 Controle PI
 ### 5.3 Controle PD
 ### 5.4 Controle PID
