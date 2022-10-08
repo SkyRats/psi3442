@@ -210,7 +210,7 @@ A evolução temporal das variáveis controladas:
 
 ![px4_sitl_overview](imgs/xyz_pi.png)
 
-Conclusão:
+Conclusão: O rastreamento do quadrado mostrou-se impreciso. Porém, realizou um quadrado e com a vantagem de gastar 5s a menos para completar a missão. Isso se deve ao nível de agressividade dos ganhos do controle que foram empregados.
 
 ### 5.3 Controle PD
 
@@ -222,7 +222,7 @@ A evolução temporal das variáveis controladas:
 
 ![px4_sitl_overview](imgs/xyz_p.png)
 
-Conclusão:
+Conclusão: 
 
 ### 5.4 Controle PID
 
