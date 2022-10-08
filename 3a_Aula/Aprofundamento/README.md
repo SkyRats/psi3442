@@ -167,3 +167,24 @@ A seguir são mostradas diferentes sinotnias de controle PID e seus efeitos na t
 ### Regime Supercritico
 ## 6 Aplicação: Solução do exercício proposto na aula 3.
 
+user@user:~$ rosrun mav_control2 demo_control_psi3442_PID_DIGITAL_graficos_QuadradoPerfeito.py 
+Esperando conexao com FCU
+Alterando para modo Offboard
+Drone em modo Offboard
+mode_sent: True
+Armando o drone
+Drone armado
+Subindo
+Esperando na coordenada (0,0,2)
+Para frente
+Esperando Esperando na coordenada (5,0,2)
+Para lado y>0
+Esperando Esperando na coordenada (5,5,2)
+Para tras
+Esperando Esperando na coordenada (0,5,2)
+Para lado
+Esperando Esperando na coordenada (0,0,2)
+Alterando para modo Land
+Drone em modo Land
+
+
