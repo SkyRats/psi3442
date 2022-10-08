@@ -132,11 +132,11 @@ O windup ocorre pois controladores mandam um sinal chamado esforço de controle 
 
 Existem duas soluções para esse problema
 
-####3.1.1 Limitar integrador
+#### 3.1.1 Limitar integrador
 
 Adiciona-se uma condicional que zera o a parcela a ser integrada no instante t caso isso implique em um esforço de controle u(t) maior do que aquele realizável pelo atuador.
 
-####3.1.2 Subtrair excedente
+#### 3.1.2 Subtrair excedente
 
 Uma outra maneira é permitir a integração mesmo quando o esforço de controle do atuador é saturado por suas limitações físicas, mas adicionando uma parcela subtrativa que compensa a soma excedente. Nesse caso, existe uma forma apropriada de se fazer isso onde uma parâmetro extra chamado $T_t = \sqrt{T_D * T_i}$ é adicionado numa malha de controle específica mostrada na referência: [Discrete-Time Control Systems - Ogata](https://edisciplinas.usp.br/pluginfile.php/5581035/mod_folder/content/0/Ogata%20-%20Discrete-Time%20Control%20Systems_Aula1.pdf?forcedownload=1) 
 
