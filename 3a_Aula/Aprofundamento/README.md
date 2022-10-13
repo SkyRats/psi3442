@@ -318,7 +318,7 @@ Esse regime é um caso limite entre o subamortecido e o supercrítico. Suas cara
 
 O comporatamento de um sistema nesse regime é mostrado nos gráficos referentes ao controle PD. Note que a menção ao sistema crítico naquela seção traduz uma tendencia de comportamento, sendo contudo mais acurado dizer que se trata de um regime supercrítico.
 
-## 6 Aplicação: Solução do exercício proposto na aula 3.
+## 6 Aplicação: Solução do exercício proposto na aula 3
 
 Uma proposta de solução é mostrada [aqui](https://github.com/SkyRats/psi3442/blob/master/3a_Aula/Aprofundamento/ControleQuadradoPerfeito/demo_control_psi3442_PID_DIGITAL_graficos_QuadradoPerfeito.py)
 
