@@ -266,10 +266,17 @@ O laço "controle" leva o drone da posição atual até a posição desjada $r$ 
 
 O laço "parada" realiza um controle de tal maneira a manter o drone no circulo de raio TOL. Para que esse método funcione, é nescessáiro que o tempo tmax seja suficientemente grande para possibilitar o drone parar o seu movimento pois no momento que o drone entra na circunferência o erro e(t)=TOL e por tanto sua velocidade é não nula.
 
-Se TOL é pequena, como deve ser, e tmax é insuficiente, é possível que seja observado "undershoot".
+Se TOL é pequena, como deve ser, e tmax é insuficiente, é possível que seja observado "undershoot" como se vê a seguir. 
+
+![px4_sitl_overview](imgs/controlbehavior.png)
+
+Do ponto de vista de controle, é como se essa configuração de TOL e tmax resultassem num sistema com zero real de fase não mínima, o que é ruim para controle. Sendo assim, um ajuste adequado desses parâmetros é essencial.
+
+Referencia sobre sistemas com zeros reais de fase não mínima:
+Stewart, J., & Davison, D. E. (2006). On Overshoot and Nonminimum Phase Zeros. IEEE Transactions on Automatic Control, 51(8), 1378–1382. doi:10.1109/tac.2006.878745
 
 
-### 5.1 Controle P
+### 5.2 Controle P
 A trajetória no plano XY:
 
 ![px4_sitl_overview](imgs/trajetoria_p.png)
@@ -280,7 +287,7 @@ A evolução temporal das variáveis controladas:
 
 Conclusão: rastreou a trajetória quadrada. Porém, a tolerância de 0.1m (em cinza) foi desrespeitada. Isso ocorre pois o |e(t)| é pequeno de tal maneira que o controle proporcional não gera esforço de controle necessário para anular o erro. O ganho utilizado foi $K_p = 0.4$.
 
-### 5.2 Controle PI
+### 5.3 Controle PI
 
 A trajetória no plano XY:
 
@@ -292,7 +299,7 @@ A evolução temporal das variáveis controladas:
 
 Conclusão: rastreou a trajetória quadrada respeitando a tolerância de 0.1m (em cinza). Comumente o elemento integrador implica alcançar o setpoint mais rapidamente. Mas, nesse caso isso não se verificou pois utilizou-se um tempo suave $T_i = 300$s. Isso com ganho $K_p = 0.4$ e saturação $=4$m/s.
 
-### 5.3 Controle PD 
+### 5.4 Controle PD 
 
 A trajetória no plano XY:
 
@@ -304,7 +311,7 @@ A evolução temporal das variáveis controladas:
 
 Conclusão: O rastreamento do quadrado mostrou-se preciso. O carater preditivo do derivador contribuiu para melhorar o erro de rastreio em relação ao controle proporcional. Uma característica interessante dessa sitonia é que o controle impos um regime superamortecido, praticamente não se observa sobressinal. Mas, sem tronar o sistema muito lento em relação aquele mostrado com controle p. Ou seja, é possível supor que a dinâmica imposta ficou algo próximo ao regime crítico.
 
-### 5.4 Controle PID
+### 5.5 Controle PID
 
 A trajetória no plano XY:
 
@@ -316,10 +323,9 @@ A evolução temporal das variáveis controladas:
 
 Conclusão: Observa-se que a trajetória quadrada foi rastreada adequadamente, mas apresenotu undershoot o que indica que esse ajuste PID levou a um sistema de malha fechada com um zero real de fase não mínima. No vértice (5,5,2) isso fica claro pois é notório que a trajetória se afasta do ponto (0,5,2) antes de se direcionar a esse ponto, o que é chamado de undershoot. O mesmo pode ser visto nos gráficos de coordenada vs tempo. Sendo assim, nesse caso em particular a sintonia PD resultou melhor do que a sintonia PID. Porém, é possível ressintonizar o PID para tentar obter um desempenho superior.
 
-Referencia sobre sistemas com zeros reais de fase não mínima:
-Stewart, J., & Davison, D. E. (2006). On Overshoot and Nonminimum Phase Zeros. IEEE Transactions on Automatic Control, 51(8), 1378–1382. doi:10.1109/tac.2006.878745
 
-### 5.5 Regime Subamortecido
+
+### 5.6 Regime Subamortecido
 
 A trajetória no plano XY:
 
@@ -331,11 +337,11 @@ A evolução temporal das variáveis controladas:
 
 Conclusão: O controle PID foi ajustado de maneira inadequada propositalmente para mostrar um caso de sistemas subamortecido explicito. Note que nem todo sistema com overshoot é nescessariamente ruim. Normalmente o overshoot é um efeito indesejado, mas em troca, sistemas com overshoot são em geral mais rápidos em $t_r$ (rise time) e $t_s$ (settling time) se comparado aos regimes crítico e supercrítico. Note que a trajetória foi finalizada 15s mais rapido do que se comparado aos 60s com o controle PD em regime supercrítico.
 
-### 5.6 Regime Critico
+### 5.7 Regime Critico
 
 Esse regime é um caso limite entre o subamortecido e o supercrítico. Suas características principais são não apresentar overshoot e ser o mais rápido dentre os sistemas supercríticos. Aqui não é mostradada nenhuma simulação desse regime pois por se tratar de regime muito particular, seria nescessário conhecer um mode fiel do drone para que um ajuste fosse feito de modo a alcançar esse regime. Somente pela observação dos gráficos é difícil afirmar que um sisemas está operando em regime crítico.
 
-### 5.7 Regime Supercritico
+### 5.8 Regime Supercritico
 
 O comporatamento de um sistema nesse regime é mostrado nos gráficos referentes ao controle PD. Note que a menção ao sistema crítico naquela seção traduz uma tendencia de comportamento, sendo contudo mais acurado dizer que se trata de um regime supercrítico.
 
