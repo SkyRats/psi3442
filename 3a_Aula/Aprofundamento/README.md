@@ -309,7 +309,7 @@ A evolução temporal das variáveis controladas:
 
 ![px4_sitl_overview](imgs/xyz_pd.png)
 
-Conclusão: O rastreamento do quadrado mostrou-se preciso. O carater preditivo do derivador contribuiu para melhorar o erro de rastreio em relação ao controle proporcional. Uma característica interessante dessa sitonia é que o controle impos um regime superamortecido, praticamente não se observa sobressinal. Mas, sem tronar o sistema muito lento em relação aquele mostrado com controle p. Ou seja, é possível supor que a dinâmica imposta ficou algo próximo ao regime crítico.
+Conclusão: rastreou a trajetória quadrada respeitando a tolerância de 0.1m (em cinza). O comportamento foi similar ao controle PI e com parâmetros  $T_d = 1.1$s. Isso com ganho $K_p = 0.4$ e $N = 10$m.
 
 ### 5.5 Controle PID
 
@@ -321,7 +321,7 @@ A evolução temporal das variáveis controladas:
 
 ![px4_sitl_overview](imgs/xyz_pid.png)
 
-Conclusão: Observa-se que a trajetória quadrada foi rastreada adequadamente, mas apresenotu undershoot o que indica que esse ajuste PID levou a um sistema de malha fechada com um zero real de fase não mínima. No vértice (5,5,2) isso fica claro pois é notório que a trajetória se afasta do ponto (0,5,2) antes de se direcionar a esse ponto, o que é chamado de undershoot. O mesmo pode ser visto nos gráficos de coordenada vs tempo. Sendo assim, nesse caso em particular a sintonia PD resultou melhor do que a sintonia PID. Porém, é possível ressintonizar o PID para tentar obter um desempenho superior.
+Conclusão: rastreou a trajetória quadrada respeitando a tolerância de 0.1m (em cinza). O comportamento foi similar ao controle PI e com parâmetros  $T_d = 1.1$s. Isso com ganho $K_p = 0.4$ e $N = 10$m.
 
 
 
