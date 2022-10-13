@@ -248,6 +248,27 @@ Alterando para modo Land
 Drone em modo Land
 ```
 
+### 5.1 Interrupção do loop de controle
+A implementação do método de controle pid é feito da seguinte maneira
+```python
+#Controle
+while r-y < TOL
+    u = pid(r,y,Kp,Ti,Td,N,sat,Ts)
+    y = get_sensor()
+#parada
+while t<tmax
+    drone.stay(r)
+```
+
+Em que o método pid() implementa o controle PID, get_sensor() obtem a informação do sensor da variavel controlada $y$ e o metodo drone.stay(r) implementa um controle para manter o drone na poisção desejada $r$.
+
+O laço "controle" leva o drone da posição atual até a posição desjada $r$ com uma tolerância TOL, ou seja, leva o drone para um circulo de raio TOL e centro $r$.
+
+O laço "parada" realiza um controle de tal maneira a manter o drone no circulo de raio TOL. Para que esse método funcione, é nescessáiro que o tempo tmax seja suficientemente grande para possibilitar o drone parar o seu movimento pois no momento que o drone entra na circunferência o erro e(t)=TOL e por tanto sua velocidade é não nula.
+
+Se TOL é pequena, como deve ser, e tmax é insuficiente, é possível que seja observado "undershoot".
+
+
 ### 5.1 Controle P
 A trajetória no plano XY:
 
@@ -257,7 +278,7 @@ A evolução temporal das variáveis controladas:
 
 ![px4_sitl_overview](imgs/xyz_p.png)
 
-Conclusão: rastreou a trajetória quadrada com baixa precisão sem alcançar erro nulo em regime permanente. Apesar da baixa qualidade, realizou um quadrado. Veremos a seguir que um controle proporcional bem ajustado pode ser melhor do que um PID mal ajustado.
+Conclusão: rastreou a trajetória quadrada. Porém, a tolerância de 0.1m (em cinza) foi desrespeitada. Isso ocorre pois o |e(t)| é pequeno de tal maneira que o controle proporcional não gera esforço de controle necessário para anular o erro. O ganho utilizado foi $K_p = 0.4$.
 
 ### 5.2 Controle PI
 
@@ -269,7 +290,7 @@ A evolução temporal das variáveis controladas:
 
 ![px4_sitl_overview](imgs/xyz_pi.png)
 
-Conclusão: O rastreamento do quadrado mostrou-se impreciso. Porém, realizou um quadrado e com a vantagem de gastar aproximadamente 5s a menos para completar a missão. Isso se deve ao nível de agressividade dos ganhos do controle que foram empregados. É possível melhorar o desempenho desse controle com um ajuste mais refinado dos ganhos do controlador.
+Conclusão: rastreou a trajetória quadrada respeitando a tolerância de 0.1m (em cinza). Comumente o elemento integrador implica alcançar o setpoint mais rapidamente. Mas, nesse caso isso não se verificou pois utilizou-se um tempo suave $T_i = 300$s. Isso com ganho $K_p = 0.4$ e saturação $=4$m/s.
 
 ### 5.3 Controle PD 
 
