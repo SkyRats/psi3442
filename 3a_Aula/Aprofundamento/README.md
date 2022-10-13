@@ -163,51 +163,44 @@ $u_{derivativa} = \text{filtro}(\cfrac{dy(t)}{dt})$
 
 ## 4 Exemplo de implementação na forma de sistema embarcado!
 
+Como controlaremos as coordenadas x,y,z precisaremos de três controles PID operando conjuntamente (desprezaremos o controle de rotação do drone).
+Logo será nescessário a criação de uma classe de controle que possa ser instânciada multiplas vezes.
+Em python, uma forma de implementar isso é:
+
 ```python
-# Global Variables 
-e = 0
-e_i = 0
-un_1 = 0
-uIn_1 = 0
-uDn_1 = 0
-yn_1 = 0
+class Control:
+    def __init__(self):    
+        self.e = 0
+        self.e_i = 0
+        self.un_1 = 0
+        self.uIn_1 = 0
+        self.uDn_1 = 0
+        self.yn_1 = 0
+        self.uP = 0
+        self.uIn = 0
+        self.uDn = 0
+        self.un = 0
 
-#Ganhos
-Kp=0.5
-Ti= 200
-Td = 0.001 
-N=10
-#Saturacao
-sat = 4
-#Periodo de amostragem
-Ts = 1/20 #s
+    def pid(self,r,yn,Kp,Ti,Td,N,sat,Ts):
 
-#Controle
-def pid(r,yn,Kp,Ti,Td,sat):
-    global e
-    global e_i
-    global un_1 
-    global uIn_1 
-    global uDn_1 
-    global yn_1 
-    e = r - yn
-    #anti-windup
-    if (un_1 > sat or un_1 < - sat):
-        e_i = 0
-    else:
-        e_i = e
-    #pid
-    uP = Kp*e
-    uIn = uIn_1 + (Kp*Ts/Ti)*e_i #backward
-    uDn = Td/(Td + N*Ts)*uDn_1 - (Kp*N*Td)/(Td+N*Ts)*(yn-yn_1)
-    un = uP + uIn + uDn
-    #update past values variables
-    un_1 = un
-    uIn_1 = uIn
-    uDn_1 = uDn
-    yn_1 = yn
-    #return
-    return un
+        self.e = r - yn
+        #anti-windup
+        if (self.un_1 > sat or self.un_1 < - sat):
+            self.e_i = 0
+        else:
+            self.e_i = self.e
+        #pid
+        self.uP = Kp*self.e
+        self.uIn = self.uIn_1 + (Kp*Ts/Ti)*self.e_i #backward
+        self.uDn = Td/(Td + N*Ts)*self.uDn_1 - (Kp*N*Td)/(Td+N*Ts)*(yn-self.yn_1)
+        self.un = self.uP + self.uIn + self.uDn
+        #update past values variables
+        self.un_1 = self.un
+        self.uIn_1 = self.uIn
+        self.uDn_1 = self.uDn
+        self.yn_1 = yn
+        #return
+        return self.un
 ```
 
 ## 5 Ajustes de controles PID e resultados
@@ -221,6 +214,16 @@ O drone percorre as arestas do quadrado segundo as seguintes coordenadas. Note q
 * (5,5,2)
 * (0,5,2)
 * (0,0,2)
+
+A sintonia proposta é
+```python
+Kp=0.4
+Ti= 300.0
+Td = 1.1 
+sat = 4
+Ts = 1/40
+N=10
+```
 
 No terminal a execução do node de controle resulta em:
 ```
