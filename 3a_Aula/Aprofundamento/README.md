@@ -264,11 +264,11 @@ while t<tmax
     drone.stay(r)
 ```
 
-Em que o método pid() implementa o controle PID, get_sensor() obtem a informação do sensor da variavel controlada $y$ e o metodo drone.stay(r) implementa um controle para manter o drone na poisção desejada $r$.
+Em que o método pid() implementa o controle PID, get_sensor() obtem a informação do sensor da variavel controlada $y$ e o método drone.stay(r) implementa um controle para manter o drone na poisção desejada $r$.
 
 O laço "controle" leva o drone da posição atual até a posição desjada $r$ com uma tolerância TOL, ou seja, leva o drone para um circulo de raio TOL e centro $r$.
 
-O laço "parada" realiza um controle de tal maneira a manter o drone no circulo de raio TOL. Para que esse método funcione, é nescessáiro que o tempo tmax seja suficientemente grande para possibilitar o drone parar o seu movimento pois no momento que o drone entra na circunferência o erro e(t)=TOL e por tanto sua velocidade é não nula.
+O laço "parada" realiza um controle de tal maneira a manter o drone no circulo de raio TOL, permitindo que no intervalo de tempo tmax o erro seja minimizado caso seja não nulo durante essa etapa. Para que esse método funcione, é nescessáiro que o tempo tmax seja suficientemente grande para possibilitar o drone parar o seu movimento pois no momento que o drone entra na circunferência o erro e(t)=TOL e por tanto sua velocidade é não nula.
 
 Se TOL é pequena, como deve ser, e tmax é insuficiente, é possível que seja observado "undershoot" como se vê a seguir. 
 
@@ -313,7 +313,7 @@ A evolução temporal das variáveis controladas:
 
 ![px4_sitl_overview](imgs/xyz_pd.png)
 
-Conclusão: rastreou a trajetória quadrada respeitando a tolerância de 0.1m (em cinza). Não se observa sobressinal pois a parcela derivativa "preve" que isso irá ocorre e introduz de maneira antecipada um ganho tal que o sobressinal seja eliminado. Nesse caso, o trade-off a ser considerando é que o sistema melhorou no quesito precisão do rastreamento mas tornou-se muito mais lento. Com um tempo total de 66s houve um incremento de aproximadamente 47% dessa grandeza em relação ao controle P ou PI.
+Conclusão: rastreou a trajetória quadrada respeitando a tolerância de 0.1m (em cinza). Não se observa sobressinal pois a parcela derivativa "prevê" que isso irá ocorre e introduz de maneira antecipada um ganho tal que o sobressinal seja eliminado. Nesse caso, o trade-off a ser considerando é que o sistema melhorou no quesito precisão do rastreamento, mas tornou-se muito mais lento. Com um tempo total de 66s houve um incremento de aproximadamente 47% dessa grandeza em relação ao controle P ou PI.
 
 ### 5.5 Controle PID
 
@@ -355,7 +355,29 @@ A evolução temporal das variáveis controladas:
 
 Observação: o resulatado na coordenada z poderia ser melhor caso se adotasse uma sintonia mais suave para o controle dessa coordenada.
 
-## 6 Aplicação: Solução do exercício proposto na aula 3
+## 6 Breve discussão sobre identificação de sistemas
+
+Para se alcançar boas sintonias de controladores é recomendado que se utilize uma técnica baseada em modelo ou o ajuste de um controle sem modelo como o PID utilizando-se um modelo matemático de modo a especificar características de reposta temporal (maximum peak, rise time, settling time) e de resposta em frequência.
+
+Existem diversasa maneiras de se obter um modelo. Pode-se derivar um modelo via abordagem fenomenológica ou por relações entrada-saída. Por simplicidade serão ilustrados a seguir métodos de Identificação de Sistemas (relações entrada-saída) para auxiliar no projeto de controladores PID.
+
+### 6.1 Sundaresan Krishnaswamy
+
+![px4_sitl_overview](imgs/sundaresan.png)
+
+O modelo da planta é
+
+$G(s) = \cfrac{Kp e^{-\theta s}}{\tau s + 1}$
+
+com
+
+$\theta = 1.294t_{0.353} - 0.294t_{0.853}$
+$\tau = t_{0.853} - t_{0.353}$
+$Kp = y_{\infty} - y_0
+
+medidos sob excitação de degrau unitário.
+
+## 7 Aplicação: Solução do exercício proposto na aula 3
 
 Uma proposta de solução é mostrada [aqui](https://github.com/SkyRats/psi3442/blob/master/3a_Aula/Aprofundamento/ControleQuadradoPerfeito/demo_control_psi3442_PID_DIGITAL_graficos_QuadradoPerfeito.py)
 
