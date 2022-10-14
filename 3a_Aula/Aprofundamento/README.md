@@ -105,11 +105,11 @@ A parcela responsável por fazer isso é
 
 $u_D(t) = K_p \times  T_D \cfrac{de(t)}{dt}$
 
-E como se vê o erro é derivado de tal maneira que maiores variações do erro geram maior esforço de controle u(t). Ou seja, no início em que o erro varia mais rapidamente esse efeito é potencializado por essa parcela derivativa.
-
 A parcela derivativa está associada a um aumento da estabilidade do sistema por ser um efeito oposto ao integrador. Porém, a parecela derivativa nunca é adicionada da maneira exposta acima pois dessa maneira ela representa um sistema não causal, dado que sua resposta depende de um valor futuro do erro. E ainda, a derivada potencializa o efeito de ruídos de alta frequência dado que a derivada em laplace é um filtro que introduz ganho em altas frequências. Ou seja, um derivador puro pode levar um ruído de ganho baixo para uma saída de amplitude infinita quebrando assim a estabilidade BIBO *Bounded Input - Bounded Output*.
 
-Por outro lado, considerando-se o carater preditivo visto na figura a seguir, a parecela derivativa permite antever o que ocorrerá no futuro próximo permitindo assim que os ganhos proporcional $K_p$ e integral $T_i$ sejam mais agressivos pois quando a partir do momento que o erro tende a zero, a parecela derivativa é capaz de antever esse momento e já compensar os efeitos de ganhos proporcional e integrativo mais elevados do que deveriam ser se somente controle PI. Por esse motivo, a parcela derivativa é capaz de reduzir sobressinal.
+Por outro lado, considerando-se o carater preditivo visto na figura a seguir, a parecela derivativa permite antever o que ocorrerá no futuro próximo permitindo assim que os ganhos proporcional $K_p$ e integral $T_i$ sejam mais agressivos pois quando o erro tende a zero, a parecela derivativa é capaz de antever esse momento e já compensar os efeitos de ganhos proporcional e integrativo mais elevados do que deveriam ser se somente controle PI. Por esse motivo, a parcela derivativa é capaz de reduzir sobressinal.
+
+Note que para sistemas assintoticamente estáveis a parcela derivativa introduz um esforço de controle $u_D < 0$ pois o erro está sempre diminuindo de tal maneira que a derivada do erro é sempre negativa. A ação derivativa atua como um "freio preditivo" do controle.
 
 #### Parâmetro T_D
 
