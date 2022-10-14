@@ -335,7 +335,19 @@ Esse regime é um caso limite entre o subamortecido e o supercrítico. Suas cara
 
 ### 5.8 Regime Supercritico
 
-O comporatamento de um sistema nesse regime é mostrado nos gráficos referentes ao controle PD. Não há sobressinal e o tempo de acomodação $ t_s $ é grande.
+O comporatamento de um sistema nesse regime é mostrado nos gráficos referentes ao controle PD. Não há sobressinal e o tempo de acomodação $t_s$ é grande.
+
+### 5.9 Flexibilizando precisão, controle rápido
+
+Flexibilizando-se a precisão da trajetória em troca de uma diminuição de 21% do tempo total de execução da trajetória respeitando ainda a tolerância TOL imposta tem-se o seguinte controle.
+
+A trajetória no plano XY:
+
+![px4_sitl_overview](imgs/trajetoria_pid_super_rapido.png)
+
+A evolução temporal das variáveis controladas:
+
+![px4_sitl_overview](imgs/xyz_pid_super_rapido.png)
 
 ## 6 Aplicação: Solução do exercício proposto na aula 3
 
