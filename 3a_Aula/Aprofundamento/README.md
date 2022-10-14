@@ -327,15 +327,7 @@ Conclusão: rastreou a trajetória quadrada respeitando a tolerância de 0.1m (e
 
 ### 5.6 Regime Subamortecido
 
-A trajetória no plano XY:
-
-![px4_sitl_overview](imgs/trajetoria_subamortecida.png)
-
-A evolução temporal das variáveis controladas:
-
-![px4_sitl_overview](imgs/xyz_subamortecido.png)
-
-Conclusão: O controle PID foi ajustado de maneira inadequada propositalmente para mostrar um caso de sistemas subamortecido explicito. Note que nem todo sistema com overshoot é nescessariamente ruim. Normalmente o overshoot é um efeito indesejado, mas em troca, sistemas com overshoot são em geral mais rápidos em $t_r$ (rise time) e $t_s$ (settling time) se comparado aos regimes crítico e supercrítico. Note que a trajetória foi finalizada 15s mais rapido do que se comparado aos 60s com o controle PD em regime supercrítico.
+Sistemas com overshoot são em geral mais rápidos em $t_r$ (rise time) e $t_s$ (settling time) se comparado aos regimes crítico e supercrítico. Porém, em certas aplicações a presença de overshoot é inadimissível. Considerando-se o estado da arte em drones em que se está considerando o acoplamento de ferramentas ao drone, sobressinal em trajetórias de drone se tornará inadimissível nesse cenáiro.
 
 ### 5.7 Regime Critico
 
@@ -343,7 +335,7 @@ Esse regime é um caso limite entre o subamortecido e o supercrítico. Suas cara
 
 ### 5.8 Regime Supercritico
 
-O comporatamento de um sistema nesse regime é mostrado nos gráficos referentes ao controle PD. Note que a menção ao sistema crítico naquela seção traduz uma tendencia de comportamento, sendo contudo mais acurado dizer que se trata de um regime supercrítico.
+O comporatamento de um sistema nesse regime é mostrado nos gráficos referentes ao controle PD. Não há sobressinal e o tempo de acomodação $ t_s $ é grande.
 
 ## 6 Aplicação: Solução do exercício proposto na aula 3
 
