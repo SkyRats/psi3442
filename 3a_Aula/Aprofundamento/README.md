@@ -349,6 +349,8 @@ A evolução temporal das variáveis controladas:
 
 ![px4_sitl_overview](imgs/xyz_pid_super_rapido.png)
 
+Observação: o resulatado na coordenada z poderia ser melhor caso se adotasse uma sintonia mais suave para o controle dessa coordenada.
+
 ## 6 Aplicação: Solução do exercício proposto na aula 3
 
 Uma proposta de solução é mostrada [aqui](https://github.com/SkyRats/psi3442/blob/master/3a_Aula/Aprofundamento/ControleQuadradoPerfeito/demo_control_psi3442_PID_DIGITAL_graficos_QuadradoPerfeito.py)
