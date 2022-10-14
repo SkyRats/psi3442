@@ -203,6 +203,10 @@ class Control:
         return self.un
 ```
 
+O esquema de simulação adotado é mostrado a seguir
+
+![px4_sitl_overview](imgs/esquema_de_simulacao.png)
+
 ## 5 Ajustes de controles PID e resultados
 
 A seguir são mostradas diferentes sinotnias de controle PID e seus efeitos na trajetória e no controle das coordenadas. A trajetória desejada é um quadrado.
