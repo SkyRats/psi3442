@@ -256,7 +256,7 @@ Drone em modo Land
 A implementação do método de controle pid é feito da seguinte maneira
 ```python
 #Controle
-while r-y < TOL
+while r-y > TOL
     u = pid(r,y,Kp,Ti,Td,N,sat,Ts)
     y = get_sensor()
 #parada
