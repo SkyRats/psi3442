@@ -285,7 +285,7 @@ A evolução temporal das variáveis controladas:
 
 ![px4_sitl_overview](imgs/xyz_p.png)
 
-Conclusão: rastreou a trajetória quadrada. Porém, a tolerância de 0.1m (em cinza) foi desrespeitada. Isso ocorre pois o |e(t)| é pequeno de tal maneira que o controle proporcional não gera esforço de controle necessário para anular o erro. O ganho utilizado foi $K_p = 0.4$.
+Conclusão: rastreou a trajetória quadrada. Porém, a tolerância de 0.1m (em cinza) foi desrespeitada. Isso ocorre pois o ganho $ Kp $ utilizado é muito alto o que implica em sobressinal. O tempo total foi de 46s.
 
 ### 5.3 Controle PI
 
@@ -297,7 +297,7 @@ A evolução temporal das variáveis controladas:
 
 ![px4_sitl_overview](imgs/xyz_pi.png)
 
-Conclusão: rastreou a trajetória quadrada respeitando a tolerância de 0.1m (em cinza). Comumente o elemento integrador implica alcançar o setpoint mais rapidamente. Mas, nesse caso isso não se verificou pois utilizou-se um tempo suave $T_i = 300$s. Isso com ganho $K_p = 0.4$ e saturação $=4$m/s.
+Conclusão: rastreou a trajetória quadrada. Porém, a tolerância de 0.1m (em cinza) foi desrespeitada. Isso ocorre pois o ganho $ Kp $ utilizado é muito alto e o integrador potencializa a agressividade do controle o que implica em sobressinal. O tempo total foi de 45s. Considerando-se a similaridade dos gráficos do controle P e PI fica implicito que a sintonia de $ T_i $ é suave, isto é, o controle tem pouco ganho integral.
 
 ### 5.4 Controle PD 
 
@@ -309,7 +309,7 @@ A evolução temporal das variáveis controladas:
 
 ![px4_sitl_overview](imgs/xyz_pd.png)
 
-Conclusão: rastreou a trajetória quadrada respeitando a tolerância de 0.1m (em cinza). O comportamento foi similar ao controle PI e com parâmetros  $T_d = 1.1$s. Isso com ganho $K_p = 0.4$ e $N = 10$m.
+Conclusão: rastreou a trajetória quadrada respeitando a tolerância de 0.1m (em cinza). Não se observa sobressinal pois a parcela derivativa "preve" que isso irá ocorre e introduz de maneira antecipada um ganho tal que o sobressinal seja eliminado. Nesse caso, o trade-off a ser considerando é que o sistema melhorou no quesito precisão do rastreamento mas tornou-se muito mais lento. Com um tempo total de 66s houve um incremento de aproximadamente 47% dessa grandeza em relação ao controle P ou PI.
 
 ### 5.5 Controle PID
 
@@ -321,7 +321,7 @@ A evolução temporal das variáveis controladas:
 
 ![px4_sitl_overview](imgs/xyz_pid.png)
 
-Conclusão: rastreou a trajetória quadrada respeitando a tolerância de 0.1m (em cinza). O comportamento foi similar ao controle PI e com parâmetros  $T_d = 1.1$s. Isso com ganho $K_p = 0.4$ e $N = 10$m.
+Conclusão: rastreou a trajetória quadrada respeitando a tolerância de 0.1m (em cinza). Não se observa sobressinal devido a parcela derivativa e não houve mudança relativa em relação significativa em relação ao controle PD dado que a parcela integral adotada não é agressiva.
 
 
 
