@@ -373,7 +373,7 @@ com
 
 $\theta = 1.294t_{0.353} - 0.294t_{0.853}$
 $\tau = t_{0.853} - t_{0.353}$
-$Kp = y_{\infty} - y_0
+$Kp = y_{\infty} - y_0$
 
 medidos sob excitação de degrau unitário.
 
