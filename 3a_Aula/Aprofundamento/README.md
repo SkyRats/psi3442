@@ -377,6 +377,22 @@ $\tau = t_{0.853} - t_{0.353}$
 
 $Kp = y_{\infty} - y_0$
 
+### 6.2 Exemplo de identificação de sistemas
+
+$t_{0.353} = 0.4 $s
+
+$t_{0.853} = 1.4 $s
+
+$\theta = 1.294t_{0.353} - 0.294t_{0.853} = 0.106$
+
+$\tau = t_{0.853} - t_{0.353} = 1$
+
+$Kp = y_{\infty} - y_0 = 1$
+
+Então o modelo da planta é
+
+$G(s) = \cfrac{1 e^{-0.106 s}}{1s + 1} \approx \cfrac{1}{1s + 1}$
+
 medidos sob excitação de degrau unitário.
 
 ## 7 Aplicação: Solução do exercício proposto na aula 3
