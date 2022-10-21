@@ -449,11 +449,19 @@ Temos a condição de fase e de modulo do lugar das raízes. Com duas condiçõe
 
 Condição de fase
 
-$F(z) = C(z)G(z) = \cfrac{0.02469K(z - 0.9753)(z-c2)}{z(z-1)(z - 0.9753)}$
+$F(z) = C(z)G(z) = \cfrac{0.02469K(z-c1)(z - 0.9753)}{z(z-1)(z - 0.9753)}$
 
-$fase(F(z)) = \text{+- multiplo impar de }\pi$
+$fase(F(z)) = \text{+- multiplo impar de }\pi$ avaliado em z=z1
 
+Considere somente na linha a seguir a notação (x) como fase de x.
 
+$(z1-c1) = +(z1) +(z1-1) -\pi$
+
+Isso implica que c1 = 0.5 é uma escolha não única que atende a essa condição
+
+Condição de módulo
+
+$|F(z)| =| \cfrac{0.02469K(z1-c1)(z1 - 0.9753)}{z1(z1-1)(z1 - 0.9753)} | = 1$
 
 ## 7 Aplicação: Solução do exercício proposto na aula 3
 
