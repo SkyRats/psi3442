@@ -377,11 +377,25 @@ $\tau = t_{0.853} - t_{0.353}$
 
 $Kp = y_{\infty} - y_0$
 
+medidos sob excitação de degrau unitário.
+
 ### 6.2 Exemplo de identificação de sistemas
 
-$t_{0.353} = 0.4 $s
+Suponha que se queria controlar a posição de um drone eviando comandos de velocidade com um controle C no tópico 
+```
+'/mavros/setpoint_velocity/cmd_vel'
+```
+da mavros da simulação do px4 com o drone Iris no gazebo. 
 
-$t_{0.853} = 1.4 $s
+Mandamos o comando velocidade_x = 1, que é equivalente a uma excitação de degrau unitáiro.
+
+E observamos o comportamento dinâmico do sistema até que a velocidade do drone na coordenada x seja unitária. Observa-se o gráfico da dinâmica identificada a seguir:
+
+E com base no método de Sundaresan Krishnaswamy levantamos o modelo:
+
+$t_{0.353} = 0.4$ s
+
+$t_{0.853} = 1.4$ s
 
 $\theta = 1.294t_{0.353} - 0.294t_{0.853} = 0.106$
 
@@ -393,7 +407,13 @@ Então o modelo da planta é
 
 $G(s) = \cfrac{1 e^{-0.106 s}}{1s + 1} \approx \cfrac{1}{1s + 1}$
 
-medidos sob excitação de degrau unitário.
+E essa aproximação é razoável pois o atraso de transporte $\theta$ é 10 vezes menor que a constante de tempo $\tau$ do sistema.
+
+### 6.3 Exemplo de controle baseado em modelo
+
+Como o modelo obtido projetamos uma lei de controle seguindo as seguintes especificações.
+
+
 
 ## 7 Aplicação: Solução do exercício proposto na aula 3
 
