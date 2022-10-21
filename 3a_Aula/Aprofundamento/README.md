@@ -405,9 +405,9 @@ $Kp = y_{\infty} - y_0 = 1$
 
 Então o modelo da planta é
 
-$G(s) = \cfrac{1 e^{-0.106 s}}{1s + 1} \approx \cfrac{1}{1s + 1}$
+$G(s) = \cfrac{1 e^{-0.106 s}}{1s + 1} \approx \cfrac{1}{s + 1}$
 
-E essa aproximação é razoável pois o atraso de transporte $\theta$ é 10 vezes menor que a constante de tempo $\tau$ do sistema.
+E essa aproximação é razoável pois o atraso de transporte $\theta$ é aproximadamente 10 vezes menor que a constante de tempo $\tau$ do sistema.
 
 ### 6.3 Exemplo de controle baseado em modelo
 
