@@ -461,7 +461,7 @@ Isso implica que c1 = 0.5 é uma escolha não única que atende a essa condiçã
 
 Condição de módulo
 
-$|F(z)| =| \cfrac{0.02469K(z1-c1)(z1 - 0.9753)}{z1(z1-1)(z1 - 0.9753)} | = 1$
+$|F(z1)| =| \cfrac{0.02469K(z1-c1)(z1 - 0.9753)}{z1(z1-1)(z1 - 0.9753)} | = 1$
 
 ## 7 Aplicação: Solução do exercício proposto na aula 3
 
