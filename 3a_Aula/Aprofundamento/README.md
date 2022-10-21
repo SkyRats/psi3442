@@ -430,7 +430,30 @@ $T_D = 2Ts \cfrac{c1c2}{c1 + c2 − 3c1c2 + 1}$
 Fazendo o projeto para
 
 Sobressinal nulo $\xi = 1$
-Tempo de acomodacao $t_s(2%) = 8$ s
+Tempo de acomodacao $t_s(2\%) = 8$ s
+
+Como $wn = 4/\xi t_s = 0.5$
+
+E em s as raizes são
+
+$s1 = -\xi wn + jwn \sqrt{1-\xi^2} = 0.5$
+$s2 = -\xi wn - jwn \sqrt{1-\xi^2} = 0.5$
+
+Em z = e^{Ts s_i} temos
+
+$z1 = 0.9876$
+$z2 = 0.9876$
+
+Escolhendo-se c2=0.9753 para cancelar o polo da planta discretizada considerando-se o zoh basta escolhermos o K e o c1.
+Temos a condição de fase e de modulo do lugar das raízes. Com duas condições e duas incógnitas o problema tem solução.
+
+Condição de fase
+
+$F(z) = C(z)G(z) = \cfrac{0.02469K(z - 0.9753)(z-c2)}{z(z-1)(z - 0.9753)}$
+
+$fase(F(z)) = \text{+- multiplo impar de }\pi$
+
+
 
 ## 7 Aplicação: Solução do exercício proposto na aula 3
 
