@@ -413,7 +413,24 @@ E essa aproximação é razoável pois o atraso de transporte $\theta$ é aproxi
 
 Como o modelo obtido projetamos uma lei de controle seguindo as seguintes especificações.
 
+O controle PID discretizado por Tustin na integral e por backward na derivada é
 
+$PID(z) = Kp( 1 + \cfrac{T_s(z+1)}{2T_I(z-1)} + \cfrac{T_D(z-1)}{T_s(z)}
+
+Que pode ser escrito como
+
+$PID(z) = \cfrac{K(z-c1)(z-c2)}{z(z-1)}$ onde
+
+$Kp = (K/2)(C1 + C2 -3C1C2 + C1)$
+
+$T_I = \frac{Ts}{2}\cfrac{1 + c1 + c2 − 3c1c2}{1 + c1c2 − c1 − c2}$
+
+$T_D = 2Ts \cfrac{c1c2}{c1 + c2 − 3c1c2 + 1}$
+
+Fazendo o projeto para
+
+Sobressinal nulo $\xi = 1$
+Tempo de acomodacao $t_s(2%) = 8$ s
 
 ## 7 Aplicação: Solução do exercício proposto na aula 3
 
