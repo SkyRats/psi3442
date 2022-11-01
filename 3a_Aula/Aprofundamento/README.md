@@ -415,7 +415,7 @@ Como o modelo obtido projetamos uma lei de controle seguindo as seguintes especi
 
 O controle PID discretizado por Tustin na integral e por backward na derivada é
 
-$PID(z) = Kp( 1 + \cfrac{T_s(z+1)}{2T_I(z-1)} + \cfrac{T_D(z-1)}{T_s(z)}
+$PID(z) = Kp( 1 + \cfrac{T_s(z+1)}{2T_I(z-1)} + \cfrac{T_D(z-1)}{T_s(z)}$
 
 Que pode ser escrito como
 
@@ -430,7 +430,8 @@ $T_D = 2Ts \cfrac{c1c2}{c1 + c2 − 3c1c2 + 1}$
 Fazendo o projeto para
 
 Sobressinal nulo $\xi = 1$
-Tempo de acomodacao $t_s(2\%) = 8$ s
+
+Tempo de acomodacao $t_s(\text{2\%}) = 8$ s
 
 Como $wn = 4/\xi t_s = 0.5$
 
@@ -442,6 +443,7 @@ $s2 = -\xi wn - jwn \sqrt{1-\xi^2} = 0.5$
 Em z = e^{Ts s_i} temos
 
 $z1 = 0.9876$
+
 $z2 = 0.9876$
 
 Escolhendo-se c2=0.9753 para cancelar o polo da planta discretizada considerando-se o zoh basta escolhermos o K e o c1.
@@ -456,6 +458,8 @@ $fase(F(z)) = \text{+- multiplo impar de }\pi$ avaliado em z=z1
 Considere somente na linha a seguir a notação (x) como fase de x.
 
 $(z1-c1) = +(z1) +(z1-1) -\pi$
+
+$c1 = -z1 + π + 1 = 3.15399$
 
 Isso implica que c1 = 0.5 é uma escolha não única que atende a essa condição
 
