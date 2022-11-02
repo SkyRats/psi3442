@@ -461,7 +461,7 @@ O que leva ao seguinte sistema de equações
 Cuja resolução resulta em (pc,p,k) de tal modo que se p<p_ideal onde p_ideal é a parte real do polo mais rápido de $Projeto(s)$.
 
 Os polos de $Projeto(s)$ são (p1=-0.4000 + 0.3584i) e (p2 = -0.4000 - 0.3584i) e (p = -80.0036).
-Logo $\cfrac{\text{Real}(p)}{\text{Real}(p1)} = \cfrac{80}{0.4} = 200 > 10$ e assim as premissas de projeto são válidas.
+Logo $\cfrac{|\text{Real}(p)|}{|\text{Real}(p1)|} = \cfrac{80}{0.4} = 200 > 10$ e assim as premissas de projeto são válidas.
 
 
 $C(s) = \cfrac{k(s+zc)}{s+pc} = \cfrac{0.28844 (s+0.9753)}{(s+0.8036)}$
@@ -485,8 +485,22 @@ Esse projeto pode ser realizado utilizando o [código matlab ](https://github.co
 
 A classe de controle reimplementada contendo o controle baseada em modelo é:
 
-```
+``` python
+class Control:
+    def __init__(self):    
+        self.en = 0
+        self.en_1 = 0
+        self.un_1 = 0
+        self.un = 0 
 
+    def siso_model_based_control(self,r,yn):
+        #Designed to Mp=3% and ts = 10s @ Ts=1/40
+        #Plant Model G = 1/(s*(s+1)) identified under setvel command from Mavlink considering IRIS drone in gazebo simulator
+        #Control Transferfunction discretized buy Tustin. Project takes ZOH into account.
+        self.en = r - yn
+        self.un = -0.98011*self.un_1 +0.28844*self.en +0.28149*self.en_1
+        self.en_1 = self.en
+        return self.un         
 ```
 
 A trajetória alcançada é mostrada a seguir
