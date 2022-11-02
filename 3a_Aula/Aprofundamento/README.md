@@ -460,7 +460,15 @@ O que leva ao seguinte sistema de equações
 
 Cuja resolução resulta em (pc,p,k) de tal modo que se p<p_ideal onde p_ideal é a parte real do polo mais rápido de $Projeto(s)$.
 
+Os polos de $Projeto(s)$ são (p1=-0.4000 + 0.3584i) e (p2 = -0.4000 - 0.3584i) e (p = -80.0036).
+Logo $\cfrac{{\rm I\!R}(p)}{{\rm I\!R}(p1) = \cfrac{80}{0.4} = 200 > 10} e assim as premissas de projeto são válidas.
+
+
+$C(s) = \cfrac{k(s+zc)}{s+pc} = \cfrac{0.28844 (s+0.9753)}{(s+0.8036)}$
+
 Transformando a função de transferência do controlador por Tustin tem-se:
+
+$C(z) = \cfrac{0.28905(z-0.9759)}{(z-0.9801)}$
 
 E antitransformando para o domínio temporal discreto a lei de controle projetada é
 
