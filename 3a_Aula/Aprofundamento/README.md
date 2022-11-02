@@ -456,8 +456,6 @@ E portanto $FTMF(s)=ProjetoCubico(s)$
 
 O que leva ao seguinte sistema de equações
 
-\begin{bmatrix} \cos\theta && -\sin\theta \\ \sin\theta && \cos\theta \end{bmatrix}
-
 Cuja resolução resulta em (pc,p,k) de tal modo que se p<p_ideal onde p_ideal é a parte real do polo mais rápido de $Projeto(s)$
 
 ## 7 Aplicação: Solução do exercício proposto na aula 3
