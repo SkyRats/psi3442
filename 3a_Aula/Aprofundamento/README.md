@@ -426,7 +426,7 @@ $\omega_n = \cfrac{4}{\xi t_s}
 
 Modelando o segurador de ordem zero como:
 
-$ZOH(s) = \cfrac{1 - e^{-sT_s}}{s} \approx \crfac{b}{s + b} \ , \ b = \cfrac{2}{T_s}$
+$ZOH(s) = \cfrac{1 - e^{-sT_s}}{s} \approx \cfrac{b}{s + b} \ , \ b = \cfrac{2}{T_s}$
 
 As especificações temporais (Mp,ts) implicaram nas especificações ($\xi$,$\omega_n$) que por sua vez implica na seguinte função de transferência de malha fechada cuja resposta apresenta exatamente as especificações desejadas. 
 
