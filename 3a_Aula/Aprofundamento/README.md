@@ -458,7 +458,26 @@ O que leva ao seguinte sistema de equações
 
 ![px4_sitl_overview](imgs/Axb.png)
 
-Cuja resolução resulta em (pc,p,k) de tal modo que se p<p_ideal onde p_ideal é a parte real do polo mais rápido de $Projeto(s)$
+Cuja resolução resulta em (pc,p,k) de tal modo que se p<p_ideal onde p_ideal é a parte real do polo mais rápido de $Projeto(s)$.
+
+Esse projeto pode ser realizado utilizando o [código matlab ]()
+
+#### 6.3.1 Resultados Matlab
+![px4_sitl_overview](imgs/Axb.png)
+
+#### 6.3.2 Resultados Gazebo com python
+
+A classe de controle reimplementada contendo o controle baseada em modelo é:
+
+```
+
+```
+
+A trajetória alcançada é mostrada a seguir
+![px4_sitl_overview](imgs/Axb.png)
+
+E a evolução temporal das variáveis (x,y,z) é mostrada a seguir
+![px4_sitl_overview](imgs/Axb.png)
 
 ## 7 Aplicação: Solução do exercício proposto na aula 3
 
