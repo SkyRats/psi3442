@@ -479,7 +479,8 @@ un = -0.98011*un_1 +0.28844*en +0.28149*en_1
 Esse projeto pode ser realizado utilizando o [código matlab ](https://github.com/SkyRats/psi3442/blob/master/3a_Aula/Aprofundamento/Projeto_SISO_baseado_em_modelo/controle_baseado_modelo.m)
 
 #### 6.3.1 Resultados Matlab
-![px4_sitl_overview](imgs/Axb.png)
+
+![px4_sitl_overview](imgs/controlebaseadomodelo_resultado_matlab.png)
 
 #### 6.3.2 Resultados Gazebo com python
 
@@ -504,10 +505,12 @@ class Control:
 ```
 
 A trajetória alcançada é mostrada a seguir
-![px4_sitl_overview](imgs/Axb.png)
+
+![px4_sitl_overview](imgs/trajetoriaBaseadaEmModelo.png)
 
 E a evolução temporal das variáveis (x,y,z) é mostrada a seguir
-![px4_sitl_overview](imgs/Axb.png)
+
+![px4_sitl_overview](imgs/xyzBaseadoEmModelo.png)
 
 ## 7 Aplicação: Solução do exercício proposto na aula 3
 
