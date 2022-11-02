@@ -420,7 +420,25 @@ Que significa um bom compromisso em baixo Mp e um tempo rápido de rastreio da t
 
 Sabemos que 
 
-$\xi = -\text{ln}(Mp/100)/\sqrt(\pi^2 + log(Mp/100)^2)$
+$\xi = \cfrac{-\text{ln}(Mp/100)}{\sqrt{(\pi^2 + log(Mp/100)^2)}}$
+
+$\omega_n = \cfrac{4}{\xi t_s} 
+
+Modelando o segurador de ordem zero como:
+
+$ZOH(s) = \cfrac{1 - e^{-sT_s}}{s} \approx \crfac{b}{s + b} \ , \ b = \cfrac{2}{T_s}$
+
+As especificações temporais (Mp,ts) implicaram nas especificações ($\xi$,$\omega_n$) que por sua vez implica na seguinte função de transferência de malha fechada cuja resposta apresenta exatamente as especificações desejadas. 
+
+$Projeto(s) = \cfrac{\omega_n^2}{s^2 + 2s\xi\omega_n + \omega_n^2}$
+
+Considere o controle (a função proposta fará sentido a seguir no cálculo da FTMA)
+
+$C(s) = \cfrac{k(s+zc)}{s+pc}$
+
+A função de transferência de malha aberta será
+
+$FTMA(s) = G(s)* C(s) * ZOH(s) \approx \cfrac{1}{s + 1} \cfrac{k(s+zc)}{s+pc} \crfac{b}{s + b}$
 
 ## 7 Aplicação: Solução do exercício proposto na aula 3
 
