@@ -411,7 +411,11 @@ E essa aproximação é razoável pois o atraso de transporte $\theta$ é aproxi
 
 ### 6.3 Exemplo de controle baseado em modelo
 
-Como o modelo obtido projetamos uma lei de controle seguindo as seguintes especificações:
+O modelo para controle de posição a partir de comandos de velocidade é igual ao interior mas com a adição de um integrador pois a posição é a integral da velocidade. Lembre que a planta levantada é uma relação de velocidades mas estamos interessados numa relação de posição/velocidade:
+
+$G(s) = \cfrac{variavelControlada(s)}{Comando(s)} = \cfrac{posicaoDesejada(s)}{velocidade(s)} = \cfrac{1}{s(s + 1)}
+
+Com o modelo obtido projetamos uma lei de controle seguindo as seguintes especificações:
 
 * Máximo sobressinal: Mp=3%
 * Tempo de acomodação (Settling Time): ts=10s
