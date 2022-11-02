@@ -456,27 +456,6 @@ E portanto $FTMF(s)=ProjetoCubico(s)$
 
 O que leva ao seguinte sistema de equações
 
-\begin{equation}
-\begin{bmatrix}
-1 & -1 & 0\\ 
-b & -2\xi\omega_n & 0\\ 
-0 & -\omega_n^2  & b
-\end{bmatrix}
-\begin{bmatrix}
-pc
-\\ 
-p
-\\
-k
-\end{bmatrix} = 
-\begin{bmatrix}
-2\xi\omega_n - b
-\\
-\omega_n^2
-\\
-0
-\end{bmatrix}
-\end{equation}
 
 Cuja resolução resulta em (pc,p,k) de tal modo que se p<p_ideal onde p_ideal é a parte real do polo mais rápido de $Projeto(s)$
 
