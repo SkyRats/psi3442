@@ -456,6 +456,7 @@ E portanto $FTMF(s)=ProjetoCubico(s)$
 
 O que leva ao seguinte sistema de equações
 
+![px4_sitl_overview](imgs/Axb.png)
 
 Cuja resolução resulta em (pc,p,k) de tal modo que se p<p_ideal onde p_ideal é a parte real do polo mais rápido de $Projeto(s)$
 
