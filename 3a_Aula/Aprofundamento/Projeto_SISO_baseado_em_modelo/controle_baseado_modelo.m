@@ -1,3 +1,4 @@
+%Matlab Script to project control
 fs = 40; %Hz
 Ts = 1/fs;
 
@@ -13,12 +14,12 @@ poleGd = pole(Gd);
 Gd = zpk(minreal(Gd));
 [zg,pg,kg] = zpkdata(Gd);
 
-%Projeto do Controlador PID ========================
-%Cd = K*(z-c1)*(z-c2)/(z*(z-1))
+%Projeto do Controlador ==========================
+%Cd = K*(z-c1)*(z-c2)/(z*(z-1)) %PID
+%Cc = k*(s + zc)/(s + pc)       %Pole alocation
 
-
-%Sobressinal = Mp
-%Acomodacao de 2% em 8s
+%Maximum peak: Mp = 3%
+%Settling time: ts= 8s
 
 Mp = 3;%
 
@@ -49,8 +50,6 @@ zc = pg{1}(2);
 
 Cc = k*(s + zc)/(s + pc);
 
-%step(feedback(G*Cc,1));
-
 Cd = c2d(Cc,Ts,'tustin');
 
 FTMF_continuo = feedback(G*Cc,1);
@@ -61,6 +60,6 @@ step(FTMF_continuo,FTMF_digital);
 [zcd,pcd,kcd] = zpkdata(Cd);
 
 %%
-disp('Controlador em python')
+disp('Controller in python')
 controllaw = ['un = ',num2str(-pcd{1}), '*un_1 +', num2str(k), '*en +',num2str(k*(zcd{1})) ,'*en_1'];
 disp(controllaw)
