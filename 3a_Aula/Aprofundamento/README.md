@@ -460,6 +460,14 @@ O que leva ao seguinte sistema de equações
 
 Cuja resolução resulta em (pc,p,k) de tal modo que se p<p_ideal onde p_ideal é a parte real do polo mais rápido de $Projeto(s)$.
 
+Transformando a função de transferência do controlador por Tustin tem-se:
+
+E antitransformando para o domínio temporal discreto a lei de controle projetada é
+
+```
+un = -0.98011*un_1 +0.28844*en +0.28149*en_1
+```
+
 Esse projeto pode ser realizado utilizando o [código matlab ]()
 
 #### 6.3.1 Resultados Matlab
