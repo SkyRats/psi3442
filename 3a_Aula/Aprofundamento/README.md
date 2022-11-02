@@ -450,31 +450,13 @@ $FTMF(s) = \cfrac{kb}{s^3 + s^2(b + p_c) + s p_c b + kb}$
 
 Porém, nossa função de transferência de malha fechada tem polinômio característico de ordem 2. Para que seja de ordem 3, considere um polo "p" muito rápido. A nova função de transferência de malha fechada de projeto é
 
-$Projeto_cubico(s)= \cfrac{p\omega_n^2}{(s^2 + 2s\xi\omega_n + \omega_n^2)(s+p)}$
+$ProjetoCubico(s)= \cfrac{p\omega_n^2}{(s^2 + 2s\xi\omega_n + \omega_n^2)(s+p)}$
 
-E portanto $FTMF(s)=Projeto_cubico(s)$
+E portanto $FTMF(s)=ProjetoCubico(s)$
 
 O que leva ao seguinte sistema de equações
 
-$\begin{bmatrix}
-1 & -1 & 0\\ 
-b & -2\xi\omega_n & 0\\ 
-0 & -\omega_n^2  & b
-\end{bmatrix}
-\begin{bmatrix}
-pc
-\\ 
-p
-\\
-k
-\end{bmatrix} = 
-\begin{bmatrix}
-2\xi\omega_n - b
-\\
-\omega_n^2
-\\
-0
-\end{bmatrix}$
+$\begin{bmatrix}1 & -1 & 0\\ b & -2\xi\omega_n & 0\\ 0 & -\omega_n^2  & b\end{bmatrix}$
 
 Cuja resolução resulta em (pc,p,k) de tal modo que se p<p_ideal onde p_ideal é a parte real do polo mais rápido de $Projeto(s)$
 
