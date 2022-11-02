@@ -468,7 +468,7 @@ E antitransformando para o domínio temporal discreto a lei de controle projetad
 un = -0.98011*un_1 +0.28844*en +0.28149*en_1
 ```
 
-Esse projeto pode ser realizado utilizando o [código matlab ]()
+Esse projeto pode ser realizado utilizando o [código matlab ](https://github.com/SkyRats/psi3442/blob/master/3a_Aula/Aprofundamento/Projeto_SISO_baseado_em_modelo/controle_baseado_modelo.m)
 
 #### 6.3.1 Resultados Matlab
 ![px4_sitl_overview](imgs/Axb.png)
