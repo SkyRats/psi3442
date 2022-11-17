@@ -519,3 +519,51 @@ E a evolução temporal das variáveis (x,y,z) é mostrada a seguir
 ## 7 Aplicação: Solução do exercício proposto na aula 3
 
 Uma proposta de solução é mostrada [aqui](https://github.com/SkyRats/psi3442/blob/master/3a_Aula/Aprofundamento/ControleQuadradoPerfeito/demo_control_psi3442_PID_DIGITAL_graficos_QuadradoPerfeito.py)
+
+## 8 Teste em Drone Real
+
+Uma vez ajustado o controle no Drone é o momento de realizar os testes no drone real.
+
+Alguns ajustes devem ser feitos para que o vôo físico seja possível.
+
+* Montar o drone
+* Definir seu ID no firmware PX4
+* Alterar o arquivo px4.launch
+
+```
+<launch>
+	<!-- vim: set ft=xml noet : -->
+	<!-- example launch script for PX4 based FCU's -->
+
+	<!--Gazebo-->
+	<!--<arg name="fcu_url" default="/dev/ttyACM0:57600" />-->
+	<!--Drone: Conecte no USB mais proximo do plug de fone de Ouvido-->
+	<arg name="fcu_url" default="/dev/ttyUSB0:57600" />  
+
+	<arg name="gcs_url" default="" />
+
+	<!--Gazebo-->
+	<!--<arg name="tgt_system" default="1" />--> 
+	<!--Drone cujo ID eh 61 (Drone f450 montado no dia 17nov2022)-->
+	<arg name="tgt_system" default="61" />
+	<arg name="tgt_component" default="1" />
+	<arg name="log_output" default="screen" />
+	<arg name="fcu_protocol" default1="v2.0" />
+	<arg name="respawn_mavros" default="false" />
+
+	<include file="$(find mavros)/launch/node.launch">
+		<arg name="pluginlists_yaml" value="$(find mavros)/launch/px4_pluginlists.yaml" />
+		<arg name="config_yaml" value="$(find mavros)/launch/px4_config.yaml" />
+
+		<arg name="fcu_url" value="$(arg fcu_url)" />
+		<arg name="gcs_url" value="$(arg gcs_url)" />
+		<arg name="tgt_system" value="$(arg tgt_system)" />
+		<arg name="tgt_component" value="$(arg tgt_component)" />
+		<arg name="log_output" value="$(arg log_output)" />
+		<arg name="fcu_protocol" value="$(arg fcu_protocol)" />
+		<arg name="respawn_mavros" default="$(arg respawn_mavros)" />
+	</include>
+</launch>
+
+```
+* Alterar o arquivo 
