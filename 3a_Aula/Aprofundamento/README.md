@@ -426,7 +426,7 @@ Sabemos que
 
 $\xi = \cfrac{-\text{ln}(Mp/100)}{\sqrt{(\pi^2 + log(Mp/100)^2)}}$
 
-$\omega_n = \cfrac{4}{\xi t_s} 
+$\omega_n = \cfrac{4}{\xi t_s}$
 
 Modelando o segurador de ordem zero como:
 
