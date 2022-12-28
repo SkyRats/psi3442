@@ -446,7 +446,7 @@ $FTMA(s) = G(s)* C(s) * ZOH(s) \approx \cfrac{1}{s + 1} \cfrac{k(s+zc)}{s+pc} \c
 
 De onde a escolha zc = 1 (polo estável da planta) implica em 
 
-$FTMA(s) =  \cfrac{k}{s+pc} \cfrac{b}{s + b}$
+$FTMA(s) =  \cfrac{1}{(s)} \cfrac{k}{(s+pc)} \cfrac{b}{(s + b)$
 
 E a função de transferência de malha fechada será
 
