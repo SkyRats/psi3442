@@ -130,11 +130,13 @@ Fonte: [Apostila de Controle - Escola Politécnica da Universidade de São Paulo
 
 O windup ocorre pois controladores mandam um sinal chamado esforço de controle u(t) para um atuador que atua sobre uma planta G(s). E esses atuadores possuem um limite de esforço de controle máximo que são capazes de empregar. Por exemplo, um par motor-hélice consegue prover um empuxo máximo limitado pela rotação máxima do motor escolhido e pelo design da hélice.
 
+Situação Exemplo: Suponha que a um comando para o drone ir indefinidamente para frente a 50km/h foi dado. Então r(t)=50km/h. Porém, o drone tem velocidade máxima de 40km/h por construção. Então um erro de 10km/h em relação a referência será mantido indefinidamente pois o drone não tem capacidade física de zerar esse erro. Digamos que o período de amostragem seja de 1s. Em 1 minuto a integral tera acumulado ki\*10km/h\*(60s) = 600\*ki onde ki é o ganho da parcela integral. Já em uma hora, a integral terá acumulado 3600\*ki. Mas o erro se manteve o mesmo apesar da parcela integral ter aumentado muito. Em seguida um comando para o drone parar é enviado, isto é, velocidade = 0km/h. O drone vai demorar muito para parar pois existe um valor da parcela integral que está muito acumulado e demorará muito para ser diminuído dado o ganho ki considerado. Esse probelma de acumulo indefinido da integral quando da saturção do esforço de controle é conhecido Windup.
+
 Existem duas soluções para esse problema
 
 #### 3.1.1 Limitar integrador
 
-Adiciona-se uma condicional que zera o a parcela a ser integrada no instante t caso isso implique em um esforço de controle u(t) maior do que aquele realizável pelo atuador.
+Adiciona-se uma condicional que zera a próxima parcela a ser integrada no instante t caso isso implique em um esforço de controle u(t) maior do que aquele realizável pelo atuador.
 
 #### 3.1.2 Subtrair excedente
 
