@@ -7,6 +7,26 @@ Nesssa atividade iremos:
 
 
 ## 1 Criando ROS Workspace
+
+´´´
+mkdir -p ros_workspaces/turtle_ws / src
+cd ros_workspaces/turtle_ws /
+´´´
+´´´
+catkin build - j2
+´´´
+´´´
+nano ~/. bashrc
+´´´
+No nano (editor de texto sem mouse), utililze a seta para baixo e des¸ca at´e a ultima
+linha e acrescente se não existir:
+
+´´´
+source / opt / ros / melodic / setup . bash
+source ~/ ros_workspaces/turtle_ws / devel / setup . bash
+´´´
+Saia do nano utilizando: ctrl + x
+
 ## 2 Criando ROS Package
 ## 3 Explorando o TurtleSim
 ## 4 Explorando ROS
