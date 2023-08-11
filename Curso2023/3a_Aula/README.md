@@ -98,13 +98,43 @@ Utilize o service correto para criar uma tartaruga chamada Edson
 
 ## 4 Estratégia de Programação
 
-Dado um problema, verifique se o problema é um problema de engenharia e se a sua solução poderia ser facilitada utilizando
-o ROS. Se sim, continue.
-
 Planeje sua aplicação. Entenda o que o seu código irá fazer e faça uma decomposição funcional do problema de modo
-que cada parte mais simples do código resolva um subproblema de maneira que o script completo solucione o problema de engenharia.
+que cada parte mais simples do código resolva um subproblema de maneira que o script completo solucione o problema.
 
-### 4.1 Exercício 
+Vamos entender isso por meio de um exemplo. Depois, abstraia o exemplo a seguir para sua aplicação, seja drone ou o que for.
+
+Queremos controlar a posição tartaruga turtle1 do simulador turtlesim (node turtlesim). 
+
+Como se controla posição? Alterando a velocdiade de um objeto ao longo do tempo. Para ir de (0,0) para (1,0) um objeto deve sair do repouso em (0,0), acelerar em direção ao alvo e desacelerar quando estiver nas proximidades do alvo (1,0)
+
+Traduzindo:
+
+controla posição? -> precisamos saber a posição do turtle1
+Alterando a velocdiade -> precisamos alterar a velocidade do turtle1
+
+posição do turtle1 -> liste os topic e procure um cujo nome remeta a posição do turtle1
+velocidade do turtle1 -> liste os topic e procure um cujo nome remeta a velocidade do turtle1
+
+verifique se o turtle1 é um publisher no topic de posição e um subscriber no topic de velocidade que você encontrou.
+Se sim, prossiga. Se não, procure outros topic pois do contrário você não poderá receber a posição do turtle1 e nem
+comandar usa velocidade.
+
+Feito isso, entenda como são as messages dos topic que você encontrou e os tipos e subtipos das messages.
+
+Com isso, agora é possível importar da biblioteca rospy as funcionalidades que permitirão implementar
+um script python que se comunique com o node turtlesim através do ROS.
+
+```
+import rospy
+from <tipo da mensagem>. msg import <subtipo da mensagem>
+```
+Por exemplo 
+```
+from geometry_msgs . msg import Twist
+```
+
+
+## 5 Problema
 Escreva um script no arquivo ```turtle_go_topic.py``` criando uma rotina que quando chamada através do comando 
 
 ```
@@ -117,9 +147,6 @@ Ligue o seu sistema robótico ao ROS;
 Consulte em quais topic o seu robo publica informações;
 Consulte em quais topic o seu robo está inscrito para receber informações;
 
-
-
-## 5 Problema
 ## 6 Solução via comunicação Assíncrona
 ### 6.1 Programa em Python
 ```
