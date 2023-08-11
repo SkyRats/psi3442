@@ -52,7 +52,9 @@ Crie um .py no diretório ```scripts``` chamado ```turtle_go_topic.py```
 cd ~/ros_workspaces/turtle_ws/src/turtle_control/scripts
 chmod + x turtle_go_topic.py
 ```
-## 3 Explorando o TurtleSim
+## 3 Explorando o ROS com TurtleSim
+
+### 3.1 Consulta de Tópicos/Services via comandos no terminal
 
 Inicie em um terminal o grafo do ROS usando Roscore para ativar o node central da rede.
 ```
@@ -81,31 +83,35 @@ Liste as messages disponíveis, descubra detalhes da message cujo tipo foi menci
 rosmsg list
 rosmsg show turtlesim/Pose
 ```
-
+Liste os services disponíveis
 ```
-```
-
-```
-```
-
-```
+rosservice list
+rosservice info /turtle1/teleport_absolute
+roservice call /turtle1/teleport_absolute 7 7 90
 ```
 
-```
-```
+Exercício simples:
+Utilize o service correto para criar uma tartaruga chamada Edson
 
-```
-```
-## 4 Explorando ROS
-### 4.1 Nodes
-### 4.2 Topics
-### 4.3 Messages
-### 4.4 Services
-### 4.5 Consulta de Tópicos/Services na ROSwiki
+### 3.1 Consulta de Tópicos/Services na ROSwiki
+/url{http://wiki.ros.org/turtlesim}
+
+
 ## 5 Estratégia de Programação
 ## 6 Problema
 ## 7 Solução via comunicação Assíncrona
 ### 7.1 Programa em Python
+```
+```
+
+```
+```
+
+```
+```
+
+```
+```
 ### 7.2 Execução do programa
 ## 8 Solução via comunicação Síncrona
 ### 8.1 Programa em Python
