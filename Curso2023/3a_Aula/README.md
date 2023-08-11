@@ -94,13 +94,34 @@ Exercício simples:
 Utilize o service correto para criar uma tartaruga chamada Edson
 
 ### 3.1 Consulta de Tópicos/Services na ROSwiki
-/url{http://wiki.ros.org/turtlesim}
+[RosWiki]([https://link-url-here.org](http://wiki.ros.org/turtlesim))
+
+## 4 Estratégia de Programação
+
+Dado um problema, verifique se o problema é um problema de engenharia e se a sua solução poderia ser facilitada utilizando
+o ROS. Se sim, continue.
+
+Planeje sua aplicação. Entenda o que o seu código irá fazer e faça uma decomposição funcional do problema de modo
+que cada parte mais simples do código resolva um subproblema de maneira que o script completo solucione o problema de engenharia.
+
+### 4.1 Exercício 
+Escreva um script no arquivo ```turtle_go_topic.py``` criando uma rotina que quando chamada através do comando 
+
+```
+rosrun turtle_control turtle_go_topic.py
+```
+
+Seu programa deve perguntar no terminal a um usuário coordenadas desejadas (x,y) de modo que a tartagura trutle1 vá para essa posição usando a comunicação assíncrona via topics.
+
+Ligue o seu sistema robótico ao ROS;
+Consulte em quais topic o seu robo publica informações;
+Consulte em quais topic o seu robo está inscrito para receber informações;
 
 
-## 5 Estratégia de Programação
-## 6 Problema
-## 7 Solução via comunicação Assíncrona
-### 7.1 Programa em Python
+
+## 5 Problema
+## 6 Solução via comunicação Assíncrona
+### 6.1 Programa em Python
 ```
 ```
 
