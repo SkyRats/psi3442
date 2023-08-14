@@ -188,7 +188,7 @@ Nele, descrevemos as diretrizes de compilação dos códigos desse package.
     * Versão
     * Nome
     * Informações dos desenvolvedores
-    * Licensa
+    * Licença
     * Balela, perfumaria
 
 * Uma pasta `src`, onde encontramos todos os codigos fontes que serão compilados
