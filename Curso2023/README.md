@@ -4,14 +4,14 @@ Bem vindos a página do Curso PSI3442 edição 2023!
 Conteúdo das Aulas:
 
 ## 1a_Aula : Apresentação de Sistemas Embarcados 
-1) Sistemas Embarcados
-2) Sistemas Ciber-físicos
-3) Drone quadrotor
-3.1) Dinâmica de voo
-3.2) Sensores e Observadores de Estado
-3.3) Hardware
-3.4) Aplicações
-4) Componentes   
+* Sistemas Embarcados
+*  Sistemas Ciber-físicos
+*  Drone quadrotor
+-  Dinâmica de voo
+- Sensores e Observadores de Estado
+- Hardware
+- Aplicações
+* Componentes   
 
 ## 2a_Aula : Simulação de sistemas embarcados: TurtleSIm [T]
 
