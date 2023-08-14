@@ -280,6 +280,44 @@ de alguém.
 No caso, por falta de tutorial mais simples, escolhi adaptar o script contido no seguinte [repositório](https://github.com/huchunxu/ros_21_tutorials/blob/master/learning_service/scripts/turtle_spawn.py). Os comandos originais
 foram mantidos comentados seguidos dos comandos adaptados para o nosso caso do teleport.
 
+Para descobrir como importar as bibliotecas para chamar o service pesquisei as informações da seguinte maneira.
+```bash
+aluno@aluno-VirtualBox:~$ rosservice list
+/clear
+/kill
+/reset
+/rosout/get_loggers
+/rosout/set_logger_level
+/spawn
+/turtle1/set_pen
+/turtle1/teleport_absolute
+/turtle1/teleport_relative
+/turtlesim/get_loggers
+/turtlesim/set_logger_level
+aluno@aluno-VirtualBox:~$ rosservice info /turtle1/teleport_absolute
+Node: /turtlesim
+URI: rosrpc://aluno-VirtualBox:46613
+Type: turtlesim/TeleportAbsolute
+Args: x y theta
+```
+
+E observando-se o atributo Type, bastou utilizar
+```
+from <tipo>.srv import <subtipo>
+```
+no caso
+```
+from turtlesim.srv import TeleportAbsolute
+```
+passando como argumentos
+```
+teleport_turtle = rospy.ServiceProxy('/turtle1/teleport_absolute', TeleportAbsolute)
+x = 8
+y = 8
+theta = 90 
+teleport_turtle(x,y,theta)
+```
+
 ```python
 #!/usr/bin/env python
 
