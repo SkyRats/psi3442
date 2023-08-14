@@ -366,7 +366,12 @@ Consulte em quais topic o seu robo publica informações;
 Consulte em quais topic o seu robo está inscrito para receber informações;
 
 ```diff
-- Atenção! Para aproveitar o material da melhor forma possível resolva o exercício sem olhar a resposta! Somente após a conclusão do exercício e após fazer os testes você pode olhar a resposta caso queria.
+- Atenção!
+- Para aproveitar o material da melhor forma possível
+- resolva o exercício sem olhar a resposta!
+
+- Somente consulte a resposta após testar e finalizar o exercício
+```
 
 ## 6 Solução via comunicação Assíncrona
 ### 6.1 Programa em Python
