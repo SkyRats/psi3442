@@ -7,10 +7,10 @@ Conteúdo das Aulas:
 * Sistemas Embarcados
 *  Sistemas Ciber-físicos
 *  Drone quadrotor
--  Dinâmica de voo
-- Sensores e Observadores de Estado
-- Hardware
-- Aplicações
+*  Dinâmica de voo
+* Sensores e Observadores de Estado
+* Hardware
+* Aplicações
 * Componentes   
 
 ## 2a_Aula : Simulação de sistemas embarcados: TurtleSIm [T]
