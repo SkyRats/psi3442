@@ -5,11 +5,31 @@ Nesssa atividade iremos:
 * criar um packge ROS de controle de tartarugas do TurtleSim (Simulador de tartarugas);
 * enteder como programar um script em python para controlar um robô (tartaruga) via grafo do ROS.
 
+Dicas de linux
+Abra o terminal 
+```
+ctrl+alt+t
+```
+Criar uma nova aba
+```
+ctrl+shift+t
+```
+Mudar de diretório
+```
+cd nome_do_diretorio/nome_do_sub_diretorio/nome_do_sub_sub_diretorio
+```
+Ver o que há em um diretório
+```
+ls
+```
+Prefira usar ```tab``` para completar os comandos, assim você digita mais rápido e certo.
+
 
 ## 1 Criando ROS Workspace
 
 O workspace é um diretório preparado para se trabalhar com o ROS em uma aplicação. Criaremos hoje um workspace para trabalhar o o turtlesim hoje. Em uma aula futura, criaremos outro worspace para trabalhar com o drone.
 
+No terminal
 ```
 mkdir -p ros_workspaces/turtle_ws/src
 cd ros_workspaces/turtle_ws/
@@ -103,7 +123,7 @@ que cada parte mais simples do código resolva um subproblema de maneira que o s
 
 Vamos entender isso por meio de um exemplo. Depois, abstraia o exemplo a seguir para sua aplicação, seja drone ou o que for.
 
-Queremos controlar a posição tartaruga turtle1 do simulador turtlesim (node turtlesim). 
+Exemplo: controlar a posição tartaruga turtle1 do simulador turtlesim (node turtlesim). 
 
 Como se controla posição? Alterando a velocdiade de um objeto ao longo do tempo. Para ir de (0,0) para (1,0) um objeto deve sair do repouso em (0,0), acelerar em direção ao alvo e desacelerar quando estiver nas proximidades do alvo (1,0)
 
@@ -115,6 +135,19 @@ Alterando a velocdiade -> precisamos alterar a velocidade do turtle1
 posição do turtle1 -> liste os topic e procure um cujo nome remeta a posição do turtle1
 velocidade do turtle1 -> liste os topic e procure um cujo nome remeta a velocidade do turtle1
 
+Terminal 1
+```
+roscore
+```
+Terminal 2
+```
+rosrun turtlesim turtlesim_node
+```
+Terminal 3
+```
+USE OS COMANDOS DA SEÇÃO 3 PARA PESQUISAR TOPICS, MESSAGES, PUBLISHERS E SUBSCRIBERS
+```
+
 verifique se o turtle1 é um publisher no topic de posição e um subscriber no topic de velocidade que você encontrou.
 Se sim, prossiga. Se não, procure outros topic pois do contrário você não poderá receber a posição do turtle1 e nem
 comandar usa velocidade.
@@ -124,13 +157,22 @@ Feito isso, entenda como são as messages dos topic que você encontrou e os tip
 Com isso, agora é possível importar da biblioteca rospy as funcionalidades que permitirão implementar
 um script python que se comunique com o node turtlesim através do ROS.
 
+Note que o comando
+```
+rostopic info /turtle1/pose
+```
+retorna no terminal
+```
+
+```
+
 ```
 import rospy
 from <tipo da mensagem>. msg import <subtipo da mensagem>
 ```
 Por exemplo 
 ```
-from geometry_msgs . msg import Twist
+from turtlesim.msg import Pose
 ```
 
 
