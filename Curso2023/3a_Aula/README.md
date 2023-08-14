@@ -197,24 +197,32 @@ import rospy
 from turtlesim.msg import Pose
 
 class Turtle:
-    def __init__(self):
-        self.pose = Pose()
-        rospy.init_node("readPose")
-        self.rate = rospy.Rate(10) # 10Hz
-        self.pose_subscriber = rospy.Subscriber("/turtle1/pose", Pose, self.pose_callback)
+    def __init__(self): #Calss constructor
+        self.pose = Pose() #turtle's pose atribute 
+        rospy.init_node("readPose") #start a node called "readPose" inteh ROS' graph
+        self.rate = rospy.Rate(10) # Set the update rate of 10Hz
+        #define "readPose" node as subscriber of /turtle1/pose topic fed by turtlesim node.
+        self.pose_subscriber = rospy.Subscriber("/turtle1/pose", Pose, self.pose_callback) 
 
-     def pose_callback(self,data):
-        self.pose.x = data.x
-        self.pose.y = data.y
-        self.pose.theta = data.theta
+    #def a calback function for the subscriber knows how to get the "data"
+    def pose_callback(self,data):
+        self.pose.x = data.x #m
+        self.pose.y = data.y #m
+        self.pose.theta = data.theta #degerees
 
+    #alternative callback getting (x,y) coordinates in cm
+    def pose_callback_cm(self,data):
+        self.pose.x = 100*data.x #cm
+        self.pose.y = 100*data.y #cm
+        self.pose.theta = data.theta #degerees
+
+    #method to show position in terminal
     def show_pose(self):
         while not rospy.is_shutdown():
             print("(x,y,theta)=("str(self.pose.x)+","+str(self.pose.y)+","+str(self.pose.theta)+")")
             self.rate.sleep()
 
 if __name__ == '__main__':
-
     turtle = Turtle()
     turtle.show_pose()
 
