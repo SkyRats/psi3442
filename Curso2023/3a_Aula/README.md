@@ -273,9 +273,44 @@ O service ```/turtle1/teleport_absolute``` parece ser o que estamos procurando.
 Na [roswiki](http://wiki.ros.org/turtlesim) procurando a descrição desse service e lendo a descrição contida na documentação confirmamos que
 esse service é de fato o que queremos.
 
-Para realizar esse comando no python fazemos
+Como chamar o service em um script python?
+As opções são: Achar uma explicação boa na Roswiki, achar um bom tutorial na internet/youtube ou adaptar o código 
+de alguém.
 
-```
+No caso, por falta de tutorial mais simples, escolhi adaptar o script contido no seguinte [repositório](https://github.com/huchunxu/ros_21_tutorials/blob/master/learning_service/scripts/turtle_spawn.py). Os comandos originais
+foram mantidos comentados seguidos dos comandos adaptados para o nosso caso do teleport.
+
+```python
+#!/usr/bin/env python
+
+import sys
+import rospy
+#from turtlesim.srv import Spawn
+from turtlesim.srv import TeleportAbsolute
+
+#def turtle_spawn():
+def turtle_gopose():
+    
+    #rospy.init_node('turtle_spawn')
+    rospy.init_node('turtle_teleport')
+
+    #rospy.wait_for_service('/spawn')
+    rospy.wait_for_service('/turtle1/teleport_absolute')
+    
+    try:
+        #add_turtle = rospy.ServiceProxy('/spawn', Spawn)
+        teleport_turtle = rospy.ServiceProxy('/turtle1/teleport_absolute', TeleportAbsolute)
+
+        #response = add_turtle(2.0, 2.0, 0.0, "turtle2")
+        teleport_turtle(8,8,90)
+        return 
+    except rospy.ServiceException, e:
+        print "Service call failed: %s"%e
+
+if __name__ == "__main__":
+    
+    #print "Spwan turtle successfully [name:%s]" %(turtle_spawn())
+    turtle_gopose()
  
 ```
 
