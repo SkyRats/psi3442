@@ -116,7 +116,7 @@ Utilize o service correto para criar uma tartaruga chamada Edson
 ### 3.1 Consulta de Tópicos/Services na ROSwiki
 [RosWiki]([https://link-url-here.org](http://wiki.ros.org/turtlesim))
 
-## 4 Estratégia de Programação
+## 4 Como usar as ferramentas do ROS no python
 
 Planeje sua aplicação. Entenda o que o seu código irá fazer e faça uma decomposição funcional do problema de modo
 que cada parte mais simples do código resolva um subproblema de maneira que o script completo solucione o problema.
@@ -131,6 +131,8 @@ Traduzindo:
 
 controla posição? -> precisamos saber a posição do turtle1
 Alterando a velocdiade -> precisamos alterar a velocidade do turtle1
+
+### 4.1 Comunicação Assíncrona
 
 posição do turtle1 -> liste os topic e procure um cujo nome remeta a posição do turtle1
 velocidade do turtle1 -> liste os topic e procure um cujo nome remeta a velocidade do turtle1
@@ -177,12 +179,48 @@ um script python que se comunique com o node turtlesim através do ROS.
 
 ```
 import rospy
-from <tipo da mensagem>. msg import <subtipo da mensagem>
+from <tipo da mensagem>.msg import <subtipo da mensagem>
 ```
 Por exemplo 
 ```
 from turtlesim.msg import Pose
 ```
+
+Agora vamos criar um script simples que é capaz de ler as informações do topic /turtle1/pose
+Para ver se o script funciona, iremos mostrar o resultado da leitura na tela.
+
+```python
+#!/usr/bin/env python
+
+#Libraries
+import rospy
+from turtlesim.msg import Pose
+
+class Turtle:
+    def __init__(self):
+        self.pose = Pose()
+        rospy.init_node("readPose")
+        self.rate = rospy.Rate(10) # 10Hz
+        self.pose_subscriber = rospy.Subscriber("/turtle1/pose", Pose, self.pose_callback)
+
+     def pose_callback(self,data):
+        self.pose.x = data.x
+        self.pose.y = data.y
+        self.pose.theta = data.theta
+
+    def show_pose(self):
+        while not rospy.is_shutdown():
+            print("(x,y,theta)=("str(self.pose.x)+","+str(self.pose.y)+","+str(self.pose.theta)+")")
+            self.rate.sleep()
+
+if __name__ == '__main__':
+
+    turtle = Turtle()
+    turtle.show_pose()
+
+```
+
+### 4.2 Comunicação Sincrona
 
 
 ## 5 Problema
