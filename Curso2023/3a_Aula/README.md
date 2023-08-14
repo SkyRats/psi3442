@@ -154,17 +154,26 @@ comandar usa velocidade.
 
 Feito isso, entenda como são as messages dos topic que você encontrou e os tipos e subtipos das messages.
 
-Com isso, agora é possível importar da biblioteca rospy as funcionalidades que permitirão implementar
-um script python que se comunique com o node turtlesim através do ROS.
-
 Note que o comando
 ```
 rostopic info /turtle1/pose
 ```
 retorna no terminal
 ```
+aluno@aluno-VirtualBox:~$ rostopic info /turtle1/pose
+Type: turtlesim/Pose
+
+Publishers:
+ * /turtlesim (http://aluno-VirtualBox:46137/)
+
+Subscribers: None
 
 ```
+De onde vemos que o tipo (type) da mensagem é turtlesim
+E o subtipo da mensagem é Pose
+
+Com isso, agora é possível importar da biblioteca rospy as funcionalidades que permitirão implementar
+um script python que se comunique com o node turtlesim através do ROS.
 
 ```
 import rospy
