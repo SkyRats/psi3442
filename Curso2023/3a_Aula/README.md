@@ -365,7 +365,8 @@ Ligue o seu sistema robótico ao ROS;
 Consulte em quais topic o seu robo publica informações;
 Consulte em quais topic o seu robo está inscrito para receber informações;
 
-- salve `#f03c15`
+```diff
+- Atenção! Para aproveitar o material da melhor forma possível resolva o exercício sem olhar a resposta! Somente após a conclusão do exercício e após fazer os testes você pode olhar a resposta caso queria.
 
 ## 6 Solução via comunicação Assíncrona
 ### 6.1 Programa em Python
