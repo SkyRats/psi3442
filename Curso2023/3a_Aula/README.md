@@ -365,7 +365,7 @@ Ligue o seu sistema robótico ao ROS;
 Consulte em quais topic o seu robo publica informações;
 Consulte em quais topic o seu robo está inscrito para receber informações;
 
-- ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `#f03c15`
+- salve `#f03c15`
 
 ## 6 Solução via comunicação Assíncrona
 ### 6.1 Programa em Python
