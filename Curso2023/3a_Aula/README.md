@@ -376,6 +376,33 @@ Consulte em quais topic o seu robo está inscrito para receber informações;
 ### 6.1 Programa em Python
 [Resposta Assíncrona aqui](https://github.com/SkyRats/psi3442/blob/master/Curso2023/3a_Aula/Respostas/turtle_go_topic.py)
 ### 7.2 Execução do programa
+Terminal 1
+```
+roscore
+```
+Terminal 2
+```
+rosrun turtlesim turtlesim_node
+```
+Terminal 3
+```
+rosrun turtle_control turtle_go_topic.py
+```
 ## 8 Solução via comunicação Síncrona
 ### 8.1 Programa em Python
+vide seção 4.2 dessa atividade
+
+[Resposta Síncrona aqui](https://github.com/SkyRats/psi3442/blob/master/Curso2023/3a_Aula/Respostas/turtle_go_topic.py)
 ### 8.2 Execução do programa
+Terminal 1
+```
+roscore
+```
+Terminal 2
+```
+rosrun turtlesim turtlesim_node
+```
+Terminal 3
+```
+rosrun turtle_control turtle_go_service.py
+```
