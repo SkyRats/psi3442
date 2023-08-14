@@ -369,24 +369,12 @@ Consulte em quais topic o seu robo está inscrito para receber informações;
 - Atenção!
 - Para aproveitar o material da melhor forma possível
 - resolva o exercício sem olhar a resposta!
-
 - Somente consulte a resposta após testar e finalizar o exercício
 ```
 
 ## 6 Solução via comunicação Assíncrona
 ### 6.1 Programa em Python
-```python
-
-```
-
-```
-```
-
-```
-```
-
-```
-```
+[Resposta Assíncrona aqui](https://github.com/SkyRats/psi3442/blob/master/Curso2023/3a_Aula/Respostas/turtle_go_topic.py)
 ### 7.2 Execução do programa
 ## 8 Solução via comunicação Síncrona
 ### 8.1 Programa em Python
