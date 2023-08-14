@@ -352,6 +352,8 @@ if __name__ == "__main__":
  
 ```
 
+Para entender o que faz cada parte do programa veja [Código comentado](https://github.com/SkyRats/psi3442/blob/master/Curso2023/3a_Aula/Respostas/turtle_go_service.py).
+
 ## 5 Problema
 Escreva um script no arquivo ```turtle_go_topic.py``` criando uma rotina que quando chamada através do comando 
 
@@ -392,7 +394,7 @@ rosrun turtle_control turtle_go_topic.py
 ### 8.1 Programa em Python
 vide seção 4.2 dessa atividade
 
-[Resposta Síncrona aqui](https://github.com/SkyRats/psi3442/blob/master/Curso2023/3a_Aula/Respostas/turtle_go_topic.py)
+[Resposta Síncrona aqui](https://github.com/SkyRats/psi3442/blob/master/Curso2023/3a_Aula/Respostas/turtle_go_service.py)
 ### 8.2 Execução do programa
 Terminal 1
 ```
