@@ -149,7 +149,7 @@ Consulte em quais topic o seu robo está inscrito para receber informações;
 
 ## 6 Solução via comunicação Assíncrona
 ### 6.1 Programa em Python
-```
+```python
 #!/usr/bin/env python
 
 #Libraries
