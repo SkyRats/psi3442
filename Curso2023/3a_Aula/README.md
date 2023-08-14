@@ -230,6 +230,54 @@ if __name__ == '__main__':
 
 ### 4.2 Comunicação Sincrona
 
+posição do turtle1 -> liste os service do node turtlesim e procure um cujo nome remeta a alteração de posição do turtle1
+
+```
+aluno@aluno-VirtualBox:~$ rosnode list
+/rosout
+/turtlesim
+aluno@aluno-VirtualBox:~$ rosnode info /turtlesim
+--------------------------------------------------------------------------------
+Node [/turtlesim]
+Publications:
+ * /rosout [rosgraph_msgs/Log]
+ * /turtle1/color_sensor [turtlesim/Color]
+ * /turtle1/pose [turtlesim/Pose]
+
+Subscriptions:
+ * /turtle1/cmd_vel [unknown type]
+
+Services:
+ * /clear
+ * /kill
+ * /reset
+ * /spawn
+ * /turtle1/set_pen
+ * /turtle1/teleport_absolute
+ * /turtle1/teleport_relative
+ * /turtlesim/get_loggers
+ * /turtlesim/set_logger_level
+
+
+contacting node http://aluno-VirtualBox:36609/ ...
+Pid: 10231
+Connections:
+ * topic: /rosout
+    * to: /rosout
+    * direction: outbound (46529 - 127.0.0.1:41620) [18]
+    * transport: TCPROS
+```
+
+O service ```/turtle1/teleport_absolute``` parece ser o que estamos procurando.
+
+Na [roswiki](http://wiki.ros.org/turtlesim) procurando a descrição desse service e lendo a descrição contida na documentação confirmamos que
+esse service é de fato o que queremos.
+
+Para realizar esse comando no python fazemos
+
+```
+ 
+```
 
 ## 5 Problema
 Escreva um script no arquivo ```turtle_go_topic.py``` criando uma rotina que quando chamada através do comando 
