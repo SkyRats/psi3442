@@ -245,6 +245,23 @@ Uma ferramenta importante para visualizar o que está acontecendo é o _rqt_grap
 
 Os _nodes_ são as elipses, os tópicos são os retângulos, e as setas indicam o fluxo de dados. Nesse caso, o /turtlesim publica mensagens no tópico /turtle1/pose, e um _node_ correspondendo ao nosso terminal com `rostopic echo` está inscrito nesse tópico.
 
+Terminal 1
+```
+roscore
+```
+Terminal 2
+```
+rosrun turtlesim turtlesim_node
+```
+Terminal 3
+```
+rostopic echo /turtle1/pose
+```
+Terminal 4
+```
+rqt_graph
+```
+
 ### 4.2 Comunicação Sincrona
 
 posição do turtle1 -> liste os service do node turtlesim e procure um cujo nome remeta a alteração de posição do turtle1
