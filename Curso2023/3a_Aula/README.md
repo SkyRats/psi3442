@@ -459,7 +459,7 @@ Seu comportamento por tanto se baseará em uma movimentação sincrona por meio 
 
 Donatello é outro membro do grupo. Sempre pronto para a ação ele segue Leonardo sempre indo para a posição (x-1,y-1) onde (x,y) é a posição de Leonardo. Assim, seu irmão tem espaço para batalhar contra os inimigos e Donatello sempre está lá para protege-lo. Donatello deve se mover observando assincronamente a movimentação de Leonardo por meio do topic de posição que contém as posição atual de Leonador. A movimentação de Donatello deve se dar publicando comandos de velocidade no topico de velocidade associado a movimentação de Donatello. O Donatello será comandado pelo script donatello.py 
 
-### 10 Exercício Brabo de verdade :sunglasses: :sunglasses:
+## 10 Exercício Ninja da robótica :sunglasses: :sunglasses:
 
 Altere o exercío 9 com as seguintes modificações em novos scripts conforme indicado a seguir.
 
