@@ -121,6 +121,15 @@ Utilize o service correto para criar uma tartaruga chamada Edson
 Planeje sua aplicação. Entenda o que o seu código irá fazer e faça uma decomposição funcional do problema de modo
 que cada parte mais simples do código resolva um subproblema de maneira que o script completo solucione o problema.
 
+Se o problema for complexo e você desejar resolvê-lo utilizando o ROS siga o procedimento:
+* Ligue o seu sistema robótico ao ROS;
+* Consulte em quais topic o seu robo publica informações;
+* Consulte em quais topic o seu robo está inscrito para receber informações;
+* Consulte os services disponíveis;
+* Elabore uma estratégia de como usar os topic/services disponíveis para operar o seu robô;
+* Sintetize seu projeto por meio scripts de comando;
+* Valide por simulações/testes práticos simples.
+
 Vamos entender isso por meio de um exemplo. Depois, abstraia o exemplo a seguir para sua aplicação, seja drone ou o que for.
 
 Exemplo: controlar a posição tartaruga turtle1 do simulador turtlesim (node turtlesim). 
@@ -227,6 +236,14 @@ if __name__ == '__main__':
     turtle.show_pose()
 
 ```
+
+#### 4.1.1 Vizualização gráfica via rqt_graph
+
+Uma ferramenta importante para visualizar o que está acontecendo é o _rqt_graph_. Executando `rqt_graph` em um terminal, vemos a seguinte tela:
+
+![rqt_graph](images/rqt_graph.png)
+
+Os _nodes_ são as elipses, os tópicos são os retângulos, e as setas indicam o fluxo de dados. Nesse caso, o /turtlesim publica mensagens no tópico /turtle1/pose, e um _node_ correspondendo ao nosso terminal com `rostopic echo` está inscrito nesse tópico.
 
 ### 4.2 Comunicação Sincrona
 
@@ -354,7 +371,7 @@ if __name__ == "__main__":
 
 Para entender o que faz cada parte do programa veja [Código comentado](https://github.com/SkyRats/psi3442/blob/master/Curso2023/3a_Aula/Respostas/turtle_go_service.py).
 
-## 5 Problema
+## 5 Problema (1)
 Escreva um script no arquivo ```turtle_go_topic.py``` criando uma rotina que quando chamada através do comando 
 
 ```
@@ -363,15 +380,10 @@ rosrun turtle_control turtle_go_topic.py
 
 Seu programa deve perguntar no terminal a um usuário coordenadas desejadas (x,y) de modo que a tartagura trutle1 vá para essa posição usando a comunicação assíncrona via topics.
 
-Ligue o seu sistema robótico ao ROS;
-Consulte em quais topic o seu robo publica informações;
-Consulte em quais topic o seu robo está inscrito para receber informações;
-
 ```diff
 - Atenção!
 - Para aproveitar o material da melhor forma possível
 - resolva o exercício sem olhar a resposta!
-- Somente consulte a resposta após testar e finalizar o exercício
 ```
 
 ## 6 Solução via comunicação Assíncrona
