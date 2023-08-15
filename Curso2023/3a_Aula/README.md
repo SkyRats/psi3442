@@ -438,12 +438,33 @@ Terminal 3
 rosrun turtle_control turtle_go_service.py
 ```
 
-## 9 Exercício PRO :sunglasses:
+## Importante :warning:
+
+O ROS é uma ferramenta e por tanto a melhor forma de aprender a mexer com ela é praticando, a final de contas ferramentas servem para serem usadas.
+
+O exercício 9 a seguir te ajudará a relembrar e fixar os conceitos da aula de hoje mas...
+
+Se você quer se tornar um ninja da robótica :monocle_face: :dagger: , o exercício 10 é essencial para você pois ele introduz conceitos de posicionamento que são fundamentasis para uma tartaruga ninja politécnica que almeja ganhar o mundo na área de robótica com sistemas embarcados!
+
+É hora de praticar!!!
+
+## 9 Exercício de fixação do conteúdo 
 
 [Contexto do exercício](https://pt.wikipedia.org/wiki/Tartarugas_Ninja)
 
-Crie um pacote ROS onde uma tartaruga chamada Donatello :turtle: segue outra tartaruga chamada Leonardo :turtle:
+Crie um pacote ROS chamado tartarugas_ninja onde uma tartaruga chamada Donatello :turtle: segue outra tartaruga chamada Leonardo :turtle:
 
-Leonardo é o Líder do grupo. Ele se move de maneira determinada e sempre liderando o grupo.
-Seu comportamento por tanto se baseará no service teleport_absolute e a sua posição deve ser gerada por um gerador aleatório de números do python. As posições de Leonardo devem ser (x,y,0) onde x,y $\in$ [1,8]
+Leonardo é o Líder do grupo. Ele se move de maneira determinada e sempre liderando o grupo. 
+Seu comportamento por tanto se baseará em uma movimentação sincrona por meio do service teleport_absolute e a sua posição deve ser gerada por um gerador aleatório de números inteiros do python. As posições de Leonardo devem ser (x,y,0) onde x,y $\in$ [1,10]. A posição de Leonardo deve ser atualizada uma vez a cada 5s. O Leonardo será comandado pelo script leonardo.py
+
+Donatello é outro membro do grupo. Sempre pronto para a ação ele segue Leonardo sempre indo para a posição (x-1,y-1) onde (x,y) é a posição de Leonardo. Assim, seu irmão tem espaço para batalhar contra os inimigos e Donatello sempre está lá para protege-lo. Donatello deve se mover observando assincronamente a movimentação de Leonardo por meio do topic de posição que contém as posição atual de Leonador. A movimentação de Donatello deve se dar publicando comandos de velocidade no topico de velocidade associado a movimentação de Donatello. O Donatello será comandado pelo script donatello.py 
+
+### 10 Exercício ULTRA-PRO-ADVANCED :sunglasses: :sunglasses:
+
+Leonardo :turtle:
+calcule e aplique o angulo theta de Leonardo para que ele esteja sempre posicionado para paralelamente a sua trajetória, isto é, para que saindo de (x0,y0) ele chegue em (x1,y1) sempre olhando para frente, isto é, no sentido oposto do vetor (x1,y1)-(x0,y0). O Leonardo será comandado pelo script leonardo_lider_nato.py
+
+Donatello :turtle:
+Além disso, introduza uma função extra de rotação no Donatello para que ele quando ele chegue na coordenada (x-1,y-1) ele realize uma rotação em torno do próprio centro de massa a mais de modo que Donatello curba a retaguarda de Leonardo, isto é, de modo que Donatello fique de costas para Leonardo. O Donatello será comandado pelo script donatello_fiel_escudeiro.py
+
 
