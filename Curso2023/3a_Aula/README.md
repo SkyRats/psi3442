@@ -459,7 +459,7 @@ Seu comportamento por tanto se baseará em uma movimentação sincrona por meio 
 
 Donatello é outro membro do grupo. Sempre pronto para a ação ele segue Leonardo sempre indo para a posição (x-1,y-1) onde (x,y) é a posição de Leonardo. Assim, seu irmão tem espaço para batalhar contra os inimigos e Donatello sempre está lá para protege-lo. Donatello deve se mover observando assincronamente a movimentação de Leonardo por meio do topic de posição que contém as posição atual de Leonador. A movimentação de Donatello deve se dar publicando comandos de velocidade no topico de velocidade associado a movimentação de Donatello. O Donatello será comandado pelo script donatello.py 
 
-### 10 Exercício ULTRA-PRO-ADVANCED :sunglasses: :sunglasses:
+### 10 Exercício Brabo de verdade :sunglasses: :sunglasses:
 
 Altere o exercío 9 com as seguintes modificações em novos scripts conforme indicado a seguir.
 
@@ -467,6 +467,6 @@ Leonardo :turtle: :
 calcule e aplique o angulo theta de Leonardo para que ele esteja sempre posicionado para paralelamente a sua trajetória, isto é, para que saindo de (x0,y0) ele chegue em (x1,y1) sempre olhando para frente, isto é, no sentido oposto do vetor (x1,y1)-(x0,y0). O Leonardo será comandado pelo script leonardo_lider_nato.py
 
 Donatello :turtle: :
-Além disso, introduza uma função extra de rotação no Donatello para que ele quando ele chegue na coordenada (x-1,y-1) ele realize uma rotação em torno do próprio centro de massa a mais de modo que Donatello curba a retaguarda de Leonardo, isto é, de modo que Donatello fique de costas para Leonardo. O Donatello será comandado pelo script donatello_fiel_escudeiro.py
+introduza uma função extra de rotação no Donatello para que ele quando ele chegue na coordenada (x-1,y-1) ele realize uma rotação em torno do próprio centro de massa a mais de modo que Donatello curba a retaguarda de Leonardo, isto é, de modo que Donatello fique de costas para Leonardo. O Donatello será comandado pelo script donatello_fiel_escudeiro.py
 
 
