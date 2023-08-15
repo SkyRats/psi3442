@@ -461,10 +461,12 @@ Donatello é outro membro do grupo. Sempre pronto para a ação ele segue Leonar
 
 ### 10 Exercício ULTRA-PRO-ADVANCED :sunglasses: :sunglasses:
 
-Leonardo :turtle:
+Altere o exercío 9 com as seguintes modificações em novos scripts conforme indicado a seguir.
+
+Leonardo :turtle: :
 calcule e aplique o angulo theta de Leonardo para que ele esteja sempre posicionado para paralelamente a sua trajetória, isto é, para que saindo de (x0,y0) ele chegue em (x1,y1) sempre olhando para frente, isto é, no sentido oposto do vetor (x1,y1)-(x0,y0). O Leonardo será comandado pelo script leonardo_lider_nato.py
 
-Donatello :turtle:
+Donatello :turtle: :
 Além disso, introduza uma função extra de rotação no Donatello para que ele quando ele chegue na coordenada (x-1,y-1) ele realize uma rotação em torno do próprio centro de massa a mais de modo que Donatello curba a retaguarda de Leonardo, isto é, de modo que Donatello fique de costas para Leonardo. O Donatello será comandado pelo script donatello_fiel_escudeiro.py
 
 
