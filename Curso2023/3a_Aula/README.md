@@ -437,3 +437,13 @@ Terminal 3
 ```
 rosrun turtle_control turtle_go_service.py
 ```
+
+## 9 Exercício PRO :sunglasses:
+
+[Contexto do exercício](https://pt.wikipedia.org/wiki/Tartarugas_Ninja)
+
+Crie um pacote ROS onde uma tartaruga chamada Donatello :turtle: segue outra tartaruga chamada Leonardo :turtle:
+
+Leonardo é o Líder do grupo. Ele se move de maneira determinada e sempre liderando o grupo.
+Seu comportamento por tanto se baseará no service teleport_absolute e a sua posição deve ser gerada por um gerador aleatório de números do python. As posições de Leonardo devem ser (x,y,0) onde x,y $/in$ [1,8]
+
