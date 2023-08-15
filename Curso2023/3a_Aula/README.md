@@ -469,4 +469,5 @@ calcule e aplique o angulo theta de Leonardo para que ele esteja sempre posicion
 Donatello :turtle: :
 introduza uma função extra de rotação no Donatello para que ele quando ele chegue na coordenada (x-1,y-1) ele realize uma rotação em torno do próprio centro de massa a mais de modo que Donatello curba a retaguarda de Leonardo, isto é, de modo que Donatello fique de costas para Leonardo. O Donatello será comandado pelo script donatello_fiel_escudeiro.py
 
+![tartarugasninja](https://github.com/SkyRats/psi3442/blob/master/Curso2023/3a_Aula/images/gifs-de-tartarugas-ninjas-36.gif)
 
