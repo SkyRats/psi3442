@@ -433,6 +433,10 @@ Para entender o que faz cada parte do programa veja [Código comentado](https://
 ## 5 Exercício
 Escreva um script no arquivo ```turtle_go_topic.py``` criando uma rotina que quando chamada através do comando 
 
+## Importante :warning:
+
+O ROS Noetic foi desenvolvido para python3. Porém, o comando rosrun foi desenvolvido na época do python2. O comando rosrun depende do rospy que por sua vez depende de um pacote do python chamado rospkg. Em resumo, há conflitos importantes entre o ROS Noetic e o comando rosrun. Existem diversas soluções para o problema na internet, porém nem sempre funcionam em todas as máquinas. Sendo assim, use os comando
+
 ```
 rosrun turtle_control turtle_go_topic.py
 ```
