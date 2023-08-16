@@ -437,8 +437,14 @@ Escreva um script no arquivo ```turtle_go_topic.py``` criando uma rotina que qua
 
 O ROS Noetic foi desenvolvido para python3. Porém, o comando rosrun foi desenvolvido na época do python2. O comando rosrun depende do rospy que por sua vez depende de um pacote do python chamado rospkg. Em resumo, há conflitos importantes entre o ROS Noetic e o comando rosrun. Existem diversas soluções para o problema na internet, porém nem sempre funcionam em todas as máquinas. Sendo assim, use os comando
 
+Pode ser usado no ROS Melodic (na Máquina virtual da disciplina)
 ```
 rosrun turtle_control turtle_go_topic.py
+```
+Pode ser usado no ROS Noetic/Debian10 (na CPU Labrador da disciplina)
+```
+cd ~/ros_workspaces/turtle_ws/src/turtle_control/scripts
+rosrun python3 turtle_go_topic.py
 ```
 
 Seu programa deve perguntar no terminal a um usuário coordenadas desejadas (x,y) de modo que a tartagura trutle1 vá para essa posição usando a comunicação assíncrona via topics.
@@ -462,8 +468,15 @@ Terminal 2
 rosrun turtlesim turtlesim_node
 ```
 Terminal 3
+
+Pode ser usado no ROS Melodic (na Máquina virtual da disciplina)
 ```
 rosrun turtle_control turtle_go_topic.py
+```
+Pode ser usado no ROS Noetic/Debian10 (na CPU Labrador da disciplina)
+```
+cd ~/ros_workspaces/turtle_ws/src/turtle_control/scripts
+rosrun python3 turtle_go_topic.py
 ```
 ## 8 Solução via comunicação Síncrona
 ### 8.1 Programa em Python
@@ -480,8 +493,15 @@ Terminal 2
 rosrun turtlesim turtlesim_node
 ```
 Terminal 3
+
+Pode ser usado no ROS Melodic (na Máquina virtual da disciplina)
 ```
-rosrun turtle_control turtle_go_service.py
+rosrun turtle_control turtle_go_topic.py
+```
+Pode ser usado no ROS Noetic/Debian10 (na CPU Labrador da disciplina)
+```
+cd ~/ros_workspaces/turtle_ws/src/turtle_control/scripts
+rosrun python3 turtle_go_topic.py
 ```
 
 ## Importante :warning:
