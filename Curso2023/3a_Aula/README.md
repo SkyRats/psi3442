@@ -235,6 +235,7 @@ ou
 Em um terminal linux, use o comando a seguir para verificar sua versão do python.  
 ```
 python -V
+python3 -V
 ```
 
 ### Código em python
@@ -429,7 +430,7 @@ if __name__ == "__main__":
 
 Para entender o que faz cada parte do programa veja [Código comentado](https://github.com/SkyRats/psi3442/blob/master/Curso2023/3a_Aula/Respostas/turtle_go_service.py).
 
-## 5 Problema (1)
+## 5 Exercício
 Escreva um script no arquivo ```turtle_go_topic.py``` criando uma rotina que quando chamada através do comando 
 
 ```
