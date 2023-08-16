@@ -205,6 +205,25 @@ from turtlesim.msg import Pose
 Agora vamos criar um script simples que é capaz de ler as informações do topic /turtle1/pose
 Para ver se o script funciona, iremos mostrar o resultado da leitura na tela.
 
+### Observação Importante: Shebang line
+
+Esses comandos que aparecem no início dos script python são chamados shebang line. Você pode usar ```#!/usr/bin/env``` de modo que o interpretador usado será o primeiro no seu ambiente do ```$PATH```. Ou, se desejar especificar uma versão específica do python utilize:
+
+```
+#!/usr/bin/env python
+```
+ou
+```
+#!/usr/bin/env python3
+```
+
+Em um terminal linux, use o comando a seguir para verificar sua versão do python.  
+```
+python -V
+```
+
+### Código em python
+
 ```python
 #!/usr/bin/env python
 
