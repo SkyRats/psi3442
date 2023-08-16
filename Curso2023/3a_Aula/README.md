@@ -79,6 +79,21 @@ cd ~/ros_workspaces/turtle_ws/src/turtle_control/scripts
 chmod +x turtle_go_topic.py
 chmod +x turtle_go_service.py
 ```
+
+Finalmente, habilite o package. Sem o comando ```source devel/setup.bash``` seu package não será encontrado pelo comando ```rosrun```. Uma dica, use ```roscd nome_do_package``` para mudar diretamente para o diretório do package a partir de qualquer diretório.
+
+Para habilitar o package 
+
+```
+cd ~/ros_workspaces/turtle_ws/
+source devel/setup.bash
+```
+
+Teste se funcionou. O comando a seguir deve mudar o seu diretório para o caminho do package ```turtle_control``` sem retornar erros.
+```
+roscd turtle_control
+```
+
 ## 3 Explorando o ROS com TurtleSim
 
 ### 3.1 Consulta de Tópicos/Services via comandos no terminal
