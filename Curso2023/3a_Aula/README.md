@@ -67,10 +67,17 @@ do pakge criado. A sequência de comandos a seguir realiza essa operação:
 cd ~/ros_workspaces/turtle_ws/src/turtle_control
 mkdir scripts
 ```
-Crie um .py no diretório ```scripts``` chamado ```turtle_go_topic.py```
+Crie um .py no diretório ```scripts``` chamado ```turtle_go_topic.py``` e outro chamado ```turtle_go_service.py```
+
+```
+touch turtle_go_topic.py
+touch turtle_go_service.py
+```
+Em seguida, habilite os .py para serem executáveis
 ```
 cd ~/ros_workspaces/turtle_ws/src/turtle_control/scripts
 chmod + x turtle_go_topic.py
+chmod + x turtle_go_service.py
 ```
 ## 3 Explorando o ROS com TurtleSim
 
