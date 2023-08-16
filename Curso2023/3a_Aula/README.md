@@ -114,7 +114,7 @@ Liste os services disponíveis
 ```
 rosservice list
 rosservice info /turtle1/teleport_absolute
-roservice call /turtle1/teleport_absolute 7 7 90
+rosservice call /turtle1/teleport_absolute 7 7 90
 ```
 
 Exercício simples:
