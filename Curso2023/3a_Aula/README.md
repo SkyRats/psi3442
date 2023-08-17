@@ -35,7 +35,7 @@ mkdir -p ros_workspaces/turtle_ws/src
 cd ros_workspaces/turtle_ws/
 ```
 ```
-catkin build - j2
+catkin build -j2
 ```
 ```
 nano ~/.bashrc
@@ -86,6 +86,7 @@ Para habilitar o package
 
 ```
 cd ~/ros_workspaces/turtle_ws/
+catkin build -j2
 source devel/setup.bash
 ```
 
