@@ -266,6 +266,22 @@ Os significados desses parâmetros podem ser encontrados na tabela do [PX4 User 
 
 Para alterar esses parâmetros do firmware use o [QgroundControl](https://docs.qgroundcontrol.com/master/en/getting_started/download_and_install.html) e siga as instruções descritas na [PX4 User Guide/advanced_config/parameters](https://docs.px4.io/main/en/advanced_config/parameters.html).
 
+## Troubleshoot VM da disciplina
+
+### O Comando catkin build falha e o worspace que aparece no relatório do comando não é o workspace indicado por você
+
+Ao usar o comando ```catkin build -j2``` o sistema tenta dar build na px4 e ou em um workspace que não foi aquele designado por você.
+
+Solução: tente rodar
+```
+cd  #go to home dir
+ls -la | grep catkin  #cheak if there is a dir named *.catkin_tools*
+```
+veja se há arquivos .catkin_tools após rodar esse comando. Se sim, isso é o problema. Utilize o comando a seguir para remove-lo.
+```
+rm -r .catkin_tools
+```
+
 ## Exercício para aprofundamento do aprendizado
 * Faça um algorítimo para que o dorne realize uma trajetória no formato de um quadrado
 * Altere a sintonia dos controladores PID no firmware PX4 para eliminar o overshoot, isto é, imponha regime supercrítico (preferencialmente crítico)
