@@ -2,6 +2,7 @@
 
 ## Install ROS Debian 10 in Labrador - CITI USP
 
+```
     1  roscore
     2  python -V
     3  python3 -V
@@ -102,5 +103,5 @@
    98  cd
    99  rosrun turtle_control turtle_go_topic.py 
   100  history
-
+```
 
