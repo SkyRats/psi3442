@@ -40,11 +40,14 @@ catkin build -j2
 ```
 nano ~/.bashrc
 ```
-No nano (editor de texto sem mouse), utililze a seta para baixo e des¸ca at´e a ultima
+No nano (editor de texto sem mouse), utililze a seta para baixo e desça até a ultima
 linha e acrescente se não existir:
 
 ```
 source /opt/ros/melodic/setup.bash
+source /opt/ros/noetic/setup.bash
+```
+```
 source ~/ros_workspaces/turtle_ws/devel/setup.bash
 ```
 Saia do nano utilizando: ctrl + x
