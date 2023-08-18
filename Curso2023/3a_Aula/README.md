@@ -45,8 +45,12 @@ linha e acrescente se não existir:
 
 ```
 source /opt/ros/melodic/setup.bash
+```
+ou
+```
 source /opt/ros/noetic/setup.bash
 ```
+e
 ```
 source ~/ros_workspaces/turtle_ws/devel/setup.bash
 ```
