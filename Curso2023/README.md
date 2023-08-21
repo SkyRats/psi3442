@@ -15,6 +15,20 @@ Conteúdo das Aulas:
 
 ## 2a_Aula : Simulação de sistemas embarcados: TurtleSIm [T]
 
+* Motivação para utilização do ROS
+* Definição prática de ROS
+* Exemplo: ROS
+* Comunicação Assíncrona
+  Topics
+  Publisher/Subscriber
+* Comunicação Síncrona
+  Services
+* Definição Formal de ROS
+* Exemplo TurtleSim
+* Como usar a documentação para construir o exemplo
+* Como rodar um controle de posição em python
+
+
 ## 3a_Aula : Simulação de sistemas embarcados: TurtleSIm [P]
 
 ## 4a_Aula : Simulação de sistemas embarcados: Drone: PX4+Mavros+Gazebo [T]
