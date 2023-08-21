@@ -24,6 +24,41 @@ ls
 ```
 Prefira usar ```tab``` para completar os comandos, assim você digita mais rápido e certo.
 
+## Lista de comandos ROS
+
+Nodes
+```
+rosnode list
+rosnode info [nome do node]
+rosrun [nome do package] [nome do node]
+```
+
+Topics
+```
+rostopic list
+rostopic info /nome_topico
+rostopic echo /nome_topico
+rostopic pub /nome_topic [tipo de mensagem] [args]
+rostopic find [tipo de mensagem]
+```
+
+```
+rostopic find std_msg/String
+```
+
+Messages
+```
+rosmsg list
+rosmsg show [tipo de mensagem]
+```
+
+Services
+```
+rosservice list
+rostopic info /nome_service
+rosservice call /nome_service [args]
+```
+
 
 ## 1 Criando ROS Workspace
 
