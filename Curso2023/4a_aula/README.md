@@ -320,6 +320,10 @@ Se escolher usar a comunicação via services, utilize os services adequados par
 
 * Altere a sintonia dos controladores PID no firmware PX4 para eliminar (reduzir o máximo possível) o overshoot, isto é, imponha regime supercrítico (preferencialmente crítico)
 
+
+### Vídeo-exemplo do exercício
+O vídeo no [link]() demonstra como sua simulação deve se parecer. No vídeo, são introduzidos detalhes extra sobre as estratégias de controle usadas: Model-based control e Model-Free control. Um pouco disso será discutido na aula sobre controle de drones na dsiciplina.
+
   
 ## Bonus: Robotic Developer Level 😎🤖🛩️
 Imponha uma trajetoria polinomial para que o drone passe em cada vértice com velocidade não nula. Referência: Robótica, 3ª Edição
