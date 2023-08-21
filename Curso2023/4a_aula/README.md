@@ -322,7 +322,7 @@ Se escolher usar a comunicação via services, utilize os services adequados par
 
 
 ### Vídeo-exemplo do exercício
-O vídeo no [link]() demonstra como sua simulação deve se parecer. No vídeo, são introduzidos detalhes extra sobre as estratégias de controle usadas: Model-based control e Model-Free control. Um pouco disso será discutido na aula sobre controle de drones na dsiciplina.
+O vídeo no [link](https://www.youtube.com/watch?v=Htvvy1nY8C8&t=30s) demonstra como sua simulação deve se parecer. No vídeo, são introduzidos detalhes extra sobre as estratégias de controle usadas: Model-based control e Model-Free control. Um pouco disso será discutido na aula sobre controle de drones na dsiciplina. Note que o conteúdo do vídeo não foi preparado para está disciplina. O artigo relacionado ao vídeo será publicado na Induscon23 caso seja do seu interesse entender melhor o conteúdo do vídeo que discute controle SISO (Single Input - Single Output).
 
   
 ## Bonus: Robotic Developer Level 😎🤖🛩️
