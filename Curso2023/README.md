@@ -25,7 +25,9 @@ Conteúdo das Aulas:
   Publisher/Subscriber
   
 * Comunicação Síncrona
+  
   Services
+
 * Definição Formal de ROS
 * Exemplo TurtleSim
 * Como usar a documentação para construir o exemplo
@@ -33,10 +35,19 @@ Conteúdo das Aulas:
 
 
 ## 3a_Aula : Simulação de sistemas embarcados: TurtleSIm [P]
+Aula prática na Caninos-Labrador: CPU produzida no CITI-USP (Centro Interdisciplinar de Tecnologias Interativas)
 
 ## 4a_Aula : Simulação de sistemas embarcados: Drone: PX4+Mavros+Gazebo [T]
 
+* Complexidade de sistemas Ciber-físicos
+* FCU: Pixhawk
+* FIrmware: PX4
+* Middleware e pacotes: ROS + MAVROS
+* Protocolo de Comunicação: MAVLINK
+* Simulador de sistemas físicos: GAZBO
+
 ## 5a_Aula : Simulação de sistemas embarcados: Drone: PX4+Mavros+Gazebo [P]
+Aula prática de simulação na máquina virtual da dsiciplina
 
 ## 6a_Aula : Sensores Gazebo [P]
 
