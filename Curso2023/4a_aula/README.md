@@ -305,9 +305,20 @@ veja se há arquivos .catkin_tools após rodar esse comando. Se sim, isso é o p
 rm -r .catkin_tools
 ```
 
-## Exercício para aprofundamento do aprendizado
+## Exercício para aprofundamento do aprendizado 📖 🧑‍🎓 👩‍🎓 🤖
 * Faça um algorítimo para que o dorne realize uma trajetória no formato de um quadrado
-* Altere a sintonia dos controladores PID no firmware PX4 para eliminar o overshoot, isto é, imponha regime supercrítico (preferencialmente crítico)
+
+Investigue os topics e/ou services disponíveis pela mavros. Utilize aqueles que julgar necessários para comandar o drone de modo a impor a trajetória quadrada.
+
+### Solução via topics
+Se escolher usar a comunicação via topics, use um controle P (Proporcional) no plano horizontal (x,y) e um controle PI (Proporcional Integral) para o controle da altura (z).
+
+Ajuste os ganhos dos controladores no script para eliminar (reduzir o máximo possível) o overshoot, isto é, imponha regime supercrítico (preferencialmente crítico)
+
+### Solução via services
+Se escolher usar a comunicação via services, utilize os services adequados para impor um quadrado. Como você estará usando services, seria interessante imprimir o status da missão no terminal.
+
+* Altere a sintonia dos controladores PID no firmware PX4 para eliminar (reduzir o máximo possível) o overshoot, isto é, imponha regime supercrítico (preferencialmente crítico)
 * Bonus: Imponha uma trajetoria polinomial para que o drone passe em cada vértice com velocidade não nula. Referência: Robótica, 3ª Edição
 John J. Craig - Capitulo 7: Geração de Trajetórias.
 
