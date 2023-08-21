@@ -19,8 +19,11 @@ Conteúdo das Aulas:
 * Definição prática de ROS
 * Exemplo: ROS
 * Comunicação Assíncrona
+  
   Topics
+  
   Publisher/Subscriber
+  
 * Comunicação Síncrona
   Services
 * Definição Formal de ROS
