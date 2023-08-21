@@ -245,10 +245,31 @@ else:
 
 Finalmente, realizamos mais comandos de movimentação para que o drone realize a atividade desejada. Note que para pousá-lo, utilizamos o modo AUTO.LAND (pouso automático). Fazemos isso pois nem sempre o chão está em $z=0$, devido a irregularidades no relevo e erros na medição de altitude. Esse modo lida com esses problemas, descendo o drone até que ele atinja o chão.
 
-### 4.4. Executando o código
+### 4.4. Criando o ambiente de desenvolvimento
 
-Para executar o código, utilizamos o comando 
+Crie um [workspace](https://github.com/SkyRats/psi3442/tree/master/Curso2023/3a_Aula#1-criando-ros-workspace) chamado drone_ws.
 
+Em seguida crie, dentro do workspace drone_ws, um [ros packge](https://github.com/SkyRats/psi3442/tree/master/Curso2023/3a_Aula#2-criando-ros-package) chamado takeoffandlanding_demo.
+
+Dentro do packge crie um script python chamado ```takeoff_land.py```
+que cotenha as instruções para armar, decolar e pousar um drone do gazebo provido pela simulação software in the loop do firmware PX4 com o gazebo e a MAVROS.
+
+Dica: Use os links fornecidos nessa seção para ajudar a criar o ambiente de programação compatível com o ROS.
+
+
+### 4.5. Executando o código
+
+Terminal 1
+```bash
+cd src/Firmware/
+make px4_sitl gazebo
+```
+Terminal 2
+```bash
+roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"
+```
+Terminal 3
+Para executar o código, utilizamos o comando
 ```bash
 rosrun mav_control takeoff_land.py
 ```
