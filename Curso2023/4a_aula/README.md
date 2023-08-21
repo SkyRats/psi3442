@@ -259,6 +259,8 @@ Dica: Use os links fornecidos nessa seção para ajudar a criar o ambiente de pr
 
 ### 4.5. Executando o código
 
+Uma explicação detalhada do passo a passo e da documentação necessária para rodar a simulação encontra-se nesse [link](https://docs.px4.io/main/en/simulation/ros_interface.html).
+
 Terminal 1
 ```bash
 cd src/Firmware/
