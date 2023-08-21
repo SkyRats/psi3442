@@ -26,14 +26,21 @@ Prefira usar ```tab``` para completar os comandos, assim você digita mais rápi
 
 ## Lista de comandos ROS
 
-Nodes
+### Nodes
 ```
 rosnode list
 rosnode info [nome do node]
 rosrun [nome do package] [nome do node]
 ```
+Exemplo
+```
+rosnode list
+rosnode info /rosout
+rosrun turtlesim turtlesim_node
 
-Topics
+```
+
+### Topics
 ```
 rostopic list
 rostopic info /nome_topico
@@ -41,22 +48,37 @@ rostopic echo /nome_topico
 rostopic pub /nome_topic [tipo de mensagem] [args]
 rostopic find [tipo de mensagem]
 ```
-
+Exemplo
 ```
+rostopic list
+rostopic info /turtle1/pose
+rostopic echo /turtle1/pose
 rostopic find std_msg/String
 ```
 
-Messages
+
+### Messages
 ```
 rosmsg list
 rosmsg show [tipo de mensagem]
 ```
+Exemplo
+```
+rosmsg list
+rosmsg show sensor_msgs/Image
+```
 
-Services
+### Services
 ```
 rosservice list
 rostopic info /nome_service
 rosservice call /nome_service [args]
+```
+Exemplo
+```
+rosservice list
+rosservice info /turtle1/teleport_absolute
+rosservice call /turtle1/teleport_absolute 1 1 0
 ```
 
 
