@@ -75,5 +75,16 @@ Now you are free to tweak any of the model values in the SDF file and any of the
 
 You can launch SITL with your model with “make px4_sitl gazebo_my_vehicle” 
 
+## Referencias
 
+Parte 1
 
+https://discuss.px4.io/t/create-custom-model-for-sitl/6700/3
+
+https://classic.gazebosim.org/tutorials?tut=build_model
+
+https://github.com/PX4/PX4-Autopilot/tree/main/ROMFS/px4fmu_common/init.d-posix/airframes
+
+https://docs.px4.io/main/en/dev_airframes/adding_a_new_frame.html
+
+https://github.com/PX4/PX4-SITL_gazebo-classic/issues/855
