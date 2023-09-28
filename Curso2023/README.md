@@ -64,14 +64,25 @@ Aula prática de simulação na máquina virtual da dsiciplina
 ## Calendário
 
 1ª  aula: Apresentação de Sistemas Embarcados 
+
 2ª  aula: ROS: Robotic Operating System [T]
+
 3ª  aula: ROS: Robotic Operating System [P]
+
 4ª  aula: ROS: Robotic Operating System [P]
+
 5ª  aula: Sistemas Embarcados: Drone: Desafios+PX4+Mavros+Gazebo [T]
+
 6ª  aula: Sistemas Embarcados: Drone: Desafios+PX4+Mavros+Gazebo [T]
+
 7ª  aula: Simulação de sistemas embarcados e Controle: Gazebo+PID [T]
+
 8ª  aula: Projeto de Sistemas Embarcados aplicado ao projeto da disciplina [T]
+
 9ª  projeto: Análise do problema, proposta de solução e adequação ao orçamento [P]
+
 10ª projeto: Desenvolvimento do algorítimo-solução e custumização dos sensores [P]
+
 11ª projeto: Desenvolvimento do algorítimo-solução e custumização dos sensores [P]
+
 12ª projeto: Desenvolvimento do algorítimo-solução e custumização dos sensores [P]
