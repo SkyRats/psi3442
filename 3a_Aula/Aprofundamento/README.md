@@ -167,6 +167,11 @@ $u_{derivativa} = \text{filtro}(\cfrac{dy(t)}{dt})$
 
 Como controlaremos as coordenadas x,y,z precisaremos de três controles PID operando conjuntamente (desprezaremos o controle de rotação do drone).
 Logo será nescessário a criação de uma classe de controle que possa ser instânciada multiplas vezes.
+
+Matematematicamente, no domínio do tempo discreto o controle PID é implementado da seguinte maneira:
+
+$u[n] = saturation(K_p)$
+
 Em python, uma forma de implementar isso é:
 
 ```python
