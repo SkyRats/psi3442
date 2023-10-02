@@ -4,6 +4,9 @@ Bem vindos a página do Curso PSI3442 edição 2023!
 Conteúdo das Aulas:
 
 ## 1a_Aula : Apresentação de Sistemas Embarcados 
+
+Aulas 1 e 2
+
 * Sistemas Embarcados
 *  Sistemas Ciber-físicos
 *  Drone quadrotor
@@ -14,6 +17,8 @@ Conteúdo das Aulas:
 * Componentes   
 
 ## 2a_Aula : Simulação de sistemas embarcados: TurtleSIm [T]
+
+Aulas 3 e 4
 
 * Motivação para utilização do ROS
 * Definição prática de ROS
@@ -49,12 +54,11 @@ Aula prática na Caninos-Labrador: CPU produzida no CITI-USP (Centro Interdiscip
 ## 5a_Aula : Simulação de sistemas embarcados: Drone: PX4+Mavros+Gazebo [P]
 Aula prática de simulação na máquina virtual da dsiciplina
 
-## 6a_Aula : Sensores Gazebo [P]
+## 6a_Aula : Criando simulação no Gazebo [P]
 
 ## 7a_Aula : Projeto de Sistemas Ciberfísicos [P]
 
 ## 8a_Aula : Traduzir requisitos de desempenho em algoritmos de controle [T] 
-
 
 ## 9a_Aula : Traduzir requisitos de desempenho em algoritmos de controle [P]
 
