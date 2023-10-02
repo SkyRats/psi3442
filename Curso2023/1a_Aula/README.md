@@ -1,4 +1,13 @@
-1 aula
+Nesta aula vamos ver
 
-Slide no moodle
+● Sistema Embarcado
+● Sistema Ciber-físico
+● Exemplo: Drone
+○ Complexidade
+○ Estados (Graus de Liberdade)
+○ Movimentação
+○ Estimação de estados
+○ Hardware
+○ Software/Controle
+○ Aplicações
 
