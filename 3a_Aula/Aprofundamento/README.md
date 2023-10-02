@@ -171,13 +171,13 @@ Logo será nescessário a criação de uma classe de controle que possa ser inst
 Matematematicamente, no domínio do tempo discreto o controle PID é implementado da seguinte maneira:
 
 
-$if \ |u[n-1]|>u_max \ then \ e_i[n]=e[n] \ else \ e_i[n]=0 ]$
+if $|u[n-1]|>u_{max}$ then $e_i[n]=e[n]$ else $e_i[n]=0$
 
 $u_p[n] = K_p e[n]$
 
-$u_i[n] = u_i[n-1] + \cfrac{Kp*Ts/Ti}{e_i[n]}$
+$u_i[n] = u_i[n-1] + \cfrac{Kp Ts/Ti}{e_i[n]}$
 
-$u_d[n] = \cfrac{Td}{Td + N*Ts}u_d[n-1] - \cfrac{Kp*N*Td}{Td+N*Ts}(y[n]-y[n-1])$
+$u_d[n] = \cfrac{Td}{Td + N Ts} u_d[n-1] - \cfrac{Kp N Td}{Td + N Ts} (y[n] - y[n-1])$
 
 $u[n] = saturation(u_p[n] + u_i[n] + u_d[n])$
 
