@@ -215,6 +215,11 @@ class Control:
         self.uIn_1 = self.uIn
         self.uDn_1 = self.uDn
         self.yn_1 = yn
+	#Saturation of control effort
+	if (self.un > sat or self.un < - sat):
+            #ok
+        else:
+            self.un = sat*self.un/abs(self.un)
         #return
         return self.un
 ```
