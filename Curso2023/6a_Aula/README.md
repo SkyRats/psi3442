@@ -95,17 +95,17 @@ Com isso, incluindo o modelo grass_plane no mundo custom_world.world o piso do m
 
 ## 3.5 O Céu Perfeito
 
-``` sdf
+``` xml
 <scene>
-      <sky>
-        <clouds>
-          <speed>12</speed>
-        </clouds>
-      </sky>
-      <ambient>0.95 0.95 0.95 1</ambient>
-      <background>0.3 0.3 0.3 1</background>
-      <shadows>true</shadows>
-    </scene>
+  <sky>
+    <clouds>
+      <speed>12</speed>
+    </clouds>
+  </sky>
+  <ambient>0.95 0.95 0.95 1</ambient>
+  <background>0.3 0.3 0.3 1</background>
+  <shadows>true</shadows>
+</scene>
 ```
 
 ## 3.6 Adicionando um objeto inusitado
