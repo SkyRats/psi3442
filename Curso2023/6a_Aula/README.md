@@ -62,15 +62,51 @@ Para isto, basta exportar o projeto crazy_object no Blender escolhendo a opção
 
 ## 3.2 IRIS SIM! Um universo onde sou amigo do Rei!
 
-O iris_sim é um rospackge criado com rospy (python) e roscpp (C++, opicional caso queria programar seus scripts já em C++ pensando em aplicá-los de maneira otimizada em sistemas embarcados).
+O iris_sim é um rospackge criado com rospy (python) e roscpp (C++, opicional caso queria programar seus scripts já em C++ pensando em aplicá-los de maneira otimizada em sistemas embarcados). O objetivo desse pacote é fornecer um arquivo chamado simulation.launch capaz prover um ambiente de simulação com um mundo customizado e drone customizado integrado ao firmware PX4.
 
 Após criar o pacote adequadamente com os comandos ensinados no tutorial de ROS, incluimos as seguintes pastas adicionais para criar noss maravilhos pacote de simulação. Se você quiser aprender mais, você pode criar o pacote do zero e ir montando ele copiando e alterando os arquivos do pacote original. Se você tem pressa, pode baixar o pacote direto e apenas alterar aquilo que faz sentido para você.
 
+Dentro do packge iris_sim você verá, dentre outros diretórios os seguintes:
+
+* launch : guarda o arquivo simulation.launch responsável por chamar o firmware PX4, iniciar o ROS e Mavros. E iniciar o drone IRIS customizado dentro de um mundo também customizado. Para mais detalhes entre no arquivo simulation.launch
+
+* models: contém o arquivo iris_custom. Este arquivo é um modelo .sdf customizável de um drone IRIS padrão que é instanciado e customizado por meio de modelos (sensores/atuadores) salvos no diretório ~/.gazebo/models
+
+* scripts: contém os algoritimos de automação do drone. Você pode salvar seus scripts de automação em outro rospackge se preferir. Se por ventura achar mais conveniente salvar tudo junto, basta adicionar seu .py na pasta scripts.
+
+* worlds: guarda o arquivo custom_world.world que descreve um mundo personalizável que uni modelos do diretório ~/.gazebo/models
+
 ## 3.3 Brilha sol! Ilumine meu mundo!
+
+Aqui vamos entender o modelo sun_customized que está implementado no diretório ~/.gazebo/models. O modelo em si encontra-se no arquivo  ~/.gazebo/models/sun_customized/model.sdf
+
+Define-se aqui uma fonte de luz perpendicular ao solo como sendo o sol do mundo outdoor do iris_sim. Para entender melhor as <tags> de iluminação leia [Parâmetros de iluminação em SDF](http://sdformat.org/tutorials?tut=spec_materials&cat=specification&)
+
+Com isso, incluindo o modelo sun_customized no mundo custom_world.world o mundo passa a ser iluminado pelo sol com os parâmetros que você escolheu.
 
 ## 3.4 Um Belo Gramado
 
+Aqui vamos entender o modelo grass_plane que está implementado no diretório ~/.gazebo/models. O modelo em si encontra-se no arquivo  ~/.gazebo/models/grass_plane/model.sdf
+
+Define-se aqui o material e especificações do solo do mundo outdoor do iris_sim. Este modelo é muito similar ao asphalt_plane explicado na parte 1 deste tutorial. Basicamente o modelo conta com um arquivo model.sdf onde a descrição principal do modelo de piso gramado é feita. A pasta "materials" contém duas outas: "sccipts" e "textures".
+A pasta "scripts" tem um arquivo chamado grass.material . Este arquivo define o material grama, a sua textura salva no formato .png e como a luz afeta este material. A pasta "textures" contém uma foto chamada grass.png conténdo uma visão aérea de um chão gramado quadrado.
+
+Com isso, incluindo o modelo grass_plane no mundo custom_world.world o piso do mundo passa a ser um belo gramado verde.
+
 ## 3.5 O Céu Perfeito
+
+``` sdf
+<scene>
+      <sky>
+        <clouds>
+          <speed>12</speed>
+        </clouds>
+      </sky>
+      <ambient>0.95 0.95 0.95 1</ambient>
+      <background>0.3 0.3 0.3 1</background>
+      <shadows>true</shadows>
+    </scene>
+```
 
 ## 3.6 Adicionando um objeto inusitado
 
