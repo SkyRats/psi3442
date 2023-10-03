@@ -4,6 +4,8 @@ A documentação a seguir Explica em detalhes como criar e customizar simulaçõ
 
 ## Parte 1 Entendendo o Gazebo
 
+![rqt_graph](images/gazebosim.png)
+
 No link a seguir você terá a oportunidade de aprender sobre o Gazebo. Observação: Arquivos mencionados no tutorial encontram-se nesse mesmo link do github.
 
 [Siga para o tutorial Skyrats sobre Gazebo](https://github.com/SkyRats/psi3442/tree/master/5a_Aula)
@@ -21,6 +23,8 @@ Nesta terceira parte do tutorial você terá a oportunidade de aprender a criar 
 Na aula de hoje veremos como criar um mundo gramado, com um lindo céu com nuvens brancas, alguns objetos de cena em um dia ensolarado e com dois balões incríveis.
 
 ### 3.1 Blender
+
+![rqt_graph](images/blender.png)
 
 O [Blender](https://www.blender.org/) é uma ferramenta de modelagem e desenho 3D fácil de usar e que lhe permitirá criar obejtos e cenários para sua simulação no gazebo.
 
