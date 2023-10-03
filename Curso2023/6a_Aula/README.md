@@ -124,7 +124,7 @@ Com este cenário incluído, temos agora um ambiente inspirador e realista para 
 
 Aqui vamos entender o modelo crazy_obejtc definido na seção 3.1 e que está implementado no diretório ~/.gazebo/models. O modelo em si encontra-se no arquivo  ~/.gazebo/models/crazy_object/model.sdf
 
-![rqt_graph](images/gazebo_crazy_object.png)
+![rqt_graph](images/grazebo_crazy_object.png)
 
 Adiciona-se o modelo no mundo custom_world.world . O objeto é definido no arquivo model.sdf que inclui o arquivo crazy_object.dae importado do Blender como explicado na seção 3.1. Esse arquivo fica no seguinte diretório: ~/.gazebo/models/crazy_object/meshes/crazy_object.dae
 
