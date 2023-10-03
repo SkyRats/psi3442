@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<sdf version='1.5'>
+  <model name='iris_custom'>
+
+    <include>
+      <uri>model://iris</uri>
+    </include> 
+
+    <!-- Add your sensors -->
+    <include>
+          <!--<uri>model://fpv_cam</uri>-->
+          <uri>model://cam_custom</uri>
+          <pose>0.097 0 0.02 0 0 0</pose>
+    </include>
+    <joint name="fpv_cam_joint" type="fixed">
+      <!--<child>fpv_cam::link</child>-->
+      <child>cam_custom::link</child>
+      <parent>iris::base_link</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+
+
+
+  </model>
+</sdf>
