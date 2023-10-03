@@ -95,23 +95,37 @@ Com isso, incluindo o modelo grass_plane no mundo custom_world.world o piso do m
 
 ## 3.5 O Céu Perfeito
 
+Dentro de um mundo descrito por um arquivo .world é possível adicionar cenas padrão do Gazebo. A seguir, mostra-se o trecho de código do cutom_world.world que adiciona uma cena contendo um céu com nuvens que se movem com velocidade 12. Os demais parâmetros referem-se a iluminação.
+
 ```xml
-<scene>
-  <sky>
-    <clouds>
-      <speed>12</speed>
-    </clouds>
-  </sky>
-  <ambient>0.95 0.95 0.95 1</ambient>
-  <background>0.3 0.3 0.3 1</background>
-  <shadows>true</shadows>
-</scene>
+<world name="default">
+  <scene>
+    <sky>
+      <clouds>
+        <speed>12</speed>
+      </clouds>
+    </sky>
+    <ambient>0.95 0.95 0.95 1</ambient>
+    <background>0.3 0.3 0.3 1</background>
+    <shadows>true</shadows>
+  </scene>
+</world>
 ```
 
 ## 3.6 Adicionando um objeto inusitado
 
+Aqui vamos entender o modelo crazy_obejtc definido na seção 3.1 e que está implementado no diretório ~/.gazebo/models. O modelo em si encontra-se no arquivo  ~/.gazebo/models/crazy_object/model.sdf
+
+Adiciona-se o modelo no mundo custom_world.world . O objeto é definido no arquivo model.sdf que inclui o arquivo crazy_object.dae importado do Blender como explicado na seção 3.1. Esse arquivo fica no seguinte diretório: ~/.gazebo/models/crazy_object/meshes/crazy_object.dae
+
+Com isso, agora completa-se a explicação de como é possível incluir objetos do Blender no Gazebo. Note que no arquivo model.sdf é possível definir propriedades físicas do objeto importado do Blender como massa, momentos de inércia, magnetismo e etc.
+
 ## 3.7 o drone que eu sempre quis!
 
+É hora de adicionarmos um drone IRIS que possa ser customizado em nossa simulação do pacote iris_sim. Para isso, no diretório iris_sim/models cria-se uma pasta chamada iris_custom. Está pasta conta com um model.sdf que define um drone IRIS padrão (advindo do modelo padrão do firmware PX4). E além disso, esse arquivo inclui sensores como uma câmera chamda custom_cam e define uma joint, isto é, como a câmera é acoplada no drone. O iris é o link pai no qual um link filho, a câmera, é acoplada.
+
 ## 3.8 Vendo o mundo de cima! A melhor câmera de todas!
+
+
 
 ## 3.9 Um poder de semi-deus. Roslaunch, big-bang! Faça-se a luz! É hora de iniciar minha criação!
