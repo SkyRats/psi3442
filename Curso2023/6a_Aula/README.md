@@ -95,7 +95,7 @@ Com isso, incluindo o modelo grass_plane no mundo custom_world.world o piso do m
 
 ## 3.5 O Céu Perfeito
 
-``` xml
+```xml
 <scene>
   <sky>
     <clouds>
