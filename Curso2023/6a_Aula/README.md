@@ -152,6 +152,26 @@ Pronto, a executar esse comando um mundo completamente customizado com um drone 
 
 ## 4.1 Configurando bashrc
 
+Certifique-se de ter as seguintes linahs de código em seu arquivo bashrc
+
+A primeira linha define o ros noetic como o que estou utilizando no momento (sua versão de ROS pode ser diferente conforme sua versão de ubuntu. Consulte a sua [versão do ROS](http://wiki.ros.org/Distributions) em que o ano de lançamento é o ano da sua versão de ubuntu.
+
+A segunda linha realiza o comando source no arquivo de setup do gazebo.
+
+A terceira linha define drone_ws como o workspace padrão para a utilização do ROS no momento pois foi nesse workspace que eu salvei o rospakge iris_sim.
+
+```
+source /opt/ros/noetic/setup.bash
+source /usr/share/gazebo/setup.sh
+source ~/ros_workspaces/drone_ws/devel/setup.bash
+```
+
+Lembrando que para altera o bashrc basta abrir um terminal e usar
+
+```
+nano ~/.bashrc
+```
+
 ## 4.2 Executando a simulação
 
 Abra um terminal e execute 
