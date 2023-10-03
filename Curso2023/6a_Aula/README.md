@@ -42,6 +42,8 @@ Nesta terceira parte do tutorial você terá a oportunidade de aprender a criar 
 
 Na aula de hoje veremos como criar um mundo gramado, com um lindo céu com nuvens brancas, alguns objetos de cena em um dia ensolarado e com dois balões incríveis.
 
+![rqt_graph](images/iris_sim_world.png)
+
 Observação importante: O tutorial a seguir se propõe a explicar como criar os arquivos e organizá-los de forma correta para que a simulação funcione. Porém, os códigos dos objetos, modelos e mundos cirados não serão apresentados no texto. Fica a cargo do leitor conferir o diretório .gazebo/models e o rospackge iris_sim (ambos fornecidos nesse turorial) e procurar os arquivos mencionados neste tutorail para entender na prática o que é explicado neste texto.
 
 ### 3.1 Blender
@@ -88,6 +90,8 @@ Com isso, incluindo o modelo sun_customized no mundo custom_world.world o mundo 
 
 Aqui vamos entender o modelo grass_plane que está implementado no diretório ~/.gazebo/models. O modelo em si encontra-se no arquivo  ~/.gazebo/models/grass_plane/model.sdf
 
+![rqt_graph](images/gazebo_grass.png)
+
 Define-se aqui o material e especificações do solo do mundo outdoor do iris_sim. Este modelo é muito similar ao asphalt_plane explicado na parte 1 deste tutorial. Basicamente o modelo conta com um arquivo model.sdf onde a descrição principal do modelo de piso gramado é feita. A pasta "materials" contém duas outas: "sccipts" e "textures".
 A pasta "scripts" tem um arquivo chamado grass.material . Este arquivo define o material grama, a sua textura salva no formato .png e como a luz afeta este material. A pasta "textures" contém uma foto chamada grass.png conténdo uma visão aérea de um chão gramado quadrado.
 
@@ -96,6 +100,8 @@ Com isso, incluindo o modelo grass_plane no mundo custom_world.world o piso do m
 ## 3.5 O Céu Perfeito
 
 Dentro de um mundo descrito por um arquivo .world é possível adicionar cenas padrão do Gazebo. A seguir, mostra-se o trecho de código do cutom_world.world que adiciona uma cena contendo um céu com nuvens que se movem com velocidade 12. Os demais parâmetros referem-se a iluminação.
+
+![rqt_graph](images/gazebo_sky.png)
 
 ```xml
 <world name="default">
@@ -118,13 +124,21 @@ Com este cenário incluído, temos agora um ambiente inspirador e realista para 
 
 Aqui vamos entender o modelo crazy_obejtc definido na seção 3.1 e que está implementado no diretório ~/.gazebo/models. O modelo em si encontra-se no arquivo  ~/.gazebo/models/crazy_object/model.sdf
 
+![rqt_graph](images/crazy_object.png)
+
 Adiciona-se o modelo no mundo custom_world.world . O objeto é definido no arquivo model.sdf que inclui o arquivo crazy_object.dae importado do Blender como explicado na seção 3.1. Esse arquivo fica no seguinte diretório: ~/.gazebo/models/crazy_object/meshes/crazy_object.dae
+
+Mas, e se quisermos ir além e quisermos colocar um balão colorido na simulação?
+
+o processo é o mesmo. Observe os arquivos do modelo happy_baloon no diretório ~/.gazebo/models/happy_baloon . Observe que agora uma textura foi adicionada ao balao2.dae . Tanto o arquivo exportado do Blender contendo o balão "balao2.dae" quanto a textura usada no blander "ImphenziaPalette01.png" devem estar no diretório ~/.gazebo/models/happy_baloon/meshes para que o balão apareça colorido no mundo do pacote iris_sim. Lembre-se de posicionar o balão com uma altura coerente no arquivo .world para que ele aparente estar voando. 
 
 Com isso, agora completa-se a explicação de como é possível incluir objetos do Blender no Gazebo. Note que no arquivo model.sdf é possível definir propriedades físicas do objeto importado do Blender como massa, momentos de inércia, magnetismo e etc.
 
 ## 3.7 o drone que eu sempre quis!
 
 É hora de adicionarmos um drone IRIS que possa ser customizado em nossa simulação do pacote iris_sim. Para isso, no diretório iris_sim/models cria-se uma pasta chamada iris_custom. Está pasta conta com um model.sdf que define um drone IRIS padrão (advindo do modelo padrão do firmware PX4). E além disso, esse arquivo inclui sensores como uma câmera chamda custom_cam e define uma joint, isto é, como a câmera é acoplada no drone. O iris é o link pai no qual um link filho, a câmera, é acoplada.
+
+![rqt_graph](images/gazebo_drone.png)
 
 Os sensore inclusos são deifinidos como modelos no diretório ~/.gazebo/models . A câmera supracitada por exemplo é um modelo descrito em ~/.gazebo/models/cam_custom .
 
@@ -149,6 +163,10 @@ O arquivo é auto explicativo, mas basicamente ele executa a simulação sitl do
 Pronto, a executar esse comando um mundo completamente customizado com um drone personalizado estará disponível para qualquer script de missão que você deseje simular, salvo no diretório iris_sim/scirpts ou em outro rospackge à sua escolha.
 
 # Parte 4 Rodando a simulação
+
+É hora de exercutar sua primeira simulação com o pacote irsi_sim
+
+![rqt_graph](images/gazebo_flight.png)
 
 ## 4.1 Configurando bashrc
 
