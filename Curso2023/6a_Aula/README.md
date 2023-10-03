@@ -62,6 +62,10 @@ Para isto, basta exportar o projeto crazy_object no Blender escolhendo a opção
 
 ## 3.2 IRIS SIM! Um universo onde sou amigo do Rei!
 
+O iris_sim é um rospackge criado com rospy (python) e roscpp (C++, opicional caso queria programar seus scripts já em C++ pensando em aplicá-los de maneira otimizada em sistemas embarcados).
+
+Após criar o pacote adequadamente com os comandos ensinados no tutorial de ROS, incluimos as seguintes pastas adicionais para criar noss maravilhos pacote de simulação. Se você quiser aprender mais, você pode criar o pacote do zero e ir montando ele copiando e alterando os arquivos do pacote original. Se você tem pressa, pode baixar o pacote direto e apenas alterar aquilo que faz sentido para você.
+
 ## 3.3 Brilha sol! Ilumine meu mundo!
 
 ## 3.4 Um Belo Gramado
