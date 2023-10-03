@@ -70,8 +70,6 @@ Para isto, basta exportar o projeto crazy_object no Blender escolhendo a opção
 
 ## 3.6 Adicionando um objeto inusitado
 
-Coloquei um objeto impróprio na minha simulação, veja no que deu [youtube]()
-
 ## 3.7 o drone que eu sempre quis!
 
 ## 3.8 Vendo o mundo de cima! A melhor câmera de todas!
