@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="happy_baloon">
+    <static>true</static>
+    <link name="happy_baloon">
+      <visual name="happy_baloon">
+        <cast_shadows>true</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://happy_baloon/meshes/balao2.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision_H">
+        <geometry>
+          <mesh>
+            <uri>model://happy_baloon/meshes/balao2.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

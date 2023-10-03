@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="baloon">
+    <static>true</static>
+    <link name="baloon">
+      <visual name="baloon">
+        <cast_shadows>true</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://skyrats_baloon/meshes/balao.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision_H">
+        <geometry>
+          <mesh>
+            <uri>model://skyrats_baloon/meshes/balao.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

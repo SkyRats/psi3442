@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="crazy_object">
+    <static>true</static>
+    <link name="crazy_object">
+
+      <inertial>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.166666</ixx>
+          <iyy>0.166666</iyy>
+          <izz>0.166666</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <visual name="crazy_object">
+        <cast_shadows>true</cast_shadows>
+        <geometry>
+          <mesh>
+            <scale>0.5 0.5 0.5</scale>
+            <uri>model://crazy_object/meshes/crazy_object.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision_H">
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>model://crazy_object/meshes/crazy_object.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>
