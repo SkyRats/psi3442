@@ -112,6 +112,8 @@ Dentro de um mundo descrito por um arquivo .world é possível adicionar cenas p
 </world>
 ```
 
+Com este cenário incluído, temos agora um ambiente inspirador e realista para simulações outdoor que envolvam visão computacional.
+
 ## 3.6 Adicionando um objeto inusitado
 
 Aqui vamos entender o modelo crazy_obejtc definido na seção 3.1 e que está implementado no diretório ~/.gazebo/models. O modelo em si encontra-se no arquivo  ~/.gazebo/models/crazy_object/model.sdf
@@ -124,8 +126,16 @@ Com isso, agora completa-se a explicação de como é possível incluir objetos 
 
 É hora de adicionarmos um drone IRIS que possa ser customizado em nossa simulação do pacote iris_sim. Para isso, no diretório iris_sim/models cria-se uma pasta chamada iris_custom. Está pasta conta com um model.sdf que define um drone IRIS padrão (advindo do modelo padrão do firmware PX4). E além disso, esse arquivo inclui sensores como uma câmera chamda custom_cam e define uma joint, isto é, como a câmera é acoplada no drone. O iris é o link pai no qual um link filho, a câmera, é acoplada.
 
+Os sensore inclusos são deifinidos como modelos no diretório ~/.gazebo/models . A câmera supracitada por exemplo é um modelo descrito em ~/.gazebo/models/cam_custom .
+
+Assim, é possível criar no gazebo um gêmio digital de um drone multirrotor com diferentes sensores para diversas aplicações possíveis de drones. Com essa estrutura, você pode testar em simulação o drone mais legal que você possa imaginar. Repleto de sensores e tecnologias interessantes mesmo sem dispor do hardware necessário para os testes no momento. Falando sério, é assim que se testa diversas configurações de sensores para um drone antes de montar um protótipo e testar o drone para o Operational Design Domain especificado para ele.
+
 ## 3.8 Vendo o mundo de cima! A melhor câmera de todas!
 
+Aqui vamos entender o modelo cam_custom que está implementado no diretório ~/.gazebo/models. O modelo em si encontra-se no arquivo  ~/.gazebo/models/cam_custom/model.sdf
 
+Define-se aqui uma câmera customizada cujos parâmetros de tamanho de imagem, fov (field of view) e muito mais podem ser customizados para replicar o comportamento real de uma câmera de mercado que você planjea comprar e instalar no seu drone real.
+
+Com isso, incluindo o modelo cam_custom no model.sdf do drone iris_custom o drone projetado agora pode utilizar recursos de visão computacional para realizar missões autonomas.
 
 ## 3.9 Um poder de semi-deus. Roslaunch, big-bang! Faça-se a luz! É hora de iniciar minha criação!
