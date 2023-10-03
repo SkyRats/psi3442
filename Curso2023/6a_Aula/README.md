@@ -2,6 +2,10 @@
 
 A documentação a seguir Explica em detalhes como criar e customizar simulações SITL (Software in the loop) usando o PX4, MAVROS/MAVLINK e Gazebo.
 
+ :warning: :warning: Alerta de Uso dos arquivos fornecidos :warning: :warning:
+
+Observação importante: Lembre-se de criar um ROS workspace (sugiro drone_ws) e adicionar o pacote iris_sim fornecido nesse tutorial ao seu workspace. Lembre-se ainda de adicionar no diretório ~/.gazebo do seu computador a pasta models contida no diretório .gazebo/ deste tutorial. Alerta super importante. Não copie a pasta .gazebo na sua home pois isso apagará aquela que já existe e isso pode quebrar o funcionamento do seu gazebo.
+
 Para os tutoriais a seguir, alguns conhecimentos são necessários e podem ser encontrados nos seguintes links. Consulte-os quando necessário. Recomendamos tentar entender primeiro os tutoriais da skyrats e recorer a estes links quando necessário.
 
 * SDF: Simulation Description File
@@ -44,11 +48,11 @@ Na aula de hoje veremos como criar um mundo gramado, com um lindo céu com nuven
 
 ![rqt_graph](images/iris_sim_world.png)
 
-Preste muito atenção a todos os detalhes das duas observações a seguir :warning: :warning: :warning:
+ :warning: :warning: Preste muito atenção a todos os detalhes das duas observações a seguir :warning: :warning: 
 
 Observação importante: O tutorial a seguir se propõe a explicar como criar os arquivos e organizá-los de forma correta para que a simulação funcione. Porém, os códigos dos objetos, modelos e mundos cirados não serão apresentados no texto. Fica a cargo do leitor conferir o diretório .gazebo/models e o rospackge iris_sim (ambos fornecidos nesse turorial) e procurar os arquivos mencionados neste tutorail para entender na prática o que é explicado neste texto.
 
-Observação importante 2: Lembre-se de criar um ROS workspace (sugiro drone_ws) e adicionar o pacote iris_sim fornecido nesse tutorial ao seu workspace. Lembre-se ainda de adicionar no diretório home do seu computador a pasta models contida no diretório .gazebo/ deste tutorial. Alerta super importante. Não copie a pasta .gazebo na sua home pois isso apagará aquela que já existe e isso pode quebrar o funcionamento do seu gazebo.
+Observação importante 2: Lembre-se de criar um ROS workspace (sugiro drone_ws) e adicionar o pacote iris_sim fornecido nesse tutorial ao seu workspace. Lembre-se ainda de adicionar no diretório ~/.gazebo do seu computador a pasta models contida no diretório .gazebo/ deste tutorial. Alerta super importante. Não copie a pasta .gazebo na sua home pois isso apagará aquela que já existe e isso pode quebrar o funcionamento do seu gazebo.
 
 ### 3.1 Blender
 
