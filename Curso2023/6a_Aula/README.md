@@ -44,7 +44,11 @@ Na aula de hoje veremos como criar um mundo gramado, com um lindo céu com nuven
 
 ![rqt_graph](images/iris_sim_world.png)
 
+Preste muito atenção a todos os detalhes das duas observações a seguir :warning: :warning: :warning:
+
 Observação importante: O tutorial a seguir se propõe a explicar como criar os arquivos e organizá-los de forma correta para que a simulação funcione. Porém, os códigos dos objetos, modelos e mundos cirados não serão apresentados no texto. Fica a cargo do leitor conferir o diretório .gazebo/models e o rospackge iris_sim (ambos fornecidos nesse turorial) e procurar os arquivos mencionados neste tutorail para entender na prática o que é explicado neste texto.
+
+Observação importante 2: Lembre-se de criar um ROS workspace (sugiro drone_ws) e adicionar o pacote iris_sim fornecido nesse tutorial ao seu workspace. Lembre-se ainda de adicionar no diretório home do seu computador a pasta models contida no diretório .gazebo/ deste tutorial. Alerta super importante. Não copie a pasta .gazebo na sua home pois isso apagará aquela que já existe e isso pode quebrar o funcionamento do seu gazebo.
 
 ### 3.1 Blender
 
