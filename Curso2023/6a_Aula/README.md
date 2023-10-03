@@ -26,6 +26,8 @@ Aqui você pode conferir os tutoriais oficiais do gazebo para te auxiliar no ent
 
 Aqui você pode conferir a documentação oficial da PX4 sobre como rodar uma simulação autonoma com dorne IRIS e o Gazebo.
 
+Uma dica extra para a prova P1: confira este [repositório da skyrats](https://github.com/SkyRats/p1_psi3442) para ver como prosseguir com a P1.
+
 ## Parte 1 Entendendo o Gazebo
 
 ![rqt_graph](images/gazebosim.png)
