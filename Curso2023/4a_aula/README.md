@@ -1,4 +1,4 @@
-# Simulação da PX4 e MAVROS
+# Implementação de Sistemas Embarcados
 
 Nesta atividade, iremos explorar a relação entre os softwares executados no sistema embarcado de um drone através de um estudo em simulação.
 
