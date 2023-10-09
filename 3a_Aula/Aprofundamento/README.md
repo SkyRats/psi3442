@@ -322,7 +322,7 @@ A evolução temporal das variáveis controladas:
 
 ![px4_sitl_overview](imgs/xyz_pi.png)
 
-Conclusão: rastreou a trajetória quadrada. Porém, a tolerância de 0.1m (em cinza) foi desrespeitada. Isso ocorre pois o ganho $ Kp $ utilizado é muito alto e o integrador potencializa a agressividade do controle o que implica em sobressinal. O tempo total foi de 45s. Considerando-se a similaridade dos gráficos do controle P e PI fica implicito que a sintonia de $ T_i $ é suave, isto é, o controle tem pouco ganho integral.
+Conclusão: rastreou a trajetória quadrada. Porém, a tolerância de 0.1m (em cinza) foi desrespeitada. Isso ocorre pois o ganho $ Kp $ utilizado é muito alto e o integrador potencializa a agressividade do controle o que implica em sobressinal. O tempo total foi de 45s. Considerando-se a similaridade dos gráficos do controle P e PI fica implicito que a sintonia de $T_i$ é suave, isto é, o controle tem pouco ganho integral.
 
 ### 5.4 Controle PD 
 
