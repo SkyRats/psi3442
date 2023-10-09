@@ -352,7 +352,7 @@ Conclusão: rastreou a trajetória quadrada respeitando a tolerância de 0.1m (e
 
 ### 5.6 Regime Subamortecido
 
-Sistemas com overshoot são em geral mais rápidos em $t_r$ (rise time) e $t_s$ (settling time) se comparado aos regimes crítico e supercrítico. Porém, em certas aplicações a presença de overshoot é inadimissível. Considerando-se o estado da arte em drones em que se está considerando o acoplamento de ferramentas ao drone, sobressinal em trajetórias de drone se tornará inadimissível nesse cenáiro.
+Sistemas com overshoot são em geral mais rápidos em $t_r$ (rise time) e $t_s$ (settling time) se comparado aos regimes crítico e supercrítico. Porém, em certas aplicações a presença de overshoot é inadimissível (por exemplo em drones usados para colheita de laranjas). Considerando-se o estado da arte em drones em que se está considerando o acoplamento de ferramentas ao drone, sobressinal em trajetórias de drone se tornará inadimissível nesse cenáiro.
 
 ### 5.7 Regime Critico
 
@@ -375,6 +375,24 @@ A evolução temporal das variáveis controladas:
 ![px4_sitl_overview](imgs/xyz_pid_super_rapido.png)
 
 Observação: o resulatado na coordenada z poderia ser melhor caso se adotasse uma sintonia mais suave para o controle dessa coordenada.
+
+### 5.10 Dedução do controle PID à diferenças:
+
+O controle PID em Laplace (domínio de frequências associado a dinâmica de tempo contínuo) com a parcela defivativa já filtrada pelo polo $\cfrac{T_D}{N}$ é
+
+$\cfrac{U(s)}{E(s)} = K_p(1 + \cfrac{1}{T_i s)} + \cfrac{T_D s}{\cfrac{T_D}{N}s + 1} $
+
+A parcela integral na forma de equação de diferenças é
+
+$\cfrac{U_p(s)}{E(s)} = K_p \Rightarrow u_p[n] = K_p e[n]$
+
+A parcela integral sem anti-windup é: (O algorítimo de anti-windup é adicionado diretamente no código e não é projetado no domínio de tempo contínuo pois trata-se de um elemento não linear em um projeto de controle linear)
+
+$\cfrac{U_i(s)}{E(s)} = \cfrac{K_p}{T_i s}$
+
+Transformando a parcela integral do domínio "s" para o domínio "z" pelo método de mapeamento backward tem-se que
+
+$U_i(z)T_i$
 
 ## 6 Breve discussão sobre identificação de sistemas
 
