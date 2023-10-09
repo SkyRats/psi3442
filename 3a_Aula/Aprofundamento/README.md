@@ -392,7 +392,7 @@ $\cfrac{U_i(s)}{E(s)} = \cfrac{K_p}{T_i s}$
 
 Transformando a parcela integral do domínio "s" para o domínio "z" pelo método de mapeamento backward tem-se que
 
-$U_i(z)T_i$
+$U_i(z)T_i = $
 
 ## 6 Breve discussão sobre identificação de sistemas
 
