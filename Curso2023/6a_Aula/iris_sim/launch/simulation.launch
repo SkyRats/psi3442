@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <include file="$(find px4)/launch/mavros_posix_sitl.launch">
+        <arg name="vehicle" value="iris"/>
+        <arg name="sdf" value="$(find iris_sim)/models/iris_custom/model.sdf"/>
+        <arg name="world" value="$(find iris_sim)/worlds/custom_world.world" />
+    </include>
+</launch>
