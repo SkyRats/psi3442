@@ -6,6 +6,8 @@ A documentação a seguir Explica em detalhes como criar e customizar simulaçõ
 
 Observação importante: Lembre-se de criar um ROS workspace (sugiro drone_ws) e adicionar o pacote iris_sim fornecido nesse tutorial ao seu workspace. Lembre-se ainda de adicionar no diretório ~/.gazebo do seu computador a pasta models contida no diretório .gazebo/ deste tutorial. Alerta super importante. Não copie a pasta .gazebo na sua home pois isso apagará aquela que já existe e isso pode quebrar o funcionamento do seu gazebo.
 
+Importnate: Os arquivos forneceidos no pacote iris_sim foram desenvolvidos para ROS Noetic (última versão do ROS 1). Caso esteja usando outra distribuição de ROS, alguns pequenos ajustes poderão ser necessáiros especialmente ao que se refere aos caminhos dos arquivos no firmware PX4.
+
 Para os tutoriais a seguir, alguns conhecimentos são necessários e podem ser encontrados nos seguintes links. Consulte-os quando necessário. Recomendamos tentar entender primeiro os tutoriais da skyrats e recorer a estes links quando necessário.
 
 * SDF: Simulation Description File
