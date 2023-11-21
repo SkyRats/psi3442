@@ -335,7 +335,7 @@ class Turtle:
     #method to show position in terminal
     def show_pose(self):
         while not rospy.is_shutdown():
-            print("(x,y,theta)=("str(self.pose.x)+","+str(self.pose.y)+","+str(self.pose.theta)+")")
+            print("(x,y,theta)=("+str(self.pose.x)+","+str(self.pose.y)+","+str(self.pose.theta)+")")
             self.rate.sleep()
 
 if __name__ == '__main__':
@@ -483,8 +483,8 @@ def turtle_gopose():
         #response = add_turtle(2.0, 2.0, 0.0, "turtle2")
         teleport_turtle(8,8,90)
         return 
-    except rospy.ServiceException, e:
-        print "Service call failed: %s"%e
+    except rospy.ServiceException as error:
+        print ("Service call failed: %s", error)
 
 if __name__ == "__main__":
     
