@@ -1,0 +1,82 @@
+To completely uninstall Docker and remove **all associated data** (containers, images, volumes, configs) on **macOS**, follow the steps below carefully.
+
+---
+
+### 🔥 Full Docker Uninstall (macOS)
+
+#### 1. **Quit Docker**
+
+Make sure Docker is not running:
+
+* Right-click the Docker icon in the macOS menu bar → **Quit Docker Desktop**.
+
+---
+
+#### 2. **Delete Docker Application**
+
+Open Terminal and run:
+
+```bash
+sudo rm -rf /Applications/Docker.app
+```
+
+---
+
+#### 3. **Remove Docker System Files and Settings**
+
+Run the following commands **carefully** to delete all Docker-related data:
+
+```bash
+rm -rf ~/Library/Containers/com.docker.docker
+rm -rf ~/.docker
+rm -rf ~/Library/Application\ Support/Docker\ Desktop
+rm -rf ~/Library/Group\ Containers/group.com.docker
+rm -rf /usr/local/bin/docker
+rm -rf /usr/local/bin/docker-compose
+rm -rf /usr/local/bin/docker-credential-desktop
+rm -rf /usr/local/bin/docker-credential-ecr-login
+rm -rf /usr/local/bin/docker-machine
+rm -rf ~/Library/Preferences/com.docker.docker.plist
+rm -rf ~/Library/Saved\ Application\ State/com.electron.docker-frontend.savedState
+```
+
+You can copy-paste all that into Terminal as one block if you'd like.
+
+---
+
+#### 4. **(Optional) Remove Docker Virtual Disks and Resources**
+
+If you're using **Apple Silicon (M1/M2/M3)** or had Docker Desktop running with VM support, also delete:
+
+```bash
+rm -rf ~/Library/Containers/com.docker.helper
+rm -rf ~/Library/Logs/Docker\ Desktop
+```
+
+---
+
+#### 5. **(Optional) Reclaim Disk Space (Check for Docker.raw)**
+
+Run this to delete the large Docker virtual disk image:
+
+```bash
+rm ~/Library/Containers/com.docker.docker/Data/vms/0/data/Docker.raw
+```
+
+> This can be several GB in size.
+
+---
+
+### ✅ To Verify Docker is Gone
+
+Check if any Docker command still works:
+
+```bash
+docker --version
+```
+
+If you see “command not found,” the uninstall was successful.
+
+---
+
+Let me know if you want a **clean reinstall guide** after this, or want to **back up containers/images** before deleting everything.
